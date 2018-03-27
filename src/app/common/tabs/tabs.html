@@ -1,0 +1,109 @@
+<div class="clearfix" [ngClass]="tabtype">
+
+  <tabset [justified]="justified">
+    <tab #staticTabs *ngFor="let tabs of tablist" heading="{{tabs.heading}}">
+      <div *ngIf="tabs.templatetype =='featured' then featured"></div>
+      <div *ngIf="tabs.templatetype =='upcoming' then upcoming"></div>
+      <div *ngIf="tabs.templatetype =='trending' then trending"></div>
+      <div *ngIf="tabs.templatetype =='about-pandit' then aboutpandit"></div>
+      <div *ngIf="tabs.templatetype =='pooja' then pooja"></div>
+      <div *ngIf="tabs.templatetype =='availability' then availability"></div>
+    </tab>
+  </tabset>
+</div>
+<ng-template #featured>
+  <div class="featured-event clearfix">
+    <div class="event-img" *ngFor="let images of featuredImageList;let i = index" [ngClass]="{'margin-recm':i == 2 || i == 6}"
+      [ngStyle]="{'background-image': 'url(' + images.src + ')'}">
+      <div class="event-date">
+        <div class="date">28</div>
+        <div class="month-year">
+          <div class="month">Feb</div>
+          <div class="year">2018</div>
+        </div>
+      </div>
+      <div class="description">
+        <h2>{{images.title}}</h2>
+        <p>{{images.location}}</p>
+        <a class="book-now">Book Now</a>
+      </div>
+  </div>
+  </div>
+</ng-template>
+<ng-template #upcoming>
+  <div class="featured-event">
+    <div class="calendar-box">
+      <events-calendar></events-calendar>
+    </div>
+    <div class="upcomingevent-box">
+      <div class="event-img" *ngFor="let images of upcomingImageList;let i = index" [ngClass]="{'margin-recm':i == 1 || i == 3}"
+        [ngStyle]="{'background-image': 'url(' + images.src + ')'}">
+        <div class="event-date">
+          <div class="date">28</div>
+          <div class="month-year">
+            <div class="month">Feb</div>
+            <div class="year">2018</div>
+          </div>
+        </div>
+        <div class="description">
+          <h2>{{images.title}}</h2>
+          <p>{{images.location}}</p>
+          <a class="book-now">Book Now</a>
+        </div>
+    </div>
+  </div>
+  </div>
+</ng-template>
+<ng-template #trending>
+  <div class="featured-event">
+    <div class="event-img" *ngFor="let images of trendingImageList;let i = index" [ngClass]="{'margin-recm':i ==2 || i ==6,'row-2-image':i ==3 || i ==4}"
+      [ngStyle]="{'background-image': 'url(' + images.src + ')'}">
+      <div class="event-date">
+        <div class="date">28</div>
+        <div class="month-year">
+          <div class="month">Feb</div>
+          <div class="year">2018</div>
+        </div>
+      </div>
+      <div class="description">
+        <h2>{{images.title}}</h2>
+        <p>{{images.location}}</p>
+        <a class="book-now">Book Now</a>
+      </div>
+  </div>
+  </div>
+</ng-template>
+
+<ng-template #aboutpandit>
+  <div class="about-tab">
+    <h3 class="tab-heading">About Deepak Kapoor</h3>
+    <div class="">
+      <img src="../assets/pandit/pandit-2.jpeg" />
+    </div>
+    <p [innerHTML]="aboutpandits"></p>
+  </div>
+</ng-template>
+<ng-template #pooja>
+  <div class="pooja-offered">
+    <h3 class="tab-heading">Pooja Offered</h3>
+    <div class="poojaList clearfix">
+      <div *ngFor="let puja of pujaList;">
+        <i class="fa fa-angle-double-right"></i> {{puja.puja}}
+      </div>
+    </div>
+  </div>
+</ng-template>
+<ng-template #availability>
+  <div class="availability">
+    <h3 class="tab-heading">Availability for Pooja/Hawan</h3>
+    <div class="available-slot" *ngFor="let availability of available;">
+      <div class="day-time">
+        <div class="date">{{availability.day}}</div>
+        <div class="time">{{availability.time}}</div>
+      </div>
+      <div class="book-slot">
+        <button type="button" class="btn btn-warning">Book Now</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

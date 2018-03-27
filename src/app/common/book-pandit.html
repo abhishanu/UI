@@ -1,0 +1,29 @@
+<div class="section-book-pandit clearfix">
+    <div class="section-bg section-light">
+        <div class="section">
+            <div class="box-head">
+                <h2>Book A Pandit</h2>
+            </div>
+            <div class="book-pandit clearfix">
+                <div class="pandit-list clearfix">
+                    <div *ngFor="let pandit of toppandit; let i = index" class="pandit-box" [ngClass]="{'active': i==1}">
+                        <div class="pandit">
+                            <div class="image" [ngStyle]="{'background-image': 'url(' + pandit.src + ')'}"></div>
+                            <div class="meta">
+                                <h4 class="name">{{pandit.name}}</h4>
+                                <h5>{{pandit.location}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pandit-detail clearfix">
+                    <div class="pandit-map-section">
+                    </div>
+                    <div class="pandit-desc-section">
+                        <tabs [tabtype]="'pandit-tab'" [tablist]="[{'heading':'About Pandit','templatetype':'about-pandit'},{'heading':'Pooja and services','templatetype':'pooja'},{'heading':'Availability','templatetype':'availability'}]"></tabs>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

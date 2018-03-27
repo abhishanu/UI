@@ -1,0 +1,28 @@
+<carousel [carouselType]="'bannercarousel'" [points]="true" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }"
+    [carouselItems]="bannerCarouselItems" [interval]="4000"></carousel>
+<carousel [carouselType]="'popularsearches'" [loop]="true" [grid]="{ xs: 2, sm: 4, md: 4, lg: 5, all: 0 }" [carouselItems]="popularSearchesIteams"></carousel>
+<div class="section">
+    <carousel [carouselType]="'shlokcarousel'" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }" [carouselItems]="shloklItems"
+        [interval]="6000"></carousel>
+</div>
+
+<div class="section-bg events-festival section-dark">
+    <div class="section">
+        <div class="box-head">
+            <h2>Events &amp; Festivals</h2>
+            <h4>The best place for workship for hindu</h4>
+        </div>
+        <tabs [tabtype]="'event-tabs'" [tablist]="[{'heading':'FEATURED EVENTS','templatetype':'featured'},{'heading':'UPCOMING EVENTS','templatetype':'upcoming'},{'heading':'TRENDING EVENTS','templatetype':'trending'}]"></tabs>
+        <div class="view-more"><a href="javascript:void(0)" class="btn btn-danger"> View More <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+</div>
+<home-temple-donations></home-temple-donations>
+<curated-experiences></curated-experiences>
+<book-pandit></book-pandit>
+<home-pooja-service></home-pooja-service>
+<app-gallery></app-gallery>
+<audio-video></audio-video>
+<gau-sewa></gau-sewa>
+<feedback></feedback>
+<blog></blog>
+<why-us></why-us>

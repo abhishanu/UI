@@ -1,0 +1,38 @@
+<div class="singlePage">
+  <div class="section clearfix">
+    <div class="sidebarSection">
+      <ngui-map center="Mahabaleshwar Temple, Gokarna" zoom="14" style="height:200px">
+        <marker [icon]="{
+         url: '../../assets/images/om-map.png',
+         anchor: [16,16],
+         size: [18,18],
+         scaledSize: [18,18]
+       }" position="Mahabaleshwar Temple, Gokarna">
+        </marker>
+      </ngui-map>
+      <near-by-temple></near-by-temple>
+
+    </div>
+    <div class="mainSection">
+      <div class="mainSectionContent temple-detail">
+        <div class="banner-head">
+          <div class="mainBanner" [ngStyle]="{'background-image': 'url(' + templeDetails.banner + ')'}">
+            <div class="subBanner">
+              <div>
+                50+ <span>Temple Needs</span>
+              </div>
+              <div>
+                39+ <span>Available Pandits</span>
+              </div>
+              <div>
+                150+ <span>Pooja Services</span>
+              </div>
+            </div>
+          </div>
+          <h1>{{templeDetails.templeName}}, {{templeDetails.city}}</h1>
+          <p>{{templeDetails.address}} <span class="devotes">{{templeDetails.devotes}} devotes</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

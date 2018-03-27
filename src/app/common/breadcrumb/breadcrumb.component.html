@@ -1,0 +1,8 @@
+<div class="section nav-breadcrumb" *ngIf="options && options.length">
+  <ul class="list-unstyled clearfix">
+    <li><a routerLink="/">Home</a></li>
+    <li *ngFor="let list of options">
+      <i class="fas fa-angle-right"></i> <a  routerLink="{{list.path}}"> {{list.label}}</a>
+    </li>
+  </ul>
+</div>

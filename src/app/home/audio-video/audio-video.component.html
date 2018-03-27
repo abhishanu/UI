@@ -1,0 +1,33 @@
+<div class="audio-video section-bg section-light clearfix">
+    <div class="section">
+        <div class="box-head">
+            <h2>Videos &amp; Audios </h2>
+            
+        </div>
+        <div class="video-section">
+            <h4>Recent Videos</h4>
+            
+            <carousel [carouselType]="'videos'" [grid]="{ xs: 3, sm: 3, md: 4, lg: 4, all: 0 }" [carouselItems]="videoIteams"
+                ></carousel>
+                <div class="view-more"><a href="javascript:void(0)" class="btn btn-danger"> View More <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+        <div class="audio-section">
+            <h4>Recent Audios</h4>
+            
+           <div class="audio">
+               <div *ngFor="let audio of audioList" class="audio-box">
+                <div class="audio-img"><img [src]="audio.src"/></div>
+                <div class="audio-detail">
+                    <div class="name">{{audio.name}}</div>
+                    <div class="title">{{audio.title}}</div>
+                    <div class="date">{{audio.date}}</div>
+                    <audio controls  controlsList="nodownload">
+                        <source [src]="audio.audiosrc" type="audio/mpeg">
+                    </audio>
+                </div>
+               </div>
+            </div>
+            <div class="view-more"><a href="javascript:void(0)" class="btn btn-danger"> View More <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+    </div>
+</div>

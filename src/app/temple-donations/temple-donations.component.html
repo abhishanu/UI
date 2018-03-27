@@ -1,0 +1,67 @@
+<div class="temple-donations clearfix">
+  <div class="section">
+    <h1>Showing -10 Temples in Delhi-NCR and NearBy</h1>
+    <div id="wrap">
+      <div class="filterSection">
+        <h4>Sort By: <select class="form-control mt-2"><option>Popularity</option><option>Distance</option></select></h4>
+
+        <h4>Filters</h4>
+        <div class="filterBox" *ngFor="let filterList of filters">
+          <h5>{{filterList.filterName}}</h5>
+          <ul class="filterList">
+            <li *ngFor="let service of filterList.filterData">
+              <label>
+                <div class="check-fake-box">
+                  <input type="checkbox" (click)="setFilters($event, filterList.filterName, service);"/>
+                  <div class="check-fake unchecked"></div>
+                  <div class="check-fake checked"><i class="fas fa-check"></i></div>
+                </div>
+                {{service}}
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main">
+        <div class="contentSection">
+          <div class="filter-badge-sections">
+            <span *ngFor="let tags of appliedFilters" class="badge badge-default">{{tags.filterData}} <i class="fas fa-times" (click)="setFilters($event, '',tags.filterData)"></i></span>
+          </div>
+          <div class="temple-list" *ngFor="let temples of templeList">
+            <div class="certified" *ngIf="temples.certified"></div>
+            <div class="details">
+              <a routerLink="/{{temples.state | url}}/{{temples.city | url}}/temple-details/{{temples.name | url}}/{{temples.address | url}}/{{temples.id}}" class="img" [ngStyle]="{'background-image': 'url(' + temples.thumb + ')'}"></a>
+              <div class="desc clearfix">
+                <a href="" class="badge badge-success mr-1" *ngFor="let gods of temples.gods">{{gods}}</a>
+                <h3 class="mt-1">
+                  <a routerLink="/{{temples.state | url}}/{{temples.city | url}}/temple-details/{{temples.name | url}}/{{temples.address | url}}/{{temples.id}}">{{temples.name}}</a>
+                </h3>
+                <div class="address">{{temples.address}}, {{temples.city}}, {{temples.state}}</div>
+                <div class="services">
+                  {{temples.services}}
+                </div>
+                <span class="badge badge-default ">{{temples.distance}}</span>
+              </div>
+            </div>
+            <div class="needs" *ngIf="temples.needs && temples.needs.length">
+              <ul class="list-unstyled clearfix">
+                <li *ngFor="let needs of temples.needs">
+                  <label>{{needs.name}}</label>
+                  <span><i class="fas fa-rupee-sign"></i> {{needs.value}}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="cart-footer clearfix">
+              <a href="javascript:void(0)" class="enquiry"><i class="fas fa-phone"></i> Enquiry</a>
+              <a href="javascript:void(0)" class="view_map" (click)="viewOnMap(temples.address)"><i class="fas fa-map"></i>  View on Map</a>
+              <a href="javascript:void(0)" class="donate"><i class="fas fa-rupee-sign"></i>  Donate Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="sidebarSection">
+          <popular-across-india></popular-across-india>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

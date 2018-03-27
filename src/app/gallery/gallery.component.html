@@ -1,0 +1,18 @@
+<div class="section-bg section-light">
+  <div class="section clearfix">
+    <div class="box-head">
+      <h2>Photo Gallery</h2>
+    </div>
+    <div class="gallery-section">
+      <div *ngFor="let images of galleryItems | slice:0:1;let i =index;" class="main-gallery" [ngStyle]="{'background-image': 'url(' + images.src + ')'}" (click)="open(i)">
+       
+       <div class="description">{{images.title}}</div>
+      </div>
+      <div  class="sub-gallery">
+        <div *ngFor="let images of galleryItems | slice:1;let i = index;" [ngClass]="i < 3 ? 'sub-gallery-1' :'sub-gallery-2'"  [ngStyle]="{'background-image': 'url(' + images.src + ')'}" (click)="open(i+1)">
+          <div class="description">{{images.title}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="fixed-top">
+    <nav class="navbar">
+        <div class="sideNav-icon">
+            <i class="fas fa-2x fa-bars open-on-body" (click)="openSideMenu($event)"></i>
+        </div>
+        <a class="navbar-brand" href="#"><img src="assets/images/logo.png" title="Religious India" /></a>
+        <div class="search-ico display-none">
+            <i class="fas fa-2x fa-search" (click)="openSearch($event)"></i>
+        </div>
+        <div class="primary-search input-group">
+            <div class="input-group-prepend">
+                <select class="custom-select">
+                <option value="everything">Everything</option>
+                <option value="temples">Temples</option>
+                <option value="everything">Events</option>
+                <option value="everything">Pandit Ji</option>
+            </select>
+            </div>
+            <input type="search" class="input-md form-control" placeholder="What are you looking for?" (keyup)="searchText($event)" [(ngModel)]="searchtext"
+            />
+            <i class="fas fa-search" (click)="searchText($event)"></i>
+        </div>
+        <ul class="list-unstyled list-inine right-nav user-detail">
+            <li><div id="google_translate_element"></div></li>
+            <li><a href="#" class="f_blue myaccount"><i class="fas fa-user"></i> My Account <i class="fas fa-caret-down"></i></a></li>
+            <li><a href="#" class="cart"><i class="fas fa-shopping-cart"></i> <span class="badge badge-primary">2</span></a></li>
+            <li style="margin-left: 20px;">
+                <div class="choose-location">
+                    <i class="fas fa-map-marker-alt" style="margin-right: 3px;"></i> <span class="badge badge-warning">New Delhi <i class="fas fa-caret-down"></i></span>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="topbar clearfix">
+        <ul class="left-nav list-unstyled">
+            <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-link" routerLink="/"><i class="fas fa-home"></i><span class="home-text">Home</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/temple-donations">Temple Donations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Book Pandit</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Pooja Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Festivals &amp; Events</a>
+            </li>
+            <li class="nav-item live-darshan">
+                <a class="nav-link" href="#">Live Darshan</a>
+                <div class="drop-menu">
+                    <div class="live-video">
+                    <video controls width="100%" autoplay controlsList="nodownload">
+                        <source src="assets/videos/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+
+                    </video>
+                    </div>
+                    <div class="feeds">
+                        <h4>Other Live Feeds</h4>
+                        <div class="live-feeds">
+                            <div *ngFor="let liveFeeds of liveFeedsItems;">
+                                <div  [ngStyle]="{'background-image': 'url(' + liveFeeds.poster + ')'}"></div>
+                                <i class="fab fa-2x fa-youtube"></i>
+                                <p [innerHTML]="liveFeeds.desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+            </li>
+        </ul>
+    </div>
+</div>

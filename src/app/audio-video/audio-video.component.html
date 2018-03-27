@@ -1,0 +1,16 @@
+<div class="audio-video section-bg section-dark clearfix">
+    <div class="section">
+        <div class="box-head">
+            <h2>Videos &amp; Audios </h2>
+        </div>
+        <div class="video-section">
+            <h4>Recent Videos</h4>
+            <carousel [carouselType]="'videos'" [loop]="true" [grid]="{ xs: 2, sm: 4, md: 4, lg: 5, all: 0 }" [carouselItems]="videoIteams"
+                [interval]="6000"></carousel>
+        </div>
+        <div class="audio-section">
+            <h4>Recent Audios</h4>
+            <audio></audio>
+        </div>
+    </div>
+</div>

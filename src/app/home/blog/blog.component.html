@@ -1,0 +1,30 @@
+<div class="section-bg blog section-dark">
+  <div class="section clearfix">
+    <div class="box-head">
+      <h2>Religious Blog</h2>
+    </div>
+    <ul class="clearfix">
+        <li *ngFor="let blog of blogList">
+            <a href="{{blog.url}}">
+                <img src="{{blog.image}}"/>
+                <h3 class="ellipsis">{{blog.title}}</h3>
+                <p>{{blog.description}}</p>
+            </a>
+            <div class="tags">
+                <span *ngFor="let tags of blog.tags">
+                <a href="{{tags.url}}" class="badge badge-primary">{{tags.tag}}</a>
+                </span>
+            </div>
+            <div class="meta clearfix">
+                <div class="posted">
+                    <i class="fas fa-user"></i> {{blog.postedBy}}
+                </div>
+                <div class="date">
+                    <i class="fas fa-calendar"></i> {{blog.postedOn}}
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="view-more"><a href="javascript:void(0)" class="btn btn-danger"> View More <i class="fas fa-arrow-right"></i></a></div>
+  </div>
+</div>

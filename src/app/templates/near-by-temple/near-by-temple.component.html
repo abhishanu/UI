@@ -1,0 +1,14 @@
+<div class="near-by">
+  <h4>NearBy Temples</h4>
+  <ul>
+    <li *ngFor="let temples of nearByTemples;let i = index">
+      <div class="details">
+        <div class="img" [ngStyle]="{'background-image': 'url(' + temples.thumb + ')'}"></div>
+        <div class="desc clearfix">
+          <h3 class="mt-1">{{temples.name}}</h3>
+          <div class="address">{{temples.city}}</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
