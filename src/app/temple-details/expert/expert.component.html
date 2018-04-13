@@ -1,0 +1,19 @@
+<div class="temple-detail-experts-section box-section">
+  <h3 class="text-center mb-3 f900 capitalize">Meet our experts</h3>
+  <div class="expert-list clearfix">
+    <p>ISKCON Dwarka Dham (Sri Sri Rukminidevi Dwarkadhish Dham) was established by HH Mahavishnu Goswami Maharaj by his pure
+      devotion to Lord Dwarkadhish. He came here in 1996 and set down to study Srila Prabhupada's Bhagavatam. He desired
+      that there should be a nice solid stone temple here in Dwarka.</p>
+    <div class="pandit">
+      <div *ngFor="let pandit of toppandit">
+        <a href="javascript:void(0)" [title]="pandit.name">
+          <div class="img bg-img" [ngStyle]="{'background-image': 'url(' + pandit.src + ')'}"></div>
+          <div class="meta">
+            <h4 class="name">{{pandit.name}}</h4>
+            <h5>{{pandit.location}}</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

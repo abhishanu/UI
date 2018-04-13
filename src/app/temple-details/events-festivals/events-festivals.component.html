@@ -1,0 +1,19 @@
+<div class="box-section clearfix">
+  <div class="temple-detail-events">
+    <div class="event-list" *ngFor="let event of eventsList">
+      <div class="img">
+        <div class="small-bg-img" [ngStyle]="{'background-image': 'url(' + event.src + ')'}"></div>
+      </div>
+      <div class="event-date">
+        <div class="date">{{event.day}}</div>
+        <div class="month-year">
+          <div class="month">{{event.month}}</div>
+          <div class="year">{{event.year}}</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h4 class="name">{{event.title}}</h4>
+      </div>
+    </div>
+  </div>
+</div>

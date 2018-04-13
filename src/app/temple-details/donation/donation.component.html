@@ -1,0 +1,25 @@
+<div class="box-section donation">
+  <tabset>
+    <tab heading="Temple Needs"></tab>
+    <tab heading="Medicine"></tab>
+    <tab heading="Food Donation">
+      <div class="item" *ngFor="let foodItem of foodItems">
+        <div class="img" [ngStyle]="{'background-image': 'url(' + foodItem.thumb + ')'}"></div>
+        <div class="detail">
+          <h5><a href="javascript:void(0)">{{foodItem.name}}</a></h5>
+          <div class="txt">{{foodItem.desc}} </div>
+          <div class="donate-now">
+            <div class="calc"><i class="fas fa-minus-circle" (click)="updateItem($event,'minus')"></i> <span class="count">1</span> <i class="fas fa-plus-circle"
+                (click)="updateItem($event,'add')"></i><i class="fas fa-plus rotate-45"></i> {{multiplier}} = <i class="fas fa-rupee-sign"></i>
+              <span
+                class="total">500</span>
+            </div> <a class="btn btn-primary btn-sm" href="javascript:void(0)">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </tab>
+    <tab heading="Education"></tab>
+    <tab heading="Clothes"></tab>
+    <tab heading="Girl Child Marriage"></tab>
+  </tabset>
+</div>

@@ -1,0 +1,104 @@
+<div id="dropOverlayWrap" [ngClass]="{'active':isPopup}">
+  <div class="register-popup-form">
+    <div class="sign-up">
+      <div class="sign-up-content">
+        <h3>New Account?</h3>
+        <p>Hurry! Sign Up Now and Get Exciting Discounts.</p>
+        <div class="forms-control">
+          <div class="row">
+            <div>
+              <input class="animate-input" type="text" value="" name="email" id="email" maxlength="100" autocomplete="off" />
+              <label class="animate-label">Email ID</label>
+            </div>
+            <div>
+              <input class="animate-input" type="text" value="" name="mobile" id="mobile" maxlength="10" autocomplete="off" />
+              <label class="animate-label">Mobile</label>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <input class="animate-input" type="text" value="" name="fName" id="fName" maxlength="35" autocomplete="off" />
+              <label class="animate-label">First Name</label>
+            </div>
+            <div>
+              <input class="animate-input" type="text" value="" name="lName" id="lName" maxlength="35" autocomplete="off" />
+              <label class="animate-label">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="w100per">
+              <input class="animate-input" type="password" value="" name="password" id="password" maxlength="35" autocomplete="off" />
+              <label class="animate-label">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Female
+              </label>
+            </div>
+            <div>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">Male
+              </label>
+            </div>
+          </div>
+          <div class="row mt-10">
+            <button class="btn text-center sign-up-btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sign-in">
+      <div class="sign-up-content">
+        <h3>Already Have An Account?</h3>
+        <p>Sign In To Track Your Order, Use Wishlist &amp; More.</p>
+        <div class="forms-control sign-in-section">
+          <div class="row ">
+            <div class="text-center w100per f700">LOGIN WITH</div>
+            <div class="connect w100per">
+              <a href="javascript:void(0)"><img src="../../assets/images/fb-logo.svg" /> Facebook</a>
+              <a href="javascript:void(0)"><img src="../../assets/images/google-logo.svg" /> Google</a>
+              <div class="text-center w100per mt-3 f700">OR</div>
+            </div>
+          </div>
+          <div class="row  mt-10">
+            <div class="w100per">
+              <input class="animate-input" type="email" value="" name="email" maxlength="35" autocomplete="off" />
+              <label class="animate-label">Email ID</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="w100per">
+              <input class="animate-input" type="password" value="" name="password" maxlength="35" autocomplete="off" />
+              <label class="animate-label">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="w100per keep">
+              <label>
+                <div class="check-fake-box">
+                  <input type="checkbox"/>
+                  <div class="check-fake unchecked"></div>
+                  <div class="check-fake checked"><i class="fas fa-check"></i></div>
+                </div>
+                Keep Me Signed In
+              </label>
+
+            </div>
+          </div>
+          <div class="row mt-10">
+            <button class="btn text-center sign-in-btn btn-primary">Sign In</button>
+          </div>
+          <div class="forgot-password">
+            <a href="javascript:void(0)">Forgot Password?</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="close">
+      <i class="far fa-times-circle" (click)="closePopup()"></i></div>
+  </div>
+
+</div>

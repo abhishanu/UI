@@ -1,8 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
+import { trigger, state, animate, transition, style,query,stagger } from '@angular/animations';
 @Component({
     selector: 'temple-donations',
-    templateUrl: './temple-donations.component.html'
+    templateUrl: './temple-donations.component.html',
+    animations: [
+    trigger('listAnimation', [
+      transition('* => *', [
+        query('.temple-list',style({ transform: 'translateY(100%)'})),
+        query('.across-india .item',style({ transform: 'translateX(100%)'})),
+        query('.across-india .item',
+          stagger('100ms', [
+            animate('400ms', style({ transform: 'translateX(0)'}))
+        ])),
+        query('.temple-list',
+          stagger('400ms', [
+            animate('900ms', style({ transform: 'translateY(0)'}))
+        ])),        
+        
+      ])
+    ])
+  ]
 })
 export class TempleDonationsComponent implements OnInit {
     acrossTemples: any;

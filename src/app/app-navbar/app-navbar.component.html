@@ -21,12 +21,22 @@
             <i class="fas fa-search" (click)="searchText($event)"></i>
         </div>
         <ul class="list-unstyled list-inine right-nav user-detail">
-            <li><div id="google_translate_element"></div></li>
-            <li><a href="#" class="f_blue myaccount"><i class="fas fa-user"></i> My Account <i class="fas fa-caret-down"></i></a></li>
+            <li>
+                <div id="google_translate_element"></div>
+            </li>
+            <li><a href="javascript:void(0)" class="f_blue myaccount" (click)="openLoginPopup()"><i class="fas fa-user"></i> My Account <i class="fas fa-caret-down"></i></a></li>
             <li><a href="#" class="cart"><i class="fas fa-shopping-cart"></i> <span class="badge badge-primary">2</span></a></li>
             <li style="margin-left: 20px;">
                 <div class="choose-location">
-                    <i class="fas fa-map-marker-alt" style="margin-right: 3px;"></i> <span class="badge badge-warning">New Delhi <i class="fas fa-caret-down"></i></span>
+                    <i class="fas fa-map-marker-alt" style="margin-right: 3px;"></i> <span class="badge badge-warning" (click)="changeCity()">{{currentCity}} <i class="fas fa-caret-down"></i></span>
+                    <div class="cityList" *ngIf="isOpenCityList">
+                        <input [(ngModel)]="selected" typeaheadOptionField="cityName" [typeaheadOptionsLimit]="7" (typeaheadOnSelect)="selectCity($event)" placeholder="Type your city(e.g Chennai, Pune)" [typeahead]="citiList" class="form-control">
+                        <!--<ul>
+                            <li *ngFor="let city of citiList" [attr.cityId]="city.id">
+                                {{city.cityName}}
+                            </li>
+                        </ul>-->
+                    </div>
                 </div>
             </li>
         </ul>
@@ -36,41 +46,26 @@
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                 <a class="nav-link" routerLink="/"><i class="fas fa-home"></i><span class="home-text">Home</span></a>
             </li>
-            <li class="nav-item" routerLinkActive="active">
-                <a class="nav-link" routerLink="/temple-donations">Temple Donations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Book Pandit</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pooja Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Festivals &amp; Events</a>
-            </li>
-            <li class="nav-item live-darshan">
-                <a class="nav-link" href="#">Live Darshan</a>
-                <div class="drop-menu">
+            <li class="nav-item" routerLinkActive="active" *ngFor="let item of menuItems" [ngClass]="{'live-darshan':item.itemName == 'LIVE DARSHAN'}">
+                <a class="nav-link" [routerLink]="item.url">{{item.itemName}}</a>
+                <div class="drop-menu" *ngIf="item.itemName == 'LIVE DARSHAN'">
                     <div class="live-video">
-                    <video controls width="100%" autoplay controlsList="nodownload">
-                        <source src="assets/videos/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+                        <video controls width="100%" autoplay controlsList="nodownload">
+                            <source src="assets/videos/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
 
-                    </video>
+                        </video>
                     </div>
                     <div class="feeds">
                         <h4>Other Live Feeds</h4>
                         <div class="live-feeds">
                             <div *ngFor="let liveFeeds of liveFeedsItems;">
-                                <div  [ngStyle]="{'background-image': 'url(' + liveFeeds.poster + ')'}"></div>
+                                <div [ngStyle]="{'background-image': 'url(' + liveFeeds.poster + ')'}"></div>
                                 <i class="fab fa-2x fa-youtube"></i>
                                 <p [innerHTML]="liveFeeds.desc"></p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
             </li>
         </ul>
     </div>

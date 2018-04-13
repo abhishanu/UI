@@ -1,5 +1,5 @@
 <div class="section-book-pandit clearfix">
-    <div class="section-bg section-light">
+    <div class="section-bg section-dark">
         <div class="section">
             <div class="box-head">
                 <h2>Book A Pandit</h2>
@@ -13,11 +13,6 @@
                                 <h4 class="name">{{pandit.name}}</h4>
                                 <h5>{{pandit.location}}</h5>
                                 <div class="rating">
-                                    <!--<span [ngClass]="{'rated':pandit.rating == 5}">☆</span>
-                                    <span [ngClass]="{'rated':pandit.rating == 4}">☆</span>
-                                    <span [ngClass]="{'rated':pandit.rating == 3}">☆</span>
-                                    <span [ngClass]="{'rated':pandit.rating == 2}">☆</span>
-                                    <span >☆</span>-->
                                     <i class="fa-star fa-xs" [ngClass]="pandit.rating == '5' ? 'fas' : 'far'"></i>
                                     <i class="fa-star fa-xs" [ngClass]="pandit.rating == '4' || pandit.rating == '5' ? 'fas' : 'far'"></i>
                                     <i class="fa-star fa-xs" [ngClass]="pandit.rating == '3' || pandit.rating == '4'  || pandit.rating == '5' ? 'fas' : 'far'"></i>

@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgxCarouselModule } from 'ngx-carousel';
 import { BannerCarouselComponent } from './common/banner.carousel';
 import 'hammerjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
-import { AlertModule ,ModalModule,TabsModule } from 'ngx-bootstrap';
+import { AlertModule ,ModalModule,TabsModule,TooltipModule,TypeaheadModule   } from 'ngx-bootstrap';
 import { PrettyUrlPipe } from './Pipes/prettyUrl.pipe';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
@@ -16,6 +17,7 @@ import { TabsComponent } from './common/tabs/tabs.component';
 import { BookPanditComponent } from './home/book-pandit/book-pandit.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
 import { CommonService } from './services/common.service';
+import { RequestService } from './services/request.service';
 import { TempleDonationsComponent } from './home/temple-donations/temple-donations.component';
 import { CuratedExperiencesComponent } from './home/curated-experiences/curated-experiences.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
@@ -35,6 +37,14 @@ import {WhyUsComponent} from './home/why-us/why-us.component';
 import { NguiMapModule} from '@ngui/map';
 import { MapOverlayComponent } from './templates/map-overlay/map-overlay.component';
 import { NearByTempleComponent } from './templates/near-by-temple/near-by-temple.component';
+import { HistoryComponent } from './temple-details/history/history.component';
+import { PhotosComponent } from './temple-details/photos/photos.component';
+import { DonationComponent } from './temple-details/donation/donation.component';
+import { ExpertComponent } from './temple-details/expert/expert.component';
+import { PoojaServiceComponent } from './temple-details/pooja-service/pooja-service.component';
+import { EventsFestivalsComponent } from './temple-details/events-festivals/events-festivals.component';
+import { PoojaServiceListingComponent } from './pooja-service-listing/pooja-service-listing.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -63,22 +73,33 @@ import { NearByTempleComponent } from './templates/near-by-temple/near-by-temple
     WhyUsComponent,
     MapOverlayComponent,
     NearByTempleComponent,
-    PrettyUrlPipe
+    PrettyUrlPipe,
+    HistoryComponent,
+    PhotosComponent,
+    DonationComponent,
+    ExpertComponent,
+    PoojaServiceComponent,
+    EventsFestivalsComponent,
+    PoojaServiceListingComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot(),
     NgxCarouselModule,
     ModalModule.forRoot(),
     AlertModule.forRoot(),
     TabsModule.forRoot(),
+    TooltipModule.forRoot(),
+    TypeaheadModule.forRoot(),
     LightboxModule,
     AppRoutingModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDyhs7KydbC9ws3jx_OoC3w0tZ1IYdNOHk'})    
   ],
-  providers: [CommonService],
+  providers: [CommonService,RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

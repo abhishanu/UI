@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
 
 @Component({
@@ -8,10 +8,24 @@ import { NgxCarousel } from 'ngx-carousel';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  scrollTopVisible:any=false;
+@HostListener("window:scroll", [])
+  onWindowScroll() {
+    var doc = document.documentElement;
+    var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+    if(top > 500){
+      this.scrollTopVisible = true;
+    }
+    else{
+      this.scrollTopVisible = false;
+    }
+  }
   ngOnInit() {
    
     
+  }
+  backtoTop(event){
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   }
   hideOnBodyClick(e){    
     let currentTarget = e.target;

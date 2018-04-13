@@ -16,7 +16,9 @@
                     </ul>
                 </div>
                 <div class="temple_details clearfix">
-                    <div class="temple_image" style="background-image: url('/assets/temples/Ranganathaswamy-lg.jpg');"></div>
+                    <div class="temple_image">
+                        <div class="small-bg-img" style="background-image: url('/assets/temples/Ranganathaswamy-lg.jpg');"></div>
+                    </div>
                     <div class="details">
                         <div class="content">
                             <h3>Sri Ranganathaswamy Temple, Srirangam</h3>
@@ -44,7 +46,7 @@
                 </div>
             </div>
             <div class="trending">
-               <span>Trending Temples:</span> <span class="badge badge-primary mr-1" *ngFor="let trend of trending; ">{{trend}}</span>
+                <span>Trending Temples:</span> <span class="badge badge-primary mr-1" *ngFor="let trend of trending; ">{{trend}}</span>
             </div>
             <div class="view-more"><a href="javascript:void(0)" class="btn btn-danger"> View More <i class="fas fa-arrow-right"></i></a></div>
         </div>

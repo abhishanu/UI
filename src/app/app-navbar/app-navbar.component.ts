@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RequestService } from '../services/request.service';
+import { CommonService } from '../services/common.service';
+import { TypeaheadMatch } from 'ngx-bootstrap/typeahead';
 @Component({
   selector: 'app-navbar',
   templateUrl: './app-navbar.component.html',
@@ -7,8 +10,35 @@ import { Router } from '@angular/router';
 })
 export class AppNavbarComponent implements OnInit {
 liveFeedsItems:any;
-  constructor(private router: Router) { }
-
+selected:any;
+menuItems:any;
+citiList:any;
+isOpenCityList:boolean;false;
+currentCity:any="New Delhi";
+  constructor(private router: Router, private _requestService:RequestService, private _commonService:CommonService) { 
+    this._requestService.fetchData("getAllHomeMenuTabs").subscribe(data => {
+      this.menuItems = data.json();
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+    this._requestService.fetchData("getAllCities").subscribe(data => {
+      this.citiList = data.json();
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    })
+  }
+changeCity(){
+this.isOpenCityList = !this.isOpenCityList;
+this.selected = "";
+}
+openLoginPopup(){
+  this._commonService.openLogin();
+}
+selectCity(e: TypeaheadMatch): void {
+    console.log('Selected value: ', e.value);
+    this.isOpenCityList = !this.isOpenCityList;
+    this.currentCity = e.value;
+  }
   ngOnInit() {
     this.liveFeedsItems = [
       {

@@ -1,14 +1,15 @@
-import { Component, Input,ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { NgxCarousel } from 'ngx-carousel';
-
+import { CommonService } from '../services/common.service';
+import { RequestService } from '../services/request.service';
 @Component({
     selector: 'carousel',
     template: `
-    <div class="container-fluid banner-carousel" *ngIf="carouselType == 'bannercarousel'">
+        <div class="container-fluid banner-carousel" *ngIf="carouselType == 'bannercarousel'">
         <ngx-carousel [inputs]="carouselTile">
-            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems" [ngStyle]="{'background-image': 'url(' + Tile.src + ')'}">
-                <h2>{{Tile.title}}</h2>
-                <p>{{Tile.description}}</p>
+            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems" [ngStyle]="{'background-image': 'url(' +this._requestService.baseServiceUrl+ Tile.Image_Path + ')'}">
+                <h2>{{Tile.BANNER_NAME}}</h2>
+                <p>{{Tile.BANNER_DESC}}</p>
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs'><i class="fas fa-chevron-circle-left"></i></a>
             <a NgxCarouselNext href="javascript:void(0)" class='rightRs'><i class="fas fa-chevron-circle-right"></i></a>
@@ -26,17 +27,17 @@ import { NgxCarousel } from 'ngx-carousel';
                     <h3 class="ellipsis">{{Tile.heading}}</h3>
                     <p>{{Tile.type}}</p>
                 </ngx-tile>
-                
+
                 <a NgxCarouselPrev href="javascript:void(0)" class='leftRs'><i class="fas fa-chevron-left"></i></a>
                 <a NgxCarouselNext href="javascript:void(0)" class='rightRs'><i class="fas fa-chevron-right"></i></a>
             </ngx-carousel>
         </div>
-    </div> 
-     <div class="container-fluid shlok-carousel" *ngIf="carouselType == 'shlokcarousel'">
+    </div>
+    <div class="container-fluid shlok-carousel" *ngIf="carouselType == 'shlokcarousel'">
         <ngx-carousel [inputs]="carouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-               <p><i class="fas fa-quote-left"></i> {{Tile.name}} <i class="fas fa-quote-right"></i></p>
-               <h5>{{Tile.source}}</h5>
+                <p><i class="fas fa-quote-left"></i> {{Tile.thoughtTitle}} <i class="fas fa-quote-right"></i></p>
+                <h5>{{Tile.thoughtRefrence}}</h5>
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs  hide-elem'><i class="fas fa-chevron-circle-left"></i></a>
             <a NgxCarouselNext href="javascript:void(0)" class='rightRs  hide-elem'><i class="fas fa-chevron-circle-right"></i></a>
@@ -47,17 +48,17 @@ import { NgxCarousel } from 'ngx-carousel';
         <video #homeVideo width="100%" height="400" controls controlsList="nodownload"><source [src]="videoSrc" type="video/mp4"></video>
         <ngx-carousel [inputs]="carouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems" [ngStyle]="{'background-image': 'url(' + Tile.poster + ')'}" (click)="playVideo(Tile.videosrc)">
-                
+
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs'><i class="fas fa-chevron-circle-left"></i></a>
             <a NgxCarouselNext href="javascript:void(0)" class='rightRs'><i class="fas fa-chevron-circle-right"></i></a>
-        </ngx-carousel> 
-    </div> 
+        </ngx-carousel>
+    </div>
 
     <div class="puja-services-carousel" *ngIf="carouselType == 'puja-services'">
         <ngx-carousel [inputs]="carouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-                <div class="puja-img" title="{{Tile.title}}" [ngStyle]="{'background-image': 'url(' + Tile.src + ')'}"></div>
+                <div class="puja-img bg-img" title="{{Tile.title}}" [ngStyle]="{'background-image': 'url(' + Tile.src + ')'}"></div>
                 <div class="puja-detail">
                     <h2>{{Tile.title}}</h2>
                     <p class="desc">{{Tile.description}}</p>
@@ -66,12 +67,12 @@ import { NgxCarousel } from 'ngx-carousel';
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs'><i class="fas fa-2x fa-chevron-circle-left"></i></a>
             <a NgxCarouselNext href="javascript:void(0)" class='rightRs'><i class="fas fa-2x fa-chevron-circle-right"></i></a>
-        </ngx-carousel> 
-    </div> 
+        </ngx-carousel>
+    </div>
     <div class="container-fluid gau-sewa-carousel" *ngIf="carouselType == 'gau-sewa'">
         <ngx-carousel [inputs]="carouselTile">
-            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems" [ngStyle]="{'background-image': 'url(' + Tile.src + ')'}">
-               
+            <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems"  [ngStyle]="{'background-image': 'url(' + Tile.src + ')'}">
+
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs hide-elem'><i class="fas fa-chevron-circle-left"></i></a>
             <a NgxCarouselNext href="javascript:void(0)" class='rightRs hide-elem'><i class="fas fa-chevron-circle-right"></i></a>
@@ -82,12 +83,11 @@ import { NgxCarousel } from 'ngx-carousel';
         <ngx-carousel [inputs]="carouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let feedback of carouselTileItems">
                 <div class="feedback-body">
-                    <img src="{{feedback.image}}"/>
+                    <img src="{{feedback.image}}" />
                     <div class="meta clearfix">
                         <p class="comment">
-                        <i class="fas fa-quote-left"></i>
-                        {{feedback.comment}}
-                        <i class="fas fa-quote-right"></i>
+                            <i class="fas fa-quote-left"></i> {{feedback.comment}}
+                            <i class="fas fa-quote-right"></i>
                         </p>
                         <p class="location"></p>
                         <div class="rating">
@@ -106,23 +106,53 @@ import { NgxCarousel } from 'ngx-carousel';
             <a NgxCarouselNext href="javascript:void(0)" class='rightRs hide-elem'><i class="fas fa-chevron-circle-right"></i></a>
         </ngx-carousel>
     </div>
+    <div class="special-event" *ngIf="carouselType == 'specialeventcarousel'">
+        <ngx-carousel [inputs]="carouselTile">
+            <ngx-tile NgxCarouselItem *ngFor="let data of carouselTileItems">
+            <div class="img bg-img"  [ngStyle]="{'background-image': 'url(' + data.eventImg + ')'}"></div>
+                <div class="header">
+                <div class="event-date-calender">
+                    <span class="weekday">{{data.day}}</span>
+                    <div class="day-month clearfix">
+                        <span class="day">{{data.date}}</span>
+                        <div class="month-year">
+                            <span class="month">{{data.month}}</span>
+                            <span class="year">{{data.year}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="name">
+                <span class="eventName">{{data.eventName}}</span>
+                <div class="distance-from">
+                    <i class="fas fa-2x fa-map-marker-alt"></i> {{data.location}}
+                </div>
+                <div class="txt">
+                    {{data.eventDesc}}
+                </div></div>
+                </div>
+                
+            </ngx-tile>
+            <a NgxCarouselPrev href="javascript:void(0)" class='leftRs'><i class="fas fa-chevron-circle-left"></i></a>
+            <a NgxCarouselNext href="javascript:void(0)" class='rightRs'><i class="fas fa-chevron-circle-right"></i></a>
+        </ngx-carousel>
+    </div>
   `,
 })
 export class BannerCarouselComponent {
     public carouselTileItems: Array<any>;
     public carouselTile: NgxCarousel;
-    public videoSrc:any="../assets/videos/video-1.mp4";
+    public videoSrc: any = "../assets/videos/video-1.mp4";
     //private carouselType: any;
     @Input('carouselItems') carouselItems: any;
     @Input('loop') loop: any;
     @Input('grid') grid: any = {};
     @Input('points') points: boolean;
     @Input('interval') interval: number;
-    @Input('carouselType') carouselType:any;
+    @Input('carouselType') carouselType: any;
     @ViewChild('homeVideo') homeVideo: any;
-    
+    constructor(private _commonService: CommonService, private _requestService: RequestService) { }
     ngOnInit() {
-        this.carouselTileItems = this.carouselItems;
+
         this.carouselTile = {
             grid: this.grid,
             speed: 400,
@@ -136,12 +166,23 @@ export class BannerCarouselComponent {
             touch: true,
             easing: 'ease'
         }
+        if (typeof this.carouselItems == "object") {
+            this.carouselTileItems = this.carouselItems;
+        }
+        else {
+            this._requestService.fetchData(this.carouselItems).subscribe(data => {
+                this.carouselTileItems = data.json();
+            }, err => {
+                this._commonService.showHttpErrorMsg();
+            });
+        }
     }
 
-    ngAfterViewInit(){
+    ngAfterViewInit() {
         
+        //  this.carouselTileItems = this.carouselItems;
     }
-    playVideo(videoSrc){
+    playVideo(videoSrc) {
         this.videoSrc = videoSrc;
         this.homeVideo.nativeElement.load();
         this.homeVideo.nativeElement.play();

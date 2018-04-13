@@ -1,0 +1,82 @@
+<div class="detail-history box-section">
+  <div class="detail" [innerHtml]="data.history"></div>
+  <a class="more" (click)="seeMore($event)">{{seeTxt}}</a>
+</div>
+<div class="box-section  clearfix">
+  <div class="pooja-services">
+    <h4>Donations</h4>
+    <div class="poojas">
+      <div class="pooja-item" *ngFor="let need of needs">
+        <div class="tile">
+          <div class="puja-img">
+            <div class="small-bg-img" [title]="pooja.title" [ngStyle]="{'background-image': 'url('+ need.src+')'}"></div>
+          </div>
+          <div class="puja-detail">
+            <h2><a href="javascript:void(0)">{{need.title}}</a></h2>
+            <p class="desc">{{need.description}}</p>
+            <p> <a class="buy-now">Donate Now</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="box-section">
+  <div class="pandits-list">
+    <h4>Experts &amp; Pandits</h4>
+    <ul class="list-unstyled clearfix gallery">
+      <li *ngFor="let pandits of pandits">
+        <a href="#" class="small-bg-img" [ngStyle]="{'background-image': 'url('+pandits.src+')'}">
+          <h5 class="ellipsis">{{pandits.name}}</h5>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="more">
+          <i class="fas fa-images"></i> See All
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="box-section  clearfix">
+  <div class="pooja-services">
+    <h4>Pooja Services</h4>
+    <!--<carousel [carouselType]="'puja-services'" [grid]="{ xs: 2, sm: 2, md: 3, lg:3, all: 0 }" [carouselItems]="pooja"
+            ></carousel>-->
+
+    <div class="poojas">
+      <div class="pooja-item" *ngFor="let pooja of pooja">
+        <div class="tile">
+          <div class="puja-img bg-img" [title]="pooja.title" [ngStyle]="{'background-image': 'url('+ pooja.src+')'}"></div>
+          <div class="puja-detail">
+            <h2><a href="javascript:void(0)">{{pooja.title}}</a></h2>
+            <p class="desc">{{pooja.description}}</p>
+            <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{pooja.price}}</span> {{pooja.discounted}}</span>
+              <a class="buy-now">Buy Now</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="box-section">
+  <div class="photos-list">
+    <h4>Photos</h4>
+    <ul class="list-unstyled clearfix gallery">
+      <li *ngFor="let photos of photos">
+        <a href="#" class="small-bg-img" [ngStyle]="{'background-image': 'url('+photos.src+')'}">
+          <h5 class="ellipsis">{{photos.title}}</h5>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="more">
+          <i class="fas fa-images"></i> See All
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

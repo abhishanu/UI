@@ -1,4 +1,4 @@
-<div class="temple-donations clearfix">
+<div class="temple-donations clearfix insider" [@listAnimation]="3">
   <div class="section">
     <h1>Showing -10 Temples in Delhi-NCR and NearBy</h1>
     <div id="wrap">
@@ -30,7 +30,10 @@
           <div class="temple-list" *ngFor="let temples of templeList">
             <div class="certified" *ngIf="temples.certified"></div>
             <div class="details">
-              <a routerLink="/{{temples.state | url}}/{{temples.city | url}}/temple-details/{{temples.name | url}}/{{temples.address | url}}/{{temples.id}}" class="img" [ngStyle]="{'background-image': 'url(' + temples.thumb + ')'}"></a>
+              <a routerLink="/{{temples.state | url}}/{{temples.city | url}}/temple-details/{{temples.name | url}}/{{temples.address | url}}/{{temples.id}}"
+                class="img">
+                <div class="small-bg-img" [ngStyle]="{'background-image': 'url(' + temples.thumb + ')'}"></div>
+              </a>
               <div class="desc clearfix">
                 <a href="" class="badge badge-success mr-1" *ngFor="let gods of temples.gods">{{gods}}</a>
                 <h3 class="mt-1">

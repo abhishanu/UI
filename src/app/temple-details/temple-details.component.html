@@ -1,36 +1,143 @@
 <div class="singlePage">
   <div class="section clearfix">
     <div class="sidebarSection">
-      <ngui-map center="Mahabaleshwar Temple, Gokarna" zoom="14" style="height:200px">
-        <marker [icon]="{
+      <div class="box-section" style="margin-top: 0">
+        <ngui-map center="Sri Ranganathaswamy Temple, Tiruchirappalli" zoom="14" style="height:200px">
+          <marker [icon]="{
          url: '../../assets/images/om-map.png',
          anchor: [16,16],
          size: [18,18],
          scaledSize: [18,18]
-       }" position="Mahabaleshwar Temple, Gokarna">
-        </marker>
-      </ngui-map>
+       }" position="Sri Ranganathaswamy Temple, Tiruchirappalli">
+          </marker>
+        </ngui-map>
+      </div>
+      <div class="box-section">
+        <h4>Upcoming Events &amp; Festivals</h4>
+        <carousel [carouselType]="'specialeventcarousel'" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }" [carouselItems]="upcomingEvents"
+          [interval]="5000"></carousel>
+
+      </div>
+      <div class="box-section">
+        <h4>Upcoming Donation Camps</h4>
+        <carousel [carouselType]="'specialeventcarousel'" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }" [carouselItems]="specialEvent"
+          [interval]="7000"></carousel>
+
+      </div>
+      <!--<div class="box-section">
+        <h4>Temple Video</h4>
+        <video controls width="100%" controlsList="nodownload">
+          <source src="../assets/videos/devstories.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+        </video>
+
+      </div>-->
       <near-by-temple></near-by-temple>
 
     </div>
     <div class="mainSection">
       <div class="mainSectionContent temple-detail">
         <div class="banner-head">
-          <div class="mainBanner" [ngStyle]="{'background-image': 'url(' + templeDetails.banner + ')'}">
+          <div class="mainBanner bg-img"  [@photosAnimation]="3" [ngStyle]="{'background-image': 'url(' + templeDetails.banner + ')'}">
             <div class="subBanner">
-              <div>
+              <a href="" class="quick-tag">
                 50+ <span>Temple Needs</span>
-              </div>
-              <div>
+              </a>
+              <a href="" class="quick-tag">
                 39+ <span>Available Pandits</span>
-              </div>
-              <div>
+              </a>
+              <a href="" class="quick-tag">
                 150+ <span>Pooja Services</span>
+              </a>
+              <a href="" class="quick-tag">
+                20+ <span>Temple Photos</span>
+              </a>
+            </div>
+          </div>
+          <h1>{{templeDetails.templeName}}, {{templeDetails.city}}
+            <div class="connectivity f10">
+              <i class="fas fa-car" tooltip="Car Parking is just 1KM away from the temple."></i>
+              <i class="fas fa-bus" tooltip="Tiruchirappalli bus stand is just 3KM away from the temple."></i>
+              <i class="fas fa-train" tooltip="Tiruchirappalli Railway station is just 6KM away from the temple."></i>
+              <i class="fas fa-plane" tooltip="Nearest Airport is just 13KM away from the temple."></i>
+            </div>
+          </h1>
+          <p>{{templeDetails.address}} <span class="devotes">{{templeDetails.devotes}} devotes</span></p>
+          <div class="open-hour">
+            <div> <i class="fas fa-2x fa-bell"></i>
+              <div>
+                <h4>Temple Timing</h4><span>Mon-Fri 5:30 AM to 9PM</span></div>
+            </div>
+            <div><i class="fab fa-2x fa-gripfire"></i>
+              <div>
+                <h4>Arti Timing</h4><span>6:30 AM and 6PM</span></div>
+            </div>
+            <div class="distance-from">
+              <i class="fas fa-2x fa-map-marker-alt"></i>
+              <div>
+                <h4>250 KMS</h4><span> from New Delhi</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="temple-details-section">
+          <tabset>
+            <tab heading="Overview">
+              <history></history>
+            </tab>
+            <tab heading="Donation">
+              <donation></donation>
+            </tab>
+            <tab heading="Experts">
+              <expert></expert>
+            </tab>
+            <tab heading="Pooja services">
+              <detail-pooja-service></detail-pooja-service>
+            </tab>
+            <tab heading="Events &amp; Festivals">
+              <detail-events-festivals></detail-events-festivals>
+            </tab>
+            <tab heading="Gallery">
+              <temple-detail-photos></temple-detail-photos>
+            </tab>
+          </tabset>
+        </div>
+        <div class="comment-section">
+
+          <div class="box-section">
+            <div class="write-review">
+              <h4>Write a Review</h4>
+              <div class="review clearfix">
+                <div class="user-img"><img src="../assets/users/user-default.png"></div>
+                <div class="review-txt">
+                  <textarea class="form-control" maxlength="140" (keyup)="count = $event.target.value.length"></textarea>
+                  <div class="count">{{count}} / 140</div>
+                </div>
+
+                <div class="btn btn-success publish">Publish Review</div>
               </div>
             </div>
           </div>
-          <h1>{{templeDetails.templeName}}, {{templeDetails.city}}</h1>
-          <p>{{templeDetails.address}} <span class="devotes">{{templeDetails.devotes}} devotes</span></p>
+          <div class="box-section">
+            <div class="review-section">
+              <h4>Reviews (67)</h4>
+              <div class="review clearfix" *ngFor="let review of reviews">
+                <div class="user-img" [ngStyle]="{'background-image':'url('+review.image+')'}"></div>
+                <div class="user-detail">
+                  <h5 class="f900 f15">{{review.name}}</h5>
+                  <div class="location f12"> {{review.location}}</div>
+                  <div class="rating">
+                    <i class="fa-star fa-xs" [ngClass]="review.rating == '5' ? 'fas' : 'far'"></i>
+                    <i class="fa-star fa-xs" [ngClass]="review.rating == '4' || review.rating == '5' ? 'fas' : 'far'"></i>
+                    <i class="fa-star fa-xs" [ngClass]="review.rating == '3' || review.rating == '4'  || review.rating == '5' ? 'fas' : 'far'"></i>
+                    <i class="fa-star fa-xs" [ngClass]="review.rating == '2' || review.rating == '3' || review.rating == '4'  || review.rating == '5' ? 'fas' : 'far'"></i>
+                    <i class="fas fa-xs fa-star"></i>
+                  </div>
+
+                  <div class="title">{{review.title}}</div>
+                  <div class="review-txt f14" [innerHtml]="review.comment"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
