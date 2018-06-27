@@ -1,10 +1,10 @@
 <h4>Popular Temples Accross India</h4>
 <div class="across-india clearfix">
-  <div class="item" *ngFor="let temple of acrossTemples; let i = index;">
+  <div class="item" *ngFor="let temple of data; let i = index;">
     <div class="tile">
       <a href="javascript:void(0)">
-        <div class="img bg-img" [ngStyle]="{'background-image': 'url(' + temple.thumb + ')'}" title="{{temple.name}}"></div>
-        <div class="detail">{{temple.name}}<span> {{temple.city}}</span></div>
+        <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + temple.Image_Path + ')'}" title="{{temple.Temple_Name}}"></div>
+        <div class="detail">{{temple.Temple_Name}}<span> {{temple.Address_Detail}}</span></div>
       </a>
     </div>
   </div>

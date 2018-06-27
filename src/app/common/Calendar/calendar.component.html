@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <div class="col-md-12">
+  <div class="col-md-12 month-btn">
     <div class="btn-group">
       <div
         class="btn btn-primary btn-xs"
@@ -25,11 +25,10 @@
       </div>
     </div>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12 date-value">
     <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
   </div>
 </div>
-<br>
 <div [ngSwitch]="view">
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"

@@ -1,0 +1,72 @@
+<div class="section">
+  <h4 class="Montserrat">Overview</h4>
+  <div class="left-section">
+    <div class="rating-pandit">
+      <div class="review-line">
+      <span> Reviews({{totalReview}})</span>
+      <div class="star-ratings-css" [title]="persentReview">
+        <div class="star-ratings-css-top" [ngStyle]="{width: persentReview}"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      </div>
+      <span>{{PanditAvgRating}} / 5</span>
+      </div>
+      <ul>
+        <li *ngFor="let review of summeryReview; let i = index">
+          <label>{{review.text}}</label>
+          <progressbar [value]="review.value" type="success"></progressbar>
+          <span class="percent">{{review.value}} %</span>
+        </li>
+      </ul>
+      <div class="user-rating">
+        <div class="user">
+          <div class="left-section">
+            <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' +  ReviewInDetail.User_Image + ')'}"></div>
+            <div class="user-name">{{ReviewInDetail.name}}</div>
+          </div>
+          <div class="review-detail">
+            <div class="review"> {{ReviewInDetail.Review_Date | date: 'MMM dd, yyyy'}}
+              <div class="rating">
+                <i class="fa-star fa-xs" [ngClass]="ReviewInDetail.Rating == '5' ? 'fas' : 'far'"></i>
+                <i class="fa-star fa-xs" [ngClass]="ReviewInDetail.Rating == '4' || ReviewInDetail.Rating == '5' ? 'fas' : 'far'"></i>
+                <i class="fa-star fa-xs" [ngClass]="ReviewInDetail.Rating == '3' || ReviewInDetail.Rating == '4'  || ReviewInDetail.Rating == '5' ? 'fas' : 'far'"></i>
+                <i class="fa-star fa-xs" [ngClass]="ReviewInDetail.Rating == '2' || ReviewInDetail.Rating == '3' || ReviewInDetail.Rating == '4'  || ReviewInDetail.Rating == '5' ? 'fas' : 'far'"></i>
+                <i class="fas fa-xs fa-star"></i>
+              </div>
+            </div>
+            <h6 class="title">{{ReviewInDetail.UserReview}}</h6>
+            <div class="description">{{ReviewInDetail.ReviewDesc}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pandit-specialization">
+      <h5 class="Montserrat"><span> Temple</span> Association</h5>
+      <div class="pandit-temple-association">{{data.association.panditRole}}</div>
+      <div class="associated-temple">
+        <div class="img" [ngStyle]="{'background-image': 'url(' + _requestService.baseServiceUrl+'/' +associationData.Image_Path + ')'}"></div>
+        <div class="temple-detail">
+          <h6>{{associationData.Temple_Name}}</h6>
+          <div>{{associationData.Address_Detail}}</div>
+
+        </div>
+        <div>{{associationData.templeDetail}}</div>
+      </div>
+    </div>
+    <div class="summary">
+      <ul>
+        <li *ngIf="data.inperson"><i class="fas fa-users" placement="top" [tooltip]="'In Person Pooja performed'"></i> </li>
+        <li *ngIf="data.whatsapp"><i class="fab fa-whatsapp-square" placement="top" [tooltip]="'Whattsapp Video Pooja performed'"></i> </li>
+        <li *ngIf="data.chat"><i class="fas fa-comments" placement="top" [tooltip]="'Pooja over online chat'"></i> </li>
+        <li *ngIf="data.withitems"><i class="fas fa-cart-plus" placement="top" [tooltip]="'With Pooja Samagri'"></i> </li>
+        <li *ngIf="data.awards.length !==0" class="awards"><i class="fas fa-trophy" [tooltip]="awards"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pandit-availability">
+    <h5 class="Montserrat"><span> Panditji</span> Availability</h5>
+    <div class="calendar-box">
+      <events-calendar [eventData]="schedule"></events-calendar>
+    </div>
+  </div>
+
+</div>

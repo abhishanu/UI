@@ -9,7 +9,7 @@
       <div class="pooja-item" *ngFor="let need of needs">
         <div class="tile">
           <div class="puja-img">
-            <div class="small-bg-img" [title]="pooja.title" [ngStyle]="{'background-image': 'url('+ need.src+')'}"></div>
+            <div class="small-bg-img" [title]="need.title" [ngStyle]="{'background-image': 'url('+ need.src+')'}"></div>
           </div>
           <div class="puja-detail">
             <h2><a href="javascript:void(0)">{{need.title}}</a></h2>
@@ -26,9 +26,9 @@
   <div class="pandits-list">
     <h4>Experts &amp; Pandits</h4>
     <ul class="list-unstyled clearfix gallery">
-      <li *ngFor="let pandits of pandits">
-        <a href="#" class="small-bg-img" [ngStyle]="{'background-image': 'url('+pandits.src+')'}">
-          <h5 class="ellipsis">{{pandits.name}}</h5>
+      <li *ngFor="let pandits of expertData | slice:0:4;">
+        <a href="#" class="small-bg-img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' +pandits.ImageId+')'}">
+          <h5 class="ellipsis">{{pandits.Name}}</h5>
         </a>
       </li>
       <li>
@@ -39,7 +39,6 @@
     </ul>
   </div>
 </div>
-
 <div class="box-section  clearfix">
   <div class="pooja-services">
     <h4>Pooja Services</h4>
@@ -47,13 +46,13 @@
             ></carousel>-->
 
     <div class="poojas">
-      <div class="pooja-item" *ngFor="let pooja of pooja">
+      <div class="pooja-item" *ngFor="let pooja of poojaService | slice:0:3;">
         <div class="tile">
-          <div class="puja-img bg-img" [title]="pooja.title" [ngStyle]="{'background-image': 'url('+ pooja.src+')'}"></div>
+          <div class="puja-img bg-img" [title]="pooja.ServiceName" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + pooja.ImageId+')'}"></div>
           <div class="puja-detail">
-            <h2><a href="javascript:void(0)">{{pooja.title}}</a></h2>
-            <p class="desc">{{pooja.description}}</p>
-            <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{pooja.price}}</span> {{pooja.discounted}}</span>
+            <h2><a href="javascript:void(0)">{{pooja.ServiceName}}</a></h2>
+            <p class="desc">{{pooja.ServiceDesc}}</p>
+            <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{pooja.Price}}</span> {{pooja.Price - pooja.Discount  | amountConverter:locale}}</span>
               <a class="buy-now">Buy Now</a></p>
           </div>
         </div>
@@ -67,9 +66,9 @@
   <div class="photos-list">
     <h4>Photos</h4>
     <ul class="list-unstyled clearfix gallery">
-      <li *ngFor="let photos of photos">
-        <a href="#" class="small-bg-img" [ngStyle]="{'background-image': 'url('+photos.src+')'}">
-          <h5 class="ellipsis">{{photos.title}}</h5>
+      <li *ngFor="let photos of gallery | slice:0:4;">
+        <a href="#" class="small-bg-img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + photos+')'}">
+          <!--<h5 class="ellipsis">{{photos.title}}</h5>-->
         </a>
       </li>
       <li>

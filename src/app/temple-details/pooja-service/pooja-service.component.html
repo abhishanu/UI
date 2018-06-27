@@ -1,13 +1,13 @@
 <div class="box-section clearfix">
   <div class="poojas inner-section">
     <h3 class="text-center mb-3 f900 capitalize">Pooja Services</h3>
-    <div class="pooja-item" *ngFor="let pooja of poojaList">
+    <div class="pooja-item" *ngFor="let pooja of poojaService">
     <div class="tile">
-      <div class="puja-img bg-img" [title]="pooja.title" [ngStyle]="{'background-image': 'url('+ pooja.src+')'}"></div>
+      <div class="puja-img bg-img" [title]="pooja.ServiceName" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + pooja.ImageId+')'}"></div>
       <div class="puja-detail">
-        <h2><a href="javascript:void(0)">{{pooja.title}}</a></h2>
-        <p class="desc">{{pooja.description}}</p>
-        <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{pooja.price}}</span> {{pooja.discounted}}</span> <a class="buy-now">Buy Now</a></p>
+        <h2><a href="javascript:void(0)">{{pooja.ServiceName}}</a></h2>
+        <p class="desc">{{pooja.ServiceDesc}}</p>
+        <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{pooja.Price}}</span> {{pooja.Price - pooja.Discount | amountConverter:locale}}</span> <a class="buy-now">Buy Now</a></p>
       </div>
     </div>
     </div>

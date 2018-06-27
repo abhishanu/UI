@@ -1,25 +1,89 @@
 <div class="box-section donation">
   <tabset>
-    <tab heading="Temple Needs"></tab>
-    <tab heading="Medicine"></tab>
-    <tab heading="Food Donation">
-      <div class="item" *ngFor="let foodItem of foodItems">
-        <div class="img" [ngStyle]="{'background-image': 'url(' + foodItem.thumb + ')'}"></div>
+    <tab heading="Temple Needs">
+      <div class="item" *ngFor="let items of templeItems">
+        <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + items.imageId + ')'}"></div>
         <div class="detail">
-          <h5><a href="javascript:void(0)">{{foodItem.name}}</a></h5>
-          <div class="txt">{{foodItem.desc}} </div>
+          <h5><a href="javascript:void(0)">{{items.donationSubCategoryName}}</a></h5>
+          <div class="txt">{{items.description}} </div>
+          <span class="donateMoney"><b>Donation Required:</b> {{items.requiredMoney | amountConverter:locale}}</span>
+          <span class="donateMoney"><b>Donation Collected:</b> {{items.collectedMoney | amountConverter:locale}}</span>
           <div class="donate-now">
             <div class="calc"><i class="fas fa-minus-circle" (click)="updateItem($event,'minus')"></i> <span class="count">1</span> <i class="fas fa-plus-circle"
                 (click)="updateItem($event,'add')"></i><i class="fas fa-plus rotate-45"></i> {{multiplier}} = <i class="fas fa-rupee-sign"></i>
-              <span
-                class="total">500</span>
-            </div> <a class="btn btn-primary btn-sm" href="javascript:void(0)">Donate Now</a>
+              <span class="total">500</span>
+            </div> <a class="btn btn-primary btn-sm" href="javascript:void(0)" (click)="donateNow($event,items.donationSubCategoryId,items.templeDonationCategoryId)">Donate Now</a>
           </div>
         </div>
       </div>
     </tab>
-    <tab heading="Education"></tab>
-    <tab heading="Clothes"></tab>
-    <tab heading="Girl Child Marriage"></tab>
+    <tab heading="Medicine">
+      <div class="item" *ngFor="let items of medicineItems">
+        <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + items.imageId + ')'}"></div>
+        <div class="detail">
+          <h5><a href="javascript:void(0)">{{items.donationSubCategoryName}}</a></h5>
+          <div class="txt">{{items.description}} </div>
+          <span class="donateMoney"><b>Donation Required:</b> {{items.requiredMoney | amountConverter:locale}}</span>
+          <span class="donateMoney"><b>Donation Collected:</b> {{items.collectedMoney | amountConverter:locale}}</span>
+          <div class="donate-now">
+            <div class="calc"><i class="fas fa-minus-circle" (click)="updateItem($event,'minus')"></i> <span class="count">1</span> <i class="fas fa-plus-circle"
+                (click)="updateItem($event,'add')"></i><i class="fas fa-plus rotate-45"></i> {{multiplier}} = <i class="fas fa-rupee-sign"></i>
+              <span class="total">500</span>
+            </div> <a class="btn btn-primary btn-sm" href="javascript:void(0)" (click)="donateNow($event,items.donationSubCategoryId,items.templeDonationCategoryId)">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </tab>
+    <tab heading="Food Donation">
+      <div class="item" *ngFor="let items of foodItems">
+        <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + items.imageId + ')'}"></div>
+        <div class="detail">
+          <h5><a href="javascript:void(0)">{{items.donationSubCategoryName}}</a></h5>
+          <div class="txt">{{items.description}} </div>
+          <span class="donateMoney"><b>Donation Required:</b> {{items.requiredMoney | amountConverter:locale}}</span>
+          <span class="donateMoney"><b>Donation Collected:</b> {{items.collectedMoney | amountConverter:locale}}</span>
+          <div class="donate-now">
+            <div class="calc"><i class="fas fa-minus-circle" (click)="updateItem($event,'minus')"></i> <span class="count">1</span> <i class="fas fa-plus-circle"
+                (click)="updateItem($event,'add')"></i><i class="fas fa-plus rotate-45"></i> {{multiplier}} = <i class="fas fa-rupee-sign"></i>
+              <span class="total">500</span>
+            </div> <a class="btn btn-primary btn-sm" (click)="donateNow($event,items.donationSubCategoryId,items.templeDonationCategoryId)" href="javascript:void(0)">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </tab>
+    <tab heading="Education">
+      <div class="item" *ngFor="let items of educationItems">
+        <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + items.imageId + ')'}"></div>
+        <div class="detail">
+          <h5><a href="javascript:void(0)">{{items.donationSubCategoryName}}</a></h5>
+          <div class="txt">{{items.description}} </div>
+          <span class="donateMoney"><b>Donation Required:</b> {{items.requiredMoney | amountConverter:locale}}</span>
+          <span class="donateMoney"><b>Donation Collected:</b> {{items.collectedMoney | amountConverter:locale}}</span>
+          <div class="donate-now">
+            <div class="calc"><i class="fas fa-minus-circle" (click)="updateItem($event,'minus')"></i> <span class="count">1</span> <i class="fas fa-plus-circle"
+                (click)="updateItem($event,'add')"></i><i class="fas fa-plus rotate-45"></i> {{multiplier}} = <i class="fas fa-rupee-sign"></i>
+              <span class="total">500</span>
+            </div> <a class="btn btn-primary btn-sm" href="javascript:void(0)" (click)="donateNow($event,items.donationSubCategoryId,items.templeDonationCategoryId)">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </tab>
+    <tab heading="Clothes">
+      <div class="item" *ngFor="let items of clothItems">
+        <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + items.imageId + ')'}"></div>
+        <div class="detail">
+          <h5><a href="javascript:void(0)">{{items.donationSubCategoryName}}</a></h5>
+          <div class="txt">{{items.description}} </div>
+          <span class="donateMoney"><b>Donation Required:</b> {{items.requiredMoney | amountConverter:locale}}</span>
+          <span class="donateMoney"><b>Donation Collected:</b> {{items.collectedMoney | amountConverter:locale}}</span>
+          <div class="donate-now">
+            <div class="calc"><i class="fas fa-minus-circle" (click)="updateItem($event,'minus')"></i> <span class="count">1</span> <i class="fas fa-plus-circle"
+                (click)="updateItem($event,'add')"></i><i class="fas fa-plus rotate-45"></i> {{multiplier}} = <i class="fas fa-rupee-sign"></i>
+              <span class="total">500</span>
+            </div> <a class="btn btn-primary btn-sm" href="javascript:void(0)" (click)="donateNow($event,items.donationSubCategoryId,items.templeDonationCategoryId)">Donate Now</a>
+          </div>
+        </div>
+      </div>
+    </tab>
   </tabset>
 </div>

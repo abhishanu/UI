@@ -1,0 +1,128 @@
+<div class="pandit-listing clearfix insider">
+  <div class="section">
+    <h1>Top Pandits Near You</h1>
+    <div id="wrap">
+      <div class="filterSection">
+        <h4>Sort By: <select class="form-control mt-2"><option>Popularity</option><option>Distance</option></select></h4>
+
+        <h4>Filters</h4>
+        <div class="filterBox">
+          <h5>By Pandit Name</h5>
+          <input type="text" [(ngModel)]="panditName" placeholder="Enter Pandit Name..." (keypress)="searchByPanditName($event)">
+        </div>
+        <div class="filterBox">
+          <h5>Pooja Services</h5>
+          <input type="text" [(ngModel)]="serviceName" placeholder="Enter Pooja Service...">
+          <ul class="filterList">
+            <li *ngFor="let service of poojaData | searchFilter:serviceName:'serviceName'">
+              <label>
+                <div class="check-fake-box">
+                  <input type="checkbox" (click)="setFilters($event, 'services', service.serviceName);"/>
+                  <div class="check-fake unchecked"></div>
+                  <div class="check-fake checked"><i class="fas fa-check"></i></div>
+                </div>
+                {{service.serviceName}}
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="filterBox">
+          <h5>Cities</h5>
+          <input type="text" [(ngModel)]="cityName" placeholder="Enter City name..">
+          <ul class="filterList">
+            <li *ngFor="let popular of _commonService.completeCitilist | searchFilter:cityName:'cityName'">
+              <label>
+                <div class="check-fake-box">
+                  <input type="checkbox" (click)="setFilters($event, 'city', popular.cityName);"/>
+                  <div class="check-fake unchecked"></div>
+                  <div class="check-fake checked"><i class="fas fa-check"></i></div>
+                </div>
+                {{popular.cityName}}
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="filterBox">
+          <div class="rating">
+            <input type="radio" name="rating" checked id="rate5" (click)="setFilters($event,'rating','5')"/>
+            <label for="rate5"></label>
+            <div class="star-ratings-css" title="100%">
+              <div class="star-ratings-css-top" style="width:100%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>
+          </div>
+          <div class="rating">
+            <input type="radio" name="rating"  id="rate4" (click)="setFilters($event,'rating','4')"/>
+             <label for="rate4"></label>
+            <div class="star-ratings-css" title="80%">
+              <div class="star-ratings-css-top" style="width:80%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>
+          </div>
+          <div class="rating">
+            <input type="radio" name="rating"  id="rate3" (click)="setFilters($event,'rating','3')"/>
+             <label for="rate3"></label>
+            <div class="star-ratings-css" title="60%">
+              <div class="star-ratings-css-top" style="width:60%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>
+          </div>
+          <div class="rating">
+            <input type="radio" name="rating"  id="rate2" (click)="setFilters($event,'rating','2')"/>
+             <label for="rate2"></label>
+            <div class="star-ratings-css" title="40%">
+              <div class="star-ratings-css-top" style="width:40%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>
+          </div>
+          <div class="rating">
+            <input type="radio" name="rating"  id="rate1" (click)="setFilters($event,'rating','1')"/>
+             <label for="rate1"></label>
+            <div class="star-ratings-css" title="20%">
+              <div class="star-ratings-css-top" style="width:20%"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="pandit-list">
+          <div class="pandit" *ngFor="let pandit of toppandit;" data-aos="fade-down">
+            <a routerLink='../{{pandit.Location}}/pandit-detail/{{pandit.Name}}/{{pandit.Pandit_ID}}' title="{{pandit.Name}}">
+              <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl + pandit.Image_Id + ')'}"></div>
+            </a>
+            <div class="desc">
+              <div class="pandit-name">
+                <h3 class="name"><a routerLink='../{{pandit.Location}}/pandit-detail/{{pandit.Name}}/{{pandit.Pandit_ID}}'> {{pandit.Name}}</a></h3>
+                <div class="location"><i class="fas fa-map-marker-alt"></i> {{pandit.Location}}</div>
+                <div class="about" title="{{pandit.about}}">{{pandit.Desc}}</div>
+                <div class="services">
+                  <i class="fas fa-tags"></i> <span *ngFor="let item of pandit.Pooja_Services">{{item}}, </span>
+                </div>
+              </div>
+              <div class="pooja-type">
+                <div class="rating">
+                  <i class="fa-star fa-xs" [ngClass]="pandit.rating == '5' ? 'fas' : 'far'"></i>
+                  <i class="fa-star fa-xs" [ngClass]="pandit.rating == '4' || pandit.rating == '5' ? 'fas' : 'far'"></i>
+                  <i class="fa-star fa-xs" [ngClass]="pandit.rating == '3' || pandit.rating == '4'  || pandit.rating == '5' ? 'fas' : 'far'"></i>
+                  <i class="fa-star fa-xs" [ngClass]="pandit.rating == '2' || pandit.rating == '3' || pandit.rating == '4'  || pandit.rating == '5' ? 'fas' : 'far'"></i>
+                  <i class="fas fa-xs fa-star"></i>
+
+                </div>
+                <p><b>{{pandit.reviews}} Reviews</b></p>
+                <div class="pooja-modes">
+                  <ul>
+                    <li *ngIf="pandit.inperson"><i class="fas fa-users"></i> In-Person Pooja performed</li>
+                    <li *ngIf="pandit.whatsapp"><i class="fab fa-whatsapp-square"></i> Whattsapp Video Pooja performed</li>
+                    <li *ngIf="pandit.chat"><i class="fas fa-comments"></i> Pooja over online chat</li>
+                    <li *ngIf="pandit.withitems"><i class="fas fa-shopping-basket"></i> With Pooja Samagri</li>
+                  </ul>
+                </div>
+                <div class="book-pandit"><a class="btn btn-danger" href="javascript:void(0)"> Book Pandit <i class="fas fa-arrow-right"></i></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

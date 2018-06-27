@@ -1,47 +1,64 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
-import { trigger, state, animate, transition, style,query,stagger } from '@angular/animations';
+import { trigger, state, animate, transition, style, query, stagger } from '@angular/animations';
+import { RequestService } from '../services/request.service';
 @Component({
     selector: 'temple-donations',
     templateUrl: './temple-donations.component.html',
-    animations: [
-    trigger('listAnimation', [
-      transition('* => *', [
-        query('.temple-list',style({ transform: 'translateY(100%)'})),
-        query('.across-india .item',style({ transform: 'translateX(100%)'})),
-        query('.across-india .item',
-          stagger('100ms', [
-            animate('400ms', style({ transform: 'translateX(0)'}))
-        ])),
-        query('.temple-list',
-          stagger('400ms', [
-            animate('900ms', style({ transform: 'translateY(0)'}))
-        ])),        
-        
-      ])
-    ])
-  ]
+    /*animations: [
+        trigger('listAnimation', [
+            transition('* => *', [
+                query('.temple-list,.across-india .item', style({ transform: 'translateY(100%)' })),
+                query('.temple-list,.across-india .item',
+                    stagger('200ms', [
+                        animate('900ms', style({ transform: 'translateY(0)' }))
+                    ])),
+
+            ])
+        ])
+    ]*/
 })
 export class TempleDonationsComponent implements OnInit {
     acrossTemples: any;
-    templeList:any;
-    filters: any;
+    poojaServices: any;
+    templeList: any = [];
+    rangeValue: any = '0';
+    params: any = {};
+    services: any = [];
+    city: any = [];
     private appliedFilters: any = [];
-    constructor(private _commonService: CommonService) {
+    constructor(private _commonService: CommonService, private _requestService: RequestService) {
+        this.city.push(this._commonService.currentCity);
+        this.params = {
+            "requestType": "filter",
+            "requestParam": {
+                "cityNames": this.city,
+                "serviceNames": this.services
+            }
+        }
+
+    }
+    range(event) {
+        this.rangeValue = event.target.value;
+    }
+    getTemples() {
+        this._commonService.showLoader();
+        this._requestService.postData("getTemplesByFilters", this.params).subscribe(data => {
+            this.templeList = data.json();
+            this._commonService.hideLoader();
+        }, err => {
+            this._commonService.showHttpErrorMsg();
+        });
     }
     ngOnInit() {
-        
-        this.filters = [
-            {
-                "filterName": "services", "filterData": ["Satyanarayan Puja", "Griha Pravesh Puja", "Vivah Puja", "Ganpati Puja", "Most Common Pujas", "Bhoomi Puja", "Gauri Puja", "Maha Mrityunjaya Jaap", "Rudrabhishek Puja", "Dhanteras Puja  ", "Laxmi Puja  ", "KaalSarp puja", "Navratri Puja", "Durga Puja", "Engagement Puja", "New business", "Shiv Puja", "Krishna Puja", "Other Puja", "Mata ki Chowki", "Sarswati Puja", "Laghu Rudra Puja", "Hanuman Chalisa Paath", "Akhand Ramayan Paath", "Sundarkand Paath", "Vishnu Sahasranama", "Mangal Dosh Nivaran", "Pitra Dosh Nivaran", "Shani Dosh Nivaran", "Mool Shanti Puja", "Namkaran Puja", "Maha Shivratri Puja", "Ganpati Sthapna", "Annaprashan Puja", "Birthday Puja", "Mundan Puja", "Other Puja", "Shradh Puja"]
-            }, {
-                "filterName": "nearby_location", "filterData": ["Agra", "Mathura", "Bharatpur", "Vrindavan", "Haridwar"]
-            }, {
-                "filterName": "popular_cities", "filterData": ["Mumbai", "Delhi", "Bangalore", "Hyderabad", "Ahmedabad", "Chennai", "Kolkata", "Surat", "Pune", "Jaipur", "Lucknow", "Kanpur", "Nagpur", "Visakhapatnam", "Indore", "Thane", "Bhopal", "Pimpri-Chinchwad", "Patna", "Vadodara", "Ghaziabad", "Ludhiana", "Coimbatore", "Agra", "Madurai"]
-            }, {
-                "filterName": "upcoming_events", "filterData": ["event 1","event 2","event 3","event 4"]
-            }
-        ]
+
+        this.getTemples();
+        this._requestService.fetchData("getAllPoojaServices").subscribe(data => {
+
+            this.poojaServices = data.json();
+        }, err => {
+            this._commonService.showHttpErrorMsg();
+        });
         this._commonService.updateBreadCrumb([
             {
                 "path": "/temple-donations",
@@ -52,147 +69,47 @@ export class TempleDonationsComponent implements OnInit {
                 "label": "Temple List"
             }
         ]);
-        this.templeList = [
-            {
-                "id": "1",
-                "name": "Mahabaleshwar Temple",
-                "address": "Koti Teertha Road, Kotiteertha",
-                "state": "Karnataka",
-                "city": "Gokarna",
-                "thumb": "../assets/temples/1.jpg",
-                "distance":"2Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "certified":true,
-                "needs":[
-                    {
-                        "name":"Food",
-                        "value":"30000"
-                    },
-                    {
-                        "name":"Construction",
-                        "value":"1200000"
-                    },{
-                        "name":"Bhandara",
-                        "value":"25000"
-                    }
-                ],
-                "services":"Shiva Pooja, Vishnu Pooja, Engagement Pooja, Namkaran, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "2",
-                "name": "Sri Ranganathaswamy Temple",
-                "address": "Srirangam",
-                "state": "Tamil Nadu",
-                "city": "Tiruchirappalli",
-                "thumb": "../assets/temples/Ranganathaswamy.jpg",
-                "distance":"412Kms from city center",
-                "gods":["Shiva","Vishnu","Krishna","Durga"],
-                "services":"Shiva Pooja, Vishnu Pooja, Engagement, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "3",
-                "name": "Laxminarayan Temple",
-                "address": "Mandir Marg, Near Gole market",
-                "state": "New Delhi",
-                "city": "New Delhi",
-                "thumb": "../assets/temples/jagannath.jpg",
-                "distance":"22Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "services":"Shiva Pooja, Vishnu Pooja, Engagement, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "4",
-                "name": "Ramaswamy Temple",
-                "address": "",
-                "state": "Tamil Nadu",
-                "city": "Rameswaram",
-                "thumb": "../assets/temples/Ramaswamy.jpg",
-                "distance":"22Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "certified":true,
-                "needs":[
-                    {
-                        "name":"Food",
-                        "value":"30000"
-                    },
-                    {
-                        "name":"Construction",
-                        "value":"1200000"
-                    },{
-                        "name":"Bhandara",
-                        "value":"25000"
-                    }
-                ],
-                "services":"Shiva Pooja, Vishnu Pooja, Engagement, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "5",
-                "name": "Mahabaleshwar Temple",
-                "address": "Koti Teertha Road, Kotiteertha",
-                "state": "Karnataka",
-                "city": "Gokarna",
-                "thumb": "../assets/temples/1.jpg",
-                "distance":"2Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "certified":true,
-                "services":"Shiva Pooja, Vishnu Pooja, Engagement Pooja, Namkaran, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "6",
-                "name": "Sri Ranganathaswamy Temple",
-                "address": "Srirangam",
-                "state": "Tamil Nadu",
-                "city": "Tiruchirappalli",
-                "thumb": "../assets/temples/Ranganathaswamy.jpg",
-                "distance":"12Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "services":"Shiva Pooja, Engagement Pooja, Namkaran, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "7",
-                "name": "Jagannath Temple",
-                "address": "",
-                "state": "Odisha",
-                "city": "Puri",
-                "thumb": "../assets/temples/jagannath.jpg",
-                "distance":"12Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "services":"Shiva Pooja, Engagement Pooja, Namkaran, Shanti Pooja, Marriage rituals"
-            },
-            {
-                "id": "8",
-                "name": "Ramaswamy Temple",
-                "address": "Sarangapani South Street, Valayapettai Agraharam",
-                "state": "Tamil Nadu",
-                "city": "Kumbakonam",
-                "thumb": "../assets/temples/Ramaswamy.jpg",
-                "distance":"12Kms from city center",
-                "gods":["Surya","Vishnu","Krishna"],
-                "services":"Shiva Pooja, Engagement Pooja, Namkaran, Shanti Pooja, Marriage rituals"
+
+        this._requestService.postData("getTemplesByFilters", {
+            "requestType": "filter",
+            "requestParam": {
+                "cityNames": ["All"]
             }
-        ];
-        //this.viewOnMap("Koti Teertha Road, Kotiteertha, Gokarna, Karnataka");
+        }).subscribe(data => {
+            this.acrossTemples = data.json();
+
+        }, err => {
+            this._commonService.showHttpErrorMsg();
+        });
 
     }
-    viewOnMap(currentTemple){
+    viewOnMap(currentTemple) {
         this._commonService.openMapOverlay({
-            "current":currentTemple,
-            "list":this.templeList,
-            "heading":"Temples in Delhi-NCR and NearBy"
+            "current": currentTemple,
+            "list": this.templeList,
+            "heading": "Temples in Delhi-NCR and NearBy"
         });
     }
 
-    private setFilters($event, filterName, service){
-        if($event.currentTarget && $event.currentTarget.checked && filterName !== ""){            
-            this.appliedFilters.push({"filterName":filterName,"filterData":service});
-        }else{
-            for(var i=0;this.appliedFilters.length;i++){
-                if(( filterName !== "" && this.appliedFilters[i].filterName == filterName ||  filterName == "") && this.appliedFilters[i].filterData == service){
-                    this.appliedFilters.splice(i,1);
+    private setFilters($event, filterName, service) {
+        /*if ($event.currentTarget && $event.currentTarget.checked && filterName !== "") {
+            this.appliedFilters.push({ "filterName": filterName, "filterData": service });
+        } else {
+            for (var i = 0; this.appliedFilters.length; i++) {
+                if ((filterName !== "" && this.appliedFilters[i].filterName == filterName || filterName == "") && this.appliedFilters[i].filterData == service) {
+                    this.appliedFilters.splice(i, 1);
                 }
             }
+        }*/
+        if ($event.currentTarget && $event.currentTarget.checked) {
+            this[filterName].push(service);
+        } else {
+            let index;
+
+            index = this[filterName].indexOf(service);
+            this[filterName].splice(index, 1);
         }
-        console.log(this.appliedFilters);
+        this.getTemples();
     }
 
 }

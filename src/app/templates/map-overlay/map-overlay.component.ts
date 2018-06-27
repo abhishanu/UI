@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '../../services/common.service'
+import { CommonService } from '../../services/common.service';
+import { RequestService } from '../../services/request.service';
 @Component({
   selector: 'map-overlay',
   templateUrl: './map-overlay.component.html',  
@@ -28,7 +29,7 @@ marker = {
 mapHeight:any;
 centerAddress:string;
 positions:any=[];
-  constructor(private _CommonService:CommonService) { }
+  constructor(private _CommonService:CommonService, private _requestService: RequestService) { }
 
   ngOnInit() {
     this._CommonService.mapOverlayHandler.subscribe(options => {

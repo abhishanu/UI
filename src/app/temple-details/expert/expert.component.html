@@ -5,12 +5,12 @@
       devotion to Lord Dwarkadhish. He came here in 1996 and set down to study Srila Prabhupada's Bhagavatam. He desired
       that there should be a nice solid stone temple here in Dwarka.</p>
     <div class="pandit">
-      <div *ngFor="let pandit of toppandit">
-        <a href="javascript:void(0)" [title]="pandit.name">
-          <div class="img bg-img" [ngStyle]="{'background-image': 'url(' + pandit.src + ')'}"></div>
+      <div *ngFor="let pandit of data">
+        <a href="javascript:void(0)" [title]="pandit.Name">
+          <div class="img bg-img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + pandit.ImageId+')'}"></div>
           <div class="meta">
-            <h4 class="name">{{pandit.name}}</h4>
-            <h5>{{pandit.location}}</h5>
+            <h4 class="name">{{pandit.Name}}</h4>
+            <h5>{{pandit.Location}}</h5>
           </div>
         </a>
       </div>

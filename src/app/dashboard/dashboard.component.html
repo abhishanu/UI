@@ -1,0 +1,12 @@
+<div class="dashboard section mt-3 clearfix">
+  <h3>Account Type: User</h3>
+  <div class="section">
+    <left-nav></left-nav>
+    <div class="dashboard-content">
+      <cart-detail *ngIf="_commonService.dashbordTab == 'orders'"></cart-detail>
+      <credit-detail *ngIf="_commonService.dashbordTab == 'credit'"></credit-detail>
+      <account-detail *ngIf="_commonService.dashbordTab == 'account'"></account-detail>
+      <wish-list *ngIf="_commonService.dashbordTab == 'wishlist'"></wish-list>
+    </div>
+  </div>
+</div>

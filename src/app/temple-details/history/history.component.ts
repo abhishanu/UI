@@ -1,19 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { RequestService } from '../../services/request.service';
 @Component({
   selector: 'history',
   templateUrl: './history.component.html'
 })
 export class HistoryComponent {
+  @Input() poojaService;
+  @Input() expertData;
+  @Input() gallery;
   data: any;
   needs: any;
-  pandits: any;
-  pooja: any;
   seeTxt: any = "See More";
 
-  photos: any;
-
-  constructor() { }
+  constructor(private _requestService: RequestService) { }
   seeMore(event) {
     let target = event.target.parentElement;
     if (this.seeTxt == "See More") {
@@ -46,77 +45,6 @@ export class HistoryComponent {
       "title": "Education",
       "description": "The Bhagavad-gita is the crown-jewel of Vedic knowledge. The teachings of the Gita are meant to."
     },];
-    this.pandits = [
-      {
-        "src": "../assets/pandit/pandit-1.jpg",
-        "name": "R K Shridhar",
-        "location": "New Delhi",
-        "rating": "2"
-      },
-      {
-        "src": "../assets/pandit/pandit-2.jpeg",
-        "name": "Deepak Kapoor",
-        "location": "New Delhi",
-        "rating": "3"
-      },
-      {
-        "src": "../assets/pandit/pandit-3.jpg",
-        "name": "Prabhu Padanugas",
-        "location": "New Delhi",
-        "rating": "4"
-      },
-      {
-        "src": "../assets/pandit/pandit-4.jpg",
-        "name": "Jyoti Vardhan Sahni",
-        "location": "New Delhi",
-        "rating": "5"
-      }
-
-    ];
-    this.pooja = [
-      {
-        "src": "../assets/puja-service/Gandmool-Shanti.jpg",
-        "title": "Gandmool Shanti",
-        "description": "The effects of Kaalsarp dosh on a person's life depends on the planetary positions and the power of the different planets in a given horoscope.",
-        "price": "28322",
-        "discounted": "21000"
-      },
-      {
-        "src": "../assets/puja-service/Mangal-Dosha-Shanti.jpg",
-        "title": "Mangal Dosha Shanti",
-        "description": "Mangal Dosha occurs when the planet Mars (Mangal) occupies the 1st, 4th, 7th, 8th or 12th house of a person's horoscope.",
-        "price": "7434",
-        "discounted": "5100"
-      },
-      {
-        "src": "../assets/puja-service/Navagraha-Pujas.jpg",
-        "title": "Navagraha Pujas",
-        "description": "Navgrah puja can be performed anytime to please the nine planets and get their blessings. Navgrah puja is done during the housewarming ceremony, during marriages, child naming ceremonies and all the important events in life",
-        "price": "12982",
-        "discounted": "11000"
-      }
-
-    ];
-
-    this.photos = [
-      {
-        "src": "../../assets/gallery/pic-1.jpg",
-        "title": "Jaap",
-      },
-      {
-        "src": "../../assets/gallery/hanuman-puja.jpg",
-        "title": "hanuman puja",
-      },
-      {
-        "src": "../../assets/gallery/shirdi_sai_baba-shamadhi-1.jpg",
-        "title": "shirdi_sai_baba-shamadhi",
-      },
-      {
-        "src": "../../assets/gallery/Vaishnavmaa.jpg",
-        "title": "Vaishnavmaa",
-      }
-
-    ];
   }
 
 }

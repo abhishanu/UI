@@ -1,12 +1,13 @@
 <carousel [carouselType]="'bannercarousel'" [points]="true" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }"
     [carouselItems]="'getBannerDetails'" [interval]="4000"></carousel>
 <carousel [carouselType]="'popularsearches'" [loop]="true" [grid]="{ xs: 2, sm: 4, md: 4, lg: 5, all: 0 }" [carouselItems]="popularSearchesIteams"></carousel>
-<div class="section">
-    <carousel [carouselType]="'shlokcarousel'" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }" [carouselItems]="'getAllThoughts'"
-        [interval]="6000"></carousel>
+<div class="shlok-bg">
+    <div class="section" data-aos="zoom-out">
+        <carousel [carouselType]="'shlokcarousel'" [loop]="true" [grid]="{ xs: 1, sm: 1, md: 1, lg: 1, all: 0 }" [carouselItems]="'getAllThoughts'"
+            [interval]="6000"></carousel>
+    </div>
 </div>
-
-<div class="section-bg events-festival section-dark">
+<div class="section-bg events-festival" data-aos="zoom-in">
     <div class="section">
         <div class="box-head">
             <h2>Events &amp; Festivals</h2>
@@ -26,4 +27,6 @@
 <feedback></feedback>
 <blog></blog>
 <why-us></why-us>
-<div class="right-fixed-nav"><a href="#why-us"><img src="../assets/images/why-choose-us.jpg"/></a></div>
+<div class="right-fixed-nav">
+    <a href="#why-us"><img src="../assets/images/why-choose-us.jpg" /></a>
+</div>

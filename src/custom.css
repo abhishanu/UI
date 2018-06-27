@@ -1,112 +1,142 @@
-@import url('https://fonts.googleapis.com/css?family=Kalam');
-.main-content{
-  min-height: 394px;
+.main-content {
+    min-height: 394px;
 }
-body{
-  padding-top:84px !important;
-  position: relative;
-  top:0px !important;
+
+body {
+    padding-top: 84px !important;
+    position: relative;
+    top: 0px !important;
 }
-.display-flex{
-  display: flex !important;
+
+.display-flex {
+    display: flex !important;
 }
-.display-none,.home-text{
-  display: none;
+
+.display-none,
+.home-text {
+    display: none;
 }
-.pandit-box:last-child{
-  display: none;
+
+.pandit-box:last-child {
+    display: none;
 }
-.hide-elem{
-  display: none !important;
+
+.temple-details-section .section-book-pandit .pandit-detail {
+    padding: 10px;
 }
-.badge-default{
-  border: 1px solid #CCC;
+
+.temple-details-section .pandit-box:last-child {
+    display: block;
 }
-.nav-breadcrumb{
-  background: #FFF;
+
+.hide-elem {
+    display: none !important;
 }
-.nav-breadcrumb ul{
+
+.badge-default {
+    border: 1px solid #CCC;
+}
+
+.nav-breadcrumb {
+    background: #FFF;
+}
+
+.nav-breadcrumb ul {
     padding: 0;
     margin: 0;
 }
-.nav-breadcrumb ul li{
-  float: left;
-  margin-right: 10px;
+
+.nav-breadcrumb ul li {
+    float: left;
+    margin-right: 10px;
 }
-.nav-breadcrumb ul li a{
-  color: #bf2d26;
-  display: inline-block;
-  padding: 5px 0;
-  font-size: 0.675em;
+
+.nav-breadcrumb ul li a {
+    color: #bf2d26;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 0.675em;
 }
-.nav-breadcrumb ul li:last-of-type a{
-  color: #666;
+
+.nav-breadcrumb ul li:last-of-type a {
+    color: #666;
 }
-.nav-breadcrumb ul li i{
-  margin-right: 5px;
-  font-size: 0.675em;
+
+.nav-breadcrumb ul li i {
+    margin-right: 5px;
+    font-size: 0.675em;
 }
+
 .sideNav-icon {
-  float: left;
-  cursor: pointer;
-  padding: 10px;
-  margin: 10px 0;
-  display: none;
+    float: left;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 0;
+    display: none;
 }
 
-.section-dark{
-  background-color: #E0E0E0
+.section-dark {
+    background-color: #E0E0E0
 }
+
 .search-label {
-  margin-top: 150px;
-  font-size:1.25em;
-  text-align: center; 
-}
-.search-label i{
-  color: #007bff
-}
-.search-label h3{
- font-size:  1.275em;
- margin: 10px 0;
-}
-.search-label span{
- font-size:  0.675em;
+    margin-top: 150px;
+    font-size: 1.25em;
+    text-align: center;
 }
 
-.events-festival .featured-event .event-img{
-  background-size: cover;
+.search-label i {
+    color: #007bff
+}
+
+.search-label h3 {
+    font-size: 1.275em;
+    margin: 10px 0;
+}
+
+.search-label span {
+    font-size: 0.675em;
+}
+
+.events-festival .featured-event .event-img {
+    background-size: cover;
 }
 
 /*Puja service*/
-  .puja-img{
+
+.puja-img {
     width: 100%;
     height: 222px;
     background-size: cover;
     background-repeat: no-repeat;
     transition: transform .6s ease;
     border-radius: 5px 5px 0 0;
-    }
-    .puja-detail{
-      padding: 15px;
-    }
-    .puja-detail h2{
-      font-size: 1.2em;
-      font-weight: 700;
-      overflow: hidden;
+}
+
+.puja-detail {
+    padding: 15px;
+}
+
+.puja-detail h2 {
+    font-size: 1.2em;
+    font-weight: 700;
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
-    }
-    .puja-detail p{
-      font-size: 0.875em;
-      color: #757575;
-      margin-bottom: 10px;
-    }
-    .puja-detail p span.price{
-      color: #e16e53;
-      font-weight: 700;
-    }
-    
-.puja-detail p.desc{
+    white-space: nowrap;
+}
+
+.puja-detail p {
+    font-size: 0.875em;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.puja-detail p span.price {
+    color: #e16e53;
+    font-weight: 700;
+}
+
+.puja-detail p.desc {
     text-align: left;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -115,6 +145,7 @@ body{
     display: -webkit-box;
     height: 60px;
 }
+
 .puja-detail p a.buy-now {
     background: #e16e53;
     color: #fff !important;
@@ -125,214 +156,229 @@ body{
     text-transform: uppercase;
     cursor: pointer;
 }
-.puja-services-carousel .tile{
-  border-radius: 5px;
+
+.puja-services-carousel .tile {
+    border-radius: 5px;
 }
-.puja-services-carousel .rightRs, .puja-services-carousel .leftRs {
+
+.puja-services-carousel .rightRs,
+.puja-services-carousel .leftRs {
     position: absolute;
     top: 50%;
     margin-top: -16px;
 }
-.puja-services-carousel .rightRs{
-  right: 18px
+
+.puja-services-carousel .rightRs {
+    right: 18px
 }
-.puja-services-carousel .leftRs{
-  left: 18px;
+
+.puja-services-carousel .leftRs {
+    left: 18px;
 }
-.puja-services-carousel .rightRs i, .puja-services-carousel .leftRs i {
+
+.puja-services-carousel .rightRs i,
+.puja-services-carousel .leftRs i {
     color: #FFF;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
-span.line-through{
-  text-decoration: line-through;
-  font-weight: 400;
-  padding-right: 7px;
+
+span.line-through {
+    text-decoration: line-through;
+    font-weight: 400;
+    padding-right: 7px;
 }
-.support{
-  text-align: center;
-  margin: 20px 0;
+
+.support {
+    text-align: center;
+    margin: 20px 0;
 }
-.support > div{
-  text-align: center;
-  display: inline-block;
-  margin: 0 30px;
+
+.support>div {
+    text-align: center;
+    display: inline-block;
+    margin: 0 30px;
 }
-.support i{
-  color: #bf2d26;
-  margin-right: 4px;
+
+.support i {
+    color: #bf2d26;
+    margin-right: 4px;
 }
-.support .fa-language{
-  font-size: 1.675rem;
-  position: relative;
-  top: 4px;
+
+.support .fa-language {
+    font-size: 1.675rem;
+    position: relative;
+    top: 4px;
 }
 
 /*Gau Sewa*/
 
-.gau-sewa-section div.text-section{
-  width: 70%;
-  margin-right: 2%;
-  float: left;
-}
-.gau-slider{
-  width: 28%;
-  float: left;
-}
-.gau-slider .ngxcarousel-items > .item{
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 300px
+.gau-sewa-section div.text-section {
+    width: 70%;
+    margin-right: 2%;
+    float: left;
 }
 
-/*Shlok*/
-.shlok-carousel{
-  padding: 20px 0;
+.gau-slider {
+    width: 28%;
+    float: left;
 }
-.shlok-carousel p{
-    font-size: 1.675em;
-    color: #bf2d26;
-    text-align: center;
-    font-family: 'Kalam', cursive;
-}
-.shlok-carousel h5{
-    font-size: 1em;
-    color: #007bff;
-    text-align: center;
-    font-family: 'Kalam', cursive;
-    padding-top: 20px;
-}
-.shlok-carousel p::after{
-    content: " ";
-    height:1px;
-    background: #E0E0E0;
-    display: block;
-    max-width: 80%;
-    margin: 10px auto 0;
-}
-.shlok-carousel .tile{
-  box-shadow:none !important;
+
+.gau-slider .ngxcarousel-items>.item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px
 }
 
 /*Drop Menu*/
-.topbar .left-nav li{
-  position: relative;
+
+.topbar .left-nav li {
+    position: relative;
 }
-.drop-menu{
-    width:850px;
+
+.drop-menu {
+    width: 850px;
     border: 2px solid #bf2d26;
     overflow: hidden;
     background: #fff;
     display: none;
     z-index: -1;
     position: absolute;
-    top:25px;
+    top: 25px;
     right: -73px;
     border-radius: 3px;
     min-height: 200px;
     text-align: center;
     padding: 10px 0;
 }
-.nav-item:hover .drop-menu{
-  display: block;
+
+.nav-item:hover .drop-menu {
+    display: block;
 }
+
 .drop-menu .feeds {
-  width: 42%;
+    width: 42%;
     float: left;
     margin-right: 1%;
 }
+
 .drop-menu .feeds h4 {
     color: #000;
     font-weight: 700;
     font-size: 1.1250rem;
     text-align: left
 }
-.drop-menu .live-video{
-  float: left;
+
+.drop-menu .live-video {
+    float: left;
     margin: 0 1%;
     width: 55%;
 }
-.drop-menu .live-feeds > div{
-  width: 50%;
-  padding: 2%;
-  float: left;
-  position: relative;
-}
-.drop-menu .live-feeds > div div{
-  height: 90px;
-  width: 100%;
-  background-size: cover;
-}
-.drop-menu .live-feeds > div i{
-  position: absolute;
-  top:50%;
-  left:50%;
-  margin:-20px 0 0 -14px;
-  color: #d2d3d4;
-  }
-  .drop-menu .live-feeds > div p{
-    font-size: 0.875em;
-  }
-.topbar {
-    padding: 0px 1rem 0px !important;
-  }
-  .nav-item.live-darshan:hover {
-    background: #ffffff;
-  }
-    .nav-item.live-darshan:hover a{
-    color: #000000;
-  }
-  @media print {
-* {
-    -webkit-print-color-adjust: exact !important; /*Chrome, Safari */
-    color-adjust: exact !important;  /*Firefox*/
-  }
+
+.drop-menu .live-feeds>div {
+    width: 50%;
+    padding: 2%;
+    float: left;
+    position: relative;
 }
 
-.connect > div i{
-  padding: 10px;
+.drop-menu .live-feeds>div div {
+    height: 90px;
+    width: 100%;
+    background-size: cover;
 }
+
+.drop-menu .live-feeds>div i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -14px;
+    color: #d2d3d4;
+}
+
+.drop-menu .live-feeds>div p {
+    font-size: 0.875em;
+}
+
+.topbar {
+    padding: 0px 1rem 0px !important;
+}
+
+.nav-item.live-darshan:hover {
+    background: #ffffff;
+}
+
+.nav-item.live-darshan:hover>div.ng-star-inserted {
+    position: absolute;
+}
+
+.nav-item.live-darshan:hover a {
+    color: #000000;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        /*Chrome, Safari */
+        color-adjust: exact !important;
+        /*Firefox*/
+    }
+}
+
+.connect>div i {
+    padding: 10px;
+}
+
 /*Why-us*/
+
 .section-bg.why-us {
     background-color: #bbdcff;
     background-image: none !important;
 }
+
 .why-us .why-us-section {
     float: left;
     width: 33.33%;
     text-align: center;
 }
+
 .why-us .why-us-section .box-head {
     margin: 0;
 }
+
 .why-us .why-us-section .icon {
     margin-bottom: 20px;
 }
 
-.view-more{
-      text-align: center;
+.view-more {
+    text-align: center;
     font-size: 0.875em;
     width: 100%;
-    margin-top:20px;
+    margin-top: 20px;
     clear: both;
 }
-.view-more i{
-  padding-left:3px;
-}
-.photo-gallery .view-more a,.blog .view-more a{
-  margin-top: 20px;
-}
-.audio-video h4{
-  display: inline-block;
+
+.view-more i {
+    padding-left: 3px;
 }
 
-.right-fixed-nav{
-  position: fixed;
-  right:-79px;
-  top:45%;
-  transform: rotate(-90deg)
+.photo-gallery .view-more a,
+.blog .view-more a {
+    margin-top: 20px;
 }
-.right-fixed-nav img{
-      max-width: 200px;
+
+.audio-video h4 {
+    display: inline-block;
+}
+
+.right-fixed-nav {
+    position: fixed;
+    right: -79px;
+    top: 45%;
+    transform: rotate(-90deg)
+}
+
+.right-fixed-nav img {
+    max-width: 200px;
     border: 2px solid #bf2d26;
     border-radius: 10px;
     display: none;
@@ -340,165 +386,96 @@ span.line-through{
 
 /*Temple*/
 
-.temple-donations .across-india{
-  margin:0 -5px;
-}
-.temple-donations .main .contentSection .temple-list{
-  width: 100%;
-  margin:8px 0;
-  border: 1px solid #e2e3e4;
-  background: #fff;
-  position: relative;
-}
-
-.temple-donations .main .contentSection .temple-list .desc .badge-success{
-    color: #666666;
-    background-color: #d4f1ff;
-}
-.temple-donations .main .contentSection .temple-list .details{
-  padding: 15px;
-}
-.temple-donations .main .contentSection .temple-list .img {
-    width: 110px;
-    height: 105px;
-    margin-right: 10px;
-    background-size: cover;
-    border-radius: 5px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    float: left
-}
-.temple-donations .main .contentSection .temple-list .desc{
-  padding-left: 130px;
-}
-.temple-donations .main .contentSection .temple-list .desc .services{
-  font-size: 0.675em;
-  color: #bf2d26;
-}
-.temple-donations .main .contentSection .temple-list .cart-footer{
-  width: 100%;
-  border-top: 1px solid #e2e3e4;
-}
-.temple-donations .main .contentSection .temple-list .cart-footer > a{
-  width: 32%;
-    display: inline-block;
-    text-align: center;
-    -webkit-box-pack: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    border-left: 1px solid #e2e3e4;
-    padding: 10px 0;
-}
-.temple-donations .main .contentSection .temple-list .cart-footer > a i{
-  margin-right: 5px;
-}
-.temple-donations .main .contentSection .temple-list .address{
-  font-size: 0.725em;
-  color: #AAA;
-}
-
-.section h1{
-      font-size: 1.675em;
+.section h1 {
+    font-size: 1.675em;
     color: #394048;
     margin: 0 0 10px 0;
 }
-.temple-donations .main .contentSection .temple-list .needs{
-  border-top: 1px solid #e2e3e4;
-    width: 96%;
-    margin:0px 2%;
-    font-size: 0.725em;
-    color: #AAA;
-    clear: both;padding:10px;
+
+body>div.skiptranslate,
+.goog-te-gadget img {
+    display: none !important;
 }
-.temple-donations .main .contentSection .temple-list .needs label{
-  padding-right: 7px;
-  font-weight: 900;
-  color: #333;
+
+.singlePage .mainSection .mainSectionContent .mainBanner {
+    min-height: 300px !important;
+    position: relative;
 }
-.temple-donations .main .contentSection .temple-list .needs span{
-  color: #666;
-}
-.temple-donations .main .contentSection .temple-list .certified{
-  position: absolute;
-    background: url(/assets/images/certified.png);
-       background-size: 90%;
-    background-position: center;
-    width: 106px;
-    height: 78px;
-    background-repeat: no-repeat;
-    top: 0px;
-    right: -5px;
-}
-.temple-donations .main .contentSection .temple-list .needs li{
-  line-height: 0.725em;
-  width: 33.3%;
-  float: left;
-}
-body > div.skiptranslate,.goog-te-gadget img {
-  display: none !important;
-}
-.singlePage .mainSection .mainSectionContent .mainBanner{
-  min-height: 300px !important;
-  position: relative;
-}
-.singlePage .mainSection .mainSectionContent .mainBanner .subBanner{
-        position: absolute;
-    top: 253px;
-    right: 8px;
+
+.singlePage .mainSection .mainSectionContent .mainBanner .subBanner {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
     color: #fff;
     text-align: center;
     font-weight: 900;
 }
-.singlePage .mainSection .mainSectionContent .mainBanner .subBanner > div{
-      width: 56px;
+
+.singlePage .mainSection .mainSectionContent .mainBanner .subBanner>.quick-tag {
+    width: 60px;
     min-height: 50px;
-    border: 1px solid #ffc107;
-    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    background: rgba(0, 0, 0, 0.6);
     line-height: 0.8em;
-    padding-top:5px;
+    padding: 5px;
     display: inline-block;
-    margin-left:8px;
+    margin-right: 8px;
     color: #ffc107;
+    border-radius: 5px;
+    float: left;
+    display: block;
+    transition: all ease 500ms;
+    -webkit-transition: all ease 500ms;
+    -moz-transition: all ease 500ms;
+    -o-transition: all ease 500ms;
+    -ms-transition: all ease 500ms;
 }
-.singlePage .mainSection .mainSectionContent .mainBanner .subBanner > div span{
-  font-weight: 400;
+
+.singlePage .mainSection .mainSectionContent .mainBanner .subBanner>.quick-tag:hover {
+    transform: scale(1.1)
+}
+
+.singlePage .mainSection .mainSectionContent .mainBanner .subBanner>.quick-tag span {
+    font-weight: 400;
     font-size: 0.725em;
     color: #fff;
-    padding: 6px 0 3px;
+    padding: 6px 0 0px;
     text-align: center;
     display: inline-block;
     float: left;
     width: 100%;
 }
-.temple-donations .filterSection .filterBox .filterList li label{
-  font-size: 0.725em !important;
+.goog-te-menu2-item:active div{
+    color: #bf2d26 !important;
+}
+/**Map Overlay***/
+
+#mapOverlayWrap , #OverlayWrap{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateX(100%);
+    transition: ease-out 500ms all;
 }
 
-/**Map Overlay***/
-#mapOverlayWrap{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top:0;
-  z-index: 9999;
-  background: rgba(0,0,0,0.6);
-  transform: translateX(100%);
-  transition: ease-out 500ms all;
+#mapOverlayWrap.active, #OverlayWrap.active {
+    transform: translateX(0);
 }
-#mapOverlayWrap.active{
-  transform: translateX(0);
+
+#mapOverlayWrap .mapContent, #OverlayWrap .overlayContent {
+    position: absolute;
+    left: 100px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: #FFF;
 }
-#mapOverlayWrap .mapContent{
-  position: absolute;
-  left: 100px;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background: #FFF;
-}
-#mapOverlayWrap .mapContent .sidebarSection{
+
+#mapOverlayWrap .mapContent .sidebarSection {
     float: right;
     width: 100%;
     max-width: 350px;
@@ -510,19 +487,17 @@ body > div.skiptranslate,.goog-te-gadget img {
     position: relative;
     z-index: 1;
 }
-#mapOverlayWrap .mapContent .sidebarSection ul,.singlePage .sidebarSection .near-by ul{
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  overflow-y: auto;
-  height: calc(100vh - 70px);
+
+#mapOverlayWrap .mapContent .sidebarSection ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
 }
-.singlePage .sidebarSection .near-by ul{
-  height:auto;
-  overflow: hidden;
-}
-.heading-section{
- line-height: 70px;
+
+.heading-section {
+    line-height: 70px;
     font-size: 1.2em;
     background: #bf2d26;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28);
@@ -533,106 +508,128 @@ body > div.skiptranslate,.goog-te-gadget img {
     color: #fff;
     padding-left: 10px;
 }
-#mapOverlayWrap .mapContent .sidebarSection ul li,.singlePage .sidebarSection .near-by ul li{
-  padding: 10px;
-  border-bottom: 1px solid #DDD;
+
+#mapOverlayWrap .mapContent .sidebarSection ul li,
+.singlePage .sidebarSection .near-by ul li {
+    padding: 10px;
+    border-bottom: 1px solid #DDD;
 }
-#mapOverlayWrap .mapContent .sidebarSection ul li:hover,.singlePage .sidebarSection .near-by ul li:hover, #mapOverlayWrap .mapContent .sidebarSection ul li.active{
-  background: #DDD;
+
+#mapOverlayWrap .mapContent .sidebarSection ul li:hover,
+.singlePage .sidebarSection .near-by ul li:hover,
+#mapOverlayWrap .mapContent .sidebarSection ul li.active {
+    background: #DDD;
 }
-#mapOverlayWrap .mapContent .sidebarSection ul li .details .img,.singlePage .sidebarSection .near-by ul li .details .img{
-  width: 70px;
-  height: 50px;
-  float: left;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-#mapOverlayWrap .mapContent .sidebarSection ul li .details .desc,.singlePage .sidebarSection .near-by ul li .details .desc{
-  margin-left: 80px;
-}
-#mapOverlayWrap .mapContent .sidebarSection ul li .details .desc h3,.singlePage .sidebarSection .near-by ul li .details .desc h3{
-  font-size: 1em;
-  font-weight: bold;
-}
-#mapOverlayWrap .mapContent .sidebarSection ul li .details .desc .address,.singlePage .sidebarSection .near-by ul li .details .desc .address{
-  font-size: 0.75em;
-  color: #999;
-  line-height: normal;
-}
-#mapOverlayWrap .mapContent .mainSection{
-padding-right: 350px;
-height: 100vh;
-}
-.closeMapOverlay{
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  color: #FFF;
-  font-size: 4rem;
-  margin-top: -48px;
-}
-body.body-overflow-hide{
-  overflow: hidden;
-}
-#mapOverlayWrap .mapContent .mainSection .google-map .img {
-    width:70px;
-    height:50px;
+
+#mapOverlayWrap .mapContent .sidebarSection ul li .details .img,
+.singlePage .sidebarSection .near-by ul li .details .img {
+    width: 70px;
+    height: 50px;
+    float: left;
     background-size: cover;
-    border-radius:3px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#mapOverlayWrap .mapContent .sidebarSection ul li .details .desc,
+.singlePage .sidebarSection .near-by ul li .details .desc {
+    margin-left: 80px;
+}
+
+#mapOverlayWrap .mapContent .sidebarSection ul li .details .desc h3,
+.singlePage .sidebarSection .near-by ul li .details .desc h3 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#mapOverlayWrap .mapContent .sidebarSection ul li .details .desc .address,
+.singlePage .sidebarSection .near-by ul li .details .desc .address {
+    font-size: 0.75em;
+    color: #999;
+    line-height: normal;
+}
+
+#mapOverlayWrap .mapContent .mainSection {
+    padding-right: 350px;
+    height: 100vh;
+}
+
+.closeMapOverlay {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    color: #FFF;
+    font-size: 4rem;
+    margin-top: -48px;
+}
+
+body.body-overflow-hide {
+    overflow: hidden;
+}
+
+#mapOverlayWrap .mapContent .mainSection .google-map .img {
+    width: 70px;
+    height: 50px;
+    background-size: cover;
+    border-radius: 3px;
     background-repeat: no-repeat;
     background-position: center center;
     float: left;
 }
+
 #mapOverlayWrap .mapContent .mainSection .google-map .desc {
-    padding-left:80px;
+    padding-left: 80px;
     font-size: 0.875em;
 }
 
 .topbar .left-nav li.live-darshan {
-  box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 0px 3px 2px rgba(0, 0, 0, 0.28);
     background: #ffc107;
 }
-.topbar .left-nav li.live-darshan a{
-  color: #000;
+
+.topbar .left-nav li.live-darshan a {
+    color: #000;
 }
 
 .topbar .left-nav li.live-darshan:hover {
-  
     background: #daab1d;
 }
-.enquiry i{
-  transform: rotate(100deg)
-}
-.temple-donations .trending{
-  font-size: 0.875em;
-  margin-top: 7px;
-  
-}
-.temple-donations .trending span:first-child{
-  font-weight: 900;
-  padding-right: 10px;
-}
-/*Near By Temples*/
-.singlePage .sidebarSection .near-by{
-  background: #fff;  
-  margin-bottom: 20px;
-  padding: 10px;
-}
-.singlePage .sidebarSection .near-by h4{
-      font-size: 1em;
-    color: #bf2d26;
-    text-transform: none;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    font-weight: 700;
-}
-.singlePage .mainSection .mainSectionContent.temple-detail .banner-head{
-background: #fff;
-padding: 10px;
-}
-.singlePage .mainSection .mainSectionContent.temple-detail .devotes {
-  float: right;
-  font-size: 0.875em;
-}
 
+.enquiry i {
+    transform: rotate(100deg)
+}
+/*Alert Messages*/
+.alert-wrapper{
+  width: 600px;
+  position: fixed;
+  top: -40px;
+  left: 50%;
+  margin-left: -300px;
+  text-align: center;
+  z-index: 99999;
+  transition: top ease 500ms;
+  -webkit-transition: top ease 500ms;
+  -moz-transition: top ease 500ms;
+  -o-transition: top ease 500ms;
+  -ms-transition: top ease 500ms;
+}
+.alert-wrapper .alertBox{
+  display: inline-block;
+  padding: 6px 15px;
+  min-width:400px;
+  box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -o-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -ms-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0 5px 10px 1px rgba(0,0,0,0.8);
+  margin: 0;
+  position: relative;
+  padding-right: 35px;
+}
+.alert-wrapper .alertBox a.hidemsg{
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  color: inherit;
+}
+/**/ 

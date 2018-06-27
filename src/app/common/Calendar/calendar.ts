@@ -2,7 +2,7 @@ import {
   Component,
   ChangeDetectionStrategy,
   ViewChild,
-  TemplateRef
+  TemplateRef, Input
 } from '@angular/core';
 import {
   startOfDay,
@@ -19,7 +19,7 @@ import { Subject } from 'rxjs/Subject';
 import {
   CalendarEvent,
   CalendarEventAction,
-  CalendarEventTimesChangedEvent ,
+  CalendarEventTimesChangedEvent,
   CalendarDateFormatter
 } from 'angular-calendar';
 import { CustomDateFormatter } from './custom-date-formatter.provider';
@@ -43,23 +43,54 @@ const colors: any = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   //styleUrls: ['styles.css'],
   templateUrl: 'calendar.component.html',
-  providers : [{
+  providers: [{
     provide: CalendarDateFormatter,
     useClass: CustomDateFormatter
   }]
 })
 export class CalendarComponent {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
-
+  @Input() eventData;
   view: string = 'month';
-
+  eventDataStr: any = [];
   viewDate: Date = new Date();
 
   modalData: {
     action: string;
     event: CalendarEvent;
   };
+  ngOnInit() {
+    
+    setTimeout(() => {
+      let booking = this.eventData.Non_Availability.Bookings;
+      // this.eventData = this.eventData.Non_Availability.Bookings;
+      let notAvailable = this.eventData.Non_Availability.Unavailable;
+      for (var i = 0; i < booking.length; i++) {
+        this.eventDataStr.push({
+          start: new Date(booking[i].Booked_From),
+          end: new Date(booking[i].Booked_To),
+          title: booking[i].Pooja_Desc + " (" + booking[i].Timing + ")",
+          color: colors.red,
+          actions: this.actions
+        })
 
+      }
+      for (var i = 0; i < notAvailable.length; i++) {
+        this.eventDataStr.push({
+          start: new Date(notAvailable[i].Unavailable_From),
+          end: new Date(notAvailable[i].Unavailable_To),
+          title: "Pandit ji not available this day.",
+        color: colors.blue,
+        actions: this.actions
+        })
+
+      }
+      setTimeout(() => {
+
+        this.refresh.next();
+      })
+    }, 2000);
+  }
   actions: CalendarEventAction[] = [
     {
       label: '<i class="fa fa-fw fa-pencil"></i>',
@@ -78,7 +109,7 @@ export class CalendarComponent {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
+  events: CalendarEvent[] = this.eventDataStr/*[
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
@@ -88,6 +119,7 @@ export class CalendarComponent {
     },
     {
       start: startOfDay(new Date()),
+      end:null,
       title: 'An event with no end date',
       color: colors.yellow,
       actions: this.actions
@@ -97,7 +129,7 @@ export class CalendarComponent {
       end: addDays(endOfMonth(new Date()), 3),
       title: 'A long event that spans 2 months',
       color: colors.blue
-    },
+    },*//*
     {
       start: addHours(startOfDay(new Date()), 2),
       end: new Date(),
@@ -110,11 +142,11 @@ export class CalendarComponent {
       },
       draggable: true
     }
-  ];
+  ];*/
 
   activeDayIsOpen: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

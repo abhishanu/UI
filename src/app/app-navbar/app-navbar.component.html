@@ -24,11 +24,11 @@
             <li>
                 <div id="google_translate_element"></div>
             </li>
-            <li><a href="javascript:void(0)" class="f_blue myaccount" (click)="openLoginPopup()"><i class="fas fa-user"></i> My Account <i class="fas fa-caret-down"></i></a></li>
-            <li><a href="#" class="cart"><i class="fas fa-shopping-cart"></i> <span class="badge badge-primary">2</span></a></li>
+            <li><a href="javascript:void(0)" class="f_blue myaccount" (click)="openLoginPopup()"><i class="fas fa-user"></i> {{_commonService.userName}} <i class="fas fa-caret-down"></i></a></li>
+            <li><a href="javascript:void(0)" (click)="cart()" class="cart"><i class="fas fa-shopping-cart"></i> <span class="badge badge-primary">2</span></a></li>
             <li style="margin-left: 20px;">
                 <div class="choose-location">
-                    <i class="fas fa-map-marker-alt" style="margin-right: 3px;"></i> <span class="badge badge-warning" (click)="changeCity()">{{currentCity}} <i class="fas fa-caret-down"></i></span>
+                    <i class="fas fa-map-marker-alt" style="margin-right: 3px;"></i> <span class="badge badge-warning" (click)="changeCity()">{{_commonService.currentCity}} <i class="fas fa-caret-down"></i></span>
                     <div class="cityList" *ngIf="isOpenCityList">
                         <input [(ngModel)]="selected" typeaheadOptionField="cityName" [typeaheadOptionsLimit]="7" (typeaheadOnSelect)="selectCity($event)" placeholder="Type your city(e.g Chennai, Pune)" [typeahead]="citiList" class="form-control">
                         <!--<ul>

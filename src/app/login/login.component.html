@@ -7,44 +7,44 @@
         <div class="forms-control">
           <div class="row">
             <div>
-              <input class="animate-input" type="text" value="" name="email" id="email" maxlength="100" autocomplete="off" />
+              <input class="animate-input" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signUp.id" type="text" value="" name="email" id="email" maxlength="100" autocomplete="off" />
               <label class="animate-label">Email ID</label>
             </div>
             <div>
-              <input class="animate-input" type="text" value="" name="mobile" id="mobile" maxlength="10" autocomplete="off" />
+              <input class="animate-input" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signUp.mobile" type="text" value="" name="mobile" id="mobile" maxlength="10" autocomplete="off" />
               <label class="animate-label">Mobile</label>
             </div>
           </div>
           <div class="row">
             <div>
-              <input class="animate-input" type="text" value="" name="fName" id="fName" maxlength="35" autocomplete="off" />
+              <input class="animate-input" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signUp.fName" type="text" value="" name="fName" id="fName" maxlength="35" autocomplete="off" />
               <label class="animate-label">First Name</label>
             </div>
             <div>
-              <input class="animate-input" type="text" value="" name="lName" id="lName" maxlength="35" autocomplete="off" />
+              <input class="animate-input" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signUp.lName" type="text" value="" name="lName" id="lName" maxlength="35" autocomplete="off" />
               <label class="animate-label">Last Name</label>
             </div>
           </div>
           <div class="row">
             <div class="w100per">
-              <input class="animate-input" type="password" value="" name="password" id="password" maxlength="35" autocomplete="off" />
+              <input class="animate-input" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signUp.pwd" type="password" value="" name="password" id="password" maxlength="35" autocomplete="off" />
               <label class="animate-label">Password</label>
             </div>
           </div>
           <div class="row">
             <div>
               <label class="radio-inline">
-                <input type="radio" name="optradio">Female
+                <input type="radio" [(ngModel)]="signUp.gender" name="optradio" value="Female">Female
               </label>
             </div>
             <div>
               <label class="radio-inline">
-                <input type="radio" name="optradio">Male
+                <input type="radio" [(ngModel)]="signUp.gender" name="optradio" value="Male">Male
               </label>
             </div>
           </div>
           <div class="row mt-10">
-            <button class="btn text-center sign-up-btn">Sign Up</button>
+            <button class="btn text-center sign-up-btn" (click)="userSignUp()">Sign Up</button>
           </div>
         </div>
       </div>
@@ -64,13 +64,13 @@
           </div>
           <div class="row  mt-10">
             <div class="w100per">
-              <input class="animate-input" type="email" value="" name="email" maxlength="35" autocomplete="off" />
+              <input class="animate-input" type="email" value="" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signIn.id" name="email" maxlength="35" autocomplete="off" />
               <label class="animate-label">Email ID</label>
             </div>
           </div>
           <div class="row">
             <div class="w100per">
-              <input class="animate-input" type="password" value="" name="password" maxlength="35" autocomplete="off" />
+              <input class="animate-input" type="password" value="" onkeyup="this.setAttribute('value', this.value);" [(ngModel)]="signIn.pwd" name="password" maxlength="35" autocomplete="off" />
               <label class="animate-label">Password</label>
             </div>
           </div>
@@ -88,7 +88,7 @@
             </div>
           </div>
           <div class="row mt-10">
-            <button class="btn text-center sign-in-btn btn-primary">Sign In</button>
+            <button class="btn text-center sign-in-btn btn-primary" (click)="userSignIn()">Sign In</button>
           </div>
           <div class="forgot-password">
             <a href="javascript:void(0)">Forgot Password?</a>

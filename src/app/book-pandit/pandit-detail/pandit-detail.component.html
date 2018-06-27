@@ -1,0 +1,134 @@
+<div class="pandit-detail-section clearfix">
+  <div class="left-pandit">
+    <a href="javascript:void(0)"></a>
+  </div>
+  <div class="right-pandit">
+    <a href="javascript:void(0)"></a>
+  </div>
+  <div class="section">
+    <div class="status" data-aos="zoom-in">
+      <i class="fas fa-quote-left"></i> {{panditdetail.Pandit_Desc}}
+      <i class="fas fa-quote-right"></i>
+    </div>
+  </div>
+  <div class="pandit-bio section-dark clearfix" data-aos="fade-down">
+    <div class="section">
+      <div class="img-section">
+        <div class="img" [ngStyle]="{'background-image': 'url(' + _requestService.baseServiceUrl+'/' + panditdetail.Image_Path + ')'}"></div>
+        <p>{{panditdetail.Location}}</p>
+        <p>{{panditdetail.Distance}} Kms away from you</p>
+      </div>
+      <div class="desc">
+        <div class="name-section">
+          <div class="name"> {{panditdetail.Pandit_Name}}</div><span>[ {{panditdetail.ourRank}} ]</span></div>
+        <div class="qualification Montserrat"><span class="grad"><i class="fas fa-graduation-cap"></i> {{panditdetail.Education_Qualification}}</span><span class="language"><b>Language Known:</b> <span *ngFor="let language of panditdetail.Languages">{{language}}, </span></span></div>
+        <div class="about">{{panditdetail.Pandit_Desc}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="trust">
+    <ul class="clearfix">
+      <li>
+        <div class="tsBox clearfix">
+          <div class="tsBoxImg">
+            <a href="https://www.panditankitsharma.com/trusted-astrology-vashikaran-website.html"><img src="https://www.panditankitsharma.com/siteimages/trustico.jpg" alt="Trusted Astrology and Vashikaran Website"></a>
+          </div>
+          <div class="tsBoxContent">
+            <a href="https://www.panditankitsharma.com/trusted-astrology-vashikaran-website.html"><span class="tsBoxHeading">TRUSTED</span>
+				Astrology and Vashikaran Website</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="tsBox clearfix">
+          <div class="tsBoxImg">
+            <a href="https://www.panditankitsharma.com/clients-testimonial.html"><img src="https://www.panditankitsharma.com/siteimages/satisfyico.jpg" alt="8500+ Satisfied Clients Globally"></a>
+          </div>
+          <div class="tsBoxContent">
+            <a href="https://www.panditankitsharma.com/clients-testimonial.html"><span class="tsBoxHeading">{{panditdetail.Total_Clients}}</span>
+				Satisfied Clients Globally</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="tsBox clearfix">
+          <div class="tsBoxImg">
+            <a href="https://www.panditankitsharma.com/genuine-astrologer-and-vashikaran-specialist.html"><img src="https://www.panditankitsharma.com/siteimages/genuineico.jpg" alt="Genuine Love Vashikaran Specialist"></a>
+          </div>
+          <div class="tsBoxContent">
+            <a href="https://www.panditankitsharma.com/genuine-astrologer-and-vashikaran-specialist.html"><span class="tsBoxHeading">GENUINE</span>
+				Love Vashikaran Specialist</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="tsBox clearfix">
+          <div class="tsBoxImg">
+            <a href="https://www.panditankitsharma.com/marriage-astrologer-astrology.html"><img src="https://www.panditankitsharma.com/siteimages/expertico.jpg" alt="Expert Marriage, Marital &amp; Family Problems"></a>
+          </div>
+          <div class="tsBoxContent">
+            <a href="https://www.panditankitsharma.com/marriage-astrologer-astrology.html"><span class="tsBoxHeading">EXPERT</span>
+				Marriage, Marital &amp; Family Problems</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="overview clearfix">
+    <pandit-overview [reviews]="reviews" [schedule]="panditdetail.Schedule" [association]="panditdetail.Temples" [PanditAvgRating]="panditdetail.PanditAvgRating"></pandit-overview>
+  </div>
+
+  <div class="pandit-info clearfix  section-dark">
+    <div class="section">
+      <tabset>
+        <tab heading="Services/Poojas">
+          <services-pooja [poojaService]="poojaService"></services-pooja>
+        </tab>
+        <tab heading="Specialization">
+          <specialization></specialization>
+        </tab>
+        <tab heading="Awards">
+          <awards [awards]="awards"></awards>
+        </tab>
+      <tab heading="Photos">
+          <h3>Photos</h3>
+          <ul class="list-unstyled clearfix gallery">
+            <li *ngFor="let photos of photos;let i=index;">
+              <a href="javascript:void(0)" class="small-bg-img" [ngStyle]="{'background-image': 'url('+photos.src+')'}" (click)="open(i)">
+                <h5 class="ellipsis">{{photos.title}}</h5>
+              </a>
+            </li>
+          </ul>
+        </tab>
+       <tab heading="Videos">
+          <h3>Videos</h3>
+          <ul class="list-unstyled clearfix videos">
+            <li *ngFor="let video of videos;">
+              <a href="javascript:void(0)">
+                <video #homeVideo width="100%" height="200" controls controlsList="nodownload">
+                  <source [src]="video.videosrc" type="video/mp4">
+                </video>
+              </a>
+            </li>
+          </ul>
+        </tab>
+        <tab heading="Media Coverage">
+          <awards></awards>
+        </tab>
+        <tab heading="Articles">
+          <h3>Articles</h3>
+          <ul class="list-unstyled clearfix articles">
+            <li *ngFor="let article of articles;"><a href="javascript:void(0)"> {{article.Article_Name}}</a></li>
+          </ul>
+        </tab>
+        <tab heading="User Reviews">
+          <pandit-reviews [reviews]="reviews"></pandit-reviews>
+        </tab>
+        <tab heading="Q &amp; A">
+          <awards></awards>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+
+</div>

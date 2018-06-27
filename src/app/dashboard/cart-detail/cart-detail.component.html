@@ -1,0 +1,42 @@
+<h4 [innerHtml]="heading"></h4>
+<div class="order-list">
+  <div class="order" *ngFor="let order of orderList">
+    <div class="order-head">
+      <div class="order-number">{{order.number}}</div>
+      <div class="reciept"><i class="fas fa-download"></i> Tax Benefit Reciept</div>
+    </div>
+    <div class="detail">
+      <a routerLink='../{{order.URL}}' class="img" [title]="order.title">
+        <div [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl + order.Image_Path + ')'}"></div>
+      </a>
+      <div class="desc">
+        <div class="detail-desc">
+          <a routerLink='../{{order.URL}}'>
+            <h4>{{order.title}}</h4>
+          </a>
+          <div class="donation-type">{{order.donationType}}</div>
+        </div>
+        <div class="amount-discount">
+          <div class="donation-amount"><i class="fas fa-rupee-sign"></i> {{order.donationAmount | amountConverter:locale}}</div>
+          <div class="cashback" *ngIf="order.cashback">(-) <i class="fas fa-rupee-sign"></i> {{order.cashback | amountConverter:locale}}</div>
+        </div>
+        <div class="status-section">
+          <div class="status" *ngIf="order.status == 'success'">
+            <div class="badge badge-success">Completed</div>
+            <div class="msg">Your donation has been successfully done.</div>
+          </div>
+          <div class="status" *ngIf="order.status == 'inprogress'"> <span class="badge badge-warning">Inprogress</span>
+            <div class="msg">Your donation is in-progress.</div>
+          </div>
+          <div class="status" *ngIf="order.status == 'declined'"> <span class="badge badge-danger">Declined</span>
+            <div class="msg">Your donation has been declined.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="total">
+      <div class="order-on"><span>Ordered On</span> {{order.date}}</div>
+      <div class="total-order"><span>Order Total</span> <i class="fas fa-rupee-sign"></i> {{order.total | amountConverter:locale}}</div>
+    </div>
+  </div>
+</div>

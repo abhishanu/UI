@@ -5,28 +5,28 @@
       <ul>
         <li *ngFor="let pos of positions;let i = index" [ngClass]="{'active': pos.address == centerAddress}">
           <div class="details">
-            <div class="img" [ngStyle]="{'background-image': 'url(' + pos.thumb + ')'}"></div>
+            <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + pos.Image_Path + ')'}"></div>
             <div class="desc clearfix">
-              <h3 class="mt-1">{{pos.name}}</h3>
-              <div class="address">{{pos.address}}</div>
+              <h3 class="mt-1">{{pos.Temple_Name}}</h3>
+              <div class="address">{{pos.Address_Detail}}</div>
             </div>
           </div>
         </li>
       </ul>
     </div>
     <div class="mainSection">
-      <ngui-map center="{{centerAddress}}" zoom="6" style="height:100vh">
+      <ngui-map center="{{centerAddress}}" zoom="16" style="height:100vh">
         <marker [icon]="{
          url: '../../assets/images/om-map.png',
          anchor: [16,16],
          size: [18,18],
          scaledSize: [18,18]
-       }" *ngFor="let pos of positions;let i = index" [position]="pos.address" (click)="clicked($event,i)">
+       }" *ngFor="let pos of positions;let i = index" [position]="pos.Address_Detail" (click)="clicked($event,i)">
           <info-window id="iw{{i}}">
-            <div class="img" [ngStyle]="{'background-image': 'url(' + pos.thumb + ')'}"></div>
+            <div class="img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + pos.Image_Path + ')'}"></div>
             <div class="desc clearfix">
-              <h3 class="mt-1">{{pos.name}}</h3>
-              <div class="address">{{pos.address}}</div>
+              <h3 class="mt-1">{{pos.Temple_Name}}</h3>
+              <div class="address">{{pos.Address_Detail}}</div>
             </div>
           </info-window>
         </marker>

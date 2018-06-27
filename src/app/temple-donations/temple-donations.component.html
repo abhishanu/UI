@@ -1,22 +1,44 @@
-<div class="temple-donations clearfix insider" [@listAnimation]="3">
+<div class="temple-donations clearfix insider">
   <div class="section">
-    <h1>Showing -10 Temples in Delhi-NCR and NearBy</h1>
+    <h1>Showing - {{templeList.length}} Temples in {{_commonService.currentCity}} and NearBy</h1>
     <div id="wrap">
       <div class="filterSection">
         <h4>Sort By: <select class="form-control mt-2"><option>Popularity</option><option>Distance</option></select></h4>
 
         <h4>Filters</h4>
-        <div class="filterBox" *ngFor="let filterList of filters">
-          <h5>{{filterList.filterName}}</h5>
+        <div class="filterBox">
+          <h5>Pooja Services</h5>
+          <input type="text" [(ngModel)]="serviceName" placeholder="Enter Pooja Service...">
           <ul class="filterList">
-            <li *ngFor="let service of filterList.filterData">
+            <li *ngFor="let service of poojaServices | searchFilter:serviceName:'serviceName'">
               <label>
                 <div class="check-fake-box">
-                  <input type="checkbox" (click)="setFilters($event, filterList.filterName, service);"/>
+                  <input type="checkbox" (click)="setFilters($event, 'services', service.serviceName);"/>
                   <div class="check-fake unchecked"></div>
                   <div class="check-fake checked"><i class="fas fa-check"></i></div>
                 </div>
-                {{service}}
+                {{service.serviceName}}
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="filterBox">
+          <h5>Select Range</h5>
+          <input type="range" min="0" max="200" step='50' value="0" (input)="range($event)" class="mt-3">
+          <span class="range">{{rangeValue}} KMS</span>
+        </div>
+        <div class="filterBox">
+          <h5>Cities</h5>
+          <input type="text" [(ngModel)]="cityName" placeholder="Enter City name..">
+          <ul class="filterList">
+            <li *ngFor="let popular of _commonService.completeCitilist | searchFilter:cityName:'cityName'">
+              <label>
+                <div class="check-fake-box">
+                  <input [disabled]="rangeValue !== '0'" type="checkbox" (click)="setFilters($event, 'city', popular.cityName);"/>
+                  <div class="check-fake unchecked"></div>
+                  <div class="check-fake checked"><i class="fas fa-check"></i></div>
+                </div>
+                {{popular.cityName}}
               </label>
             </li>
           </ul>
@@ -24,26 +46,26 @@
       </div>
       <div class="main">
         <div class="contentSection">
-          <div class="filter-badge-sections">
+          <!--<div class="filter-badge-sections">
             <span *ngFor="let tags of appliedFilters" class="badge badge-default">{{tags.filterData}} <i class="fas fa-times" (click)="setFilters($event, '',tags.filterData)"></i></span>
-          </div>
+          </div>-->
           <div class="temple-list" *ngFor="let temples of templeList">
-            <div class="certified" *ngIf="temples.certified"></div>
+            <div class="certified" *ngIf="temples.Is_Authenticated !=='0'"></div>
             <div class="details">
-              <a routerLink="/{{temples.state | url}}/{{temples.city | url}}/temple-details/{{temples.name | url}}/{{temples.address | url}}/{{temples.id}}"
+              <a routerLink='../{{temples.URL}}'
                 class="img">
-                <div class="small-bg-img" [ngStyle]="{'background-image': 'url(' + temples.thumb + ')'}"></div>
+                <div class="small-bg-img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + temples.Image_Path + ')'}"></div>
               </a>
               <div class="desc clearfix">
-                <a href="" class="badge badge-success mr-1" *ngFor="let gods of temples.gods">{{gods}}</a>
+                <a href="" class="badge badge-success mr-1" *ngFor="let gods of temples.Pooja_tabs">{{gods}}</a>
                 <h3 class="mt-1">
-                  <a routerLink="/{{temples.state | url}}/{{temples.city | url}}/temple-details/{{temples.name | url}}/{{temples.address | url}}/{{temples.id}}">{{temples.name}}</a>
+                  <a routerLink="../{{temples.URL}}">{{temples.Temple_Name}}</a>
                 </h3>
-                <div class="address">{{temples.address}}, {{temples.city}}, {{temples.state}}</div>
+                <div class="address">{{temples.Address_Detail}}</div>
                 <div class="services">
-                  {{temples.services}}
+                  {{temples.Pooja_Services}}
                 </div>
-                <span class="badge badge-default ">{{temples.distance}}</span>
+                <span class="badge badge-default ">{{temples.Distance}}</span>
               </div>
             </div>
             <div class="needs" *ngIf="temples.needs && temples.needs.length">
@@ -55,14 +77,14 @@
               </ul>
             </div>
             <div class="cart-footer clearfix">
-              <a href="javascript:void(0)" class="enquiry"><i class="fas fa-phone"></i> Enquiry</a>
-              <a href="javascript:void(0)" class="view_map" (click)="viewOnMap(temples.address)"><i class="fas fa-map"></i>  View on Map</a>
+              <a href="tel:{{temples.Contact_No}}" class="enquiry"><i class="fas fa-phone"></i> Enquiry</a>
+              <a href="javascript:void(0)" class="view_map" (click)="viewOnMap(temples.Address_Detail)"><i class="fas fa-map"></i>  View on Map</a>
               <a href="javascript:void(0)" class="donate"><i class="fas fa-rupee-sign"></i>  Donate Now</a>
             </div>
           </div>
         </div>
         <div class="sidebarSection">
-          <popular-across-india></popular-across-india>
+          <popular-across-india [data]=acrossTemples></popular-across-india>
         </div>
       </div>
     </div>

@@ -1,0 +1,8 @@
+<div class="award-section">
+  <h3>AWARDS &amp; ACHIEVEMENTS</h3>
+  <div class="award" *ngFor="let award of awards">
+    <div class="img" [ngStyle]="{'background-image': 'url('  + _requestService.baseServiceUrl + award.Image_Id + ')'}"></div>
+    <div class="title">{{award.Award_Name}}</div>
+    <div class="desc">{{award.Desc}}</div>
+  </div>
+</div>

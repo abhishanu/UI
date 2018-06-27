@@ -1,7 +1,17 @@
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css";
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Khand:500");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Tangerine");
+@import url("https://fonts.googleapis.com/css?family=Niconne|Oswald");
 .lato {
   font-family: 'Lato', sans-serif; }
+
+.Montserrat {
+  font-family: 'Montserrat', sans-serif; }
+
+.Tangerine {
+  font-family: 'Tangerine', serif; }
 
 * {
   box-sizing: border-box;
@@ -10,7 +20,8 @@
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box; }
 
-body, html {
+body,
+html {
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -24,7 +35,16 @@ body {
   max-width: 1200px;
   margin: auto; }
 
-ul, li, p, h1, h2, h3, h4, h5, h6, form {
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form {
   padding: 0;
   margin: 0; }
 
@@ -35,9 +55,20 @@ a {
 a.f_blue:hover {
   color: #004c9e; }
 
-a.img, a > img {
+a.img,
+a > img {
   outline: none;
   border: none; }
+
+.box-section {
+  padding: 15px;
+  background: #FFF;
+  margin: 20px 0 0; }
+  .box-section h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: bold; }
 
 /*
 .img, img{
@@ -70,7 +101,8 @@ a.img, a > img {
       top: -1px;
       display: block;
       left: 2px;
-      font-size: 1.375em; }
+      font-size: 1.375em;
+      border-color: #28a745; }
   .check-fake-box input[type="checkbox"]:checked ~ div.check-fake.checked {
     display: inline-block; }
   .check-fake-box input[type="checkbox"]:checked ~ div.check-fake.unchecked {
@@ -305,8 +337,9 @@ a.img, a > img {
   margin: 0px 0 30px; }
 
 .box-head h2 {
-  font-size: 1.675em;
-  color: #394048; }
+  font-size: 3em;
+  color: #394048;
+  font-family: 'Niconne', cursive; }
 
 .box-head h2:after {
   content: " ";
@@ -334,7 +367,7 @@ a.img, a > img {
   overflow: hidden; }
 
 .section-bg {
-  padding: 50px 0;
+  padding: 30px 0 50px 0;
   background-size: 100px 100px;
   background-position: center 10px;
   background-repeat: no-repeat; }
@@ -344,6 +377,33 @@ a.img, a > img {
 
 .section-bg.section-light {
   background-image: url("./assets/images/om-dark.svg"); }
+
+.rotate-45 {
+  transform: rotate(45deg); }
+
+.bg-img {
+  background-repeat: no-repeat;
+  background-size: 100% !important;
+  background-position: center center;
+  transition: all ease 500ms;
+  -webkit-transition: all ease 500ms;
+  -moz-transition: all ease 500ms;
+  -o-transition: all ease 500ms;
+  -ms-transition: all ease 500ms; }
+  .bg-img:hover {
+    background-size: 120% !important; }
+
+.small-bg-img {
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: center center;
+  transition: all ease 500ms;
+  -webkit-transition: all ease 500ms;
+  -moz-transition: all ease 500ms;
+  -o-transition: all ease 500ms;
+  -ms-transition: all ease 500ms; }
+  .small-bg-img:hover {
+    transform: scale(1.1); }
 
 /*BACKGROUND COLORS*/
 .bg_green1 {
@@ -650,7 +710,12 @@ h5 {
 .input-fluid {
   width: 100%; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding: 0;
   margin: 0; }
 
@@ -769,7 +834,9 @@ nav.navbar {
     max-width: 540px;
     position: relative; }
     nav.navbar .primary-search input[type="search"] {
-      padding-right: 30px; }
+      padding-right: 30px;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px; }
     nav.navbar .primary-search .fa-search {
       position: absolute;
       right: 12px;
@@ -780,13 +847,15 @@ nav.navbar {
 
 .banner-carousel {
   padding: 0; }
-  .banner-carousel .rightRs, .banner-carousel .leftRs {
+  .banner-carousel .rightRs,
+  .banner-carousel .leftRs {
     position: absolute;
     top: 50%;
     font-size: 3em;
     margin-top: -36px;
     left: 30px; }
-    .banner-carousel .rightRs i, .banner-carousel .leftRs i {
+    .banner-carousel .rightRs i,
+    .banner-carousel .leftRs i {
       color: #FFF;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
   .banner-carousel .rightRs {
@@ -800,11 +869,12 @@ nav.navbar {
   .banner-carousel .tile {
     box-shadow: none !important;
     position: absolute;
-    left: 0;
+    left: 0px;
     right: 0;
     bottom: 0px;
-    text-align: center;
+    text-align: left;
     padding-bottom: 20px;
+    padding-left: 30px;
     background: transparent 0%;
     background: -moz-linear-gradient(top, transparent 0% 0%, rgba(0, 0, 0, 0.8) 100% 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, transparent 0%), color-stop(100%, rgba(0, 0, 0, 0.8) 100%));
@@ -814,8 +884,11 @@ nav.navbar {
     background: linear-gradient(to bottom, transparent 0% 0%, rgba(0, 0, 0, 0.8) 100% 100%);
     padding-top: 10px; }
     .banner-carousel .tile h2 {
-      font-weight: 900; }
-    .banner-carousel .tile h2, .banner-carousel .tile p {
+      font-size: 3.2em;
+      font-family: 'Tangerine', cursive;
+      font-weight: bold; }
+    .banner-carousel .tile h2,
+    .banner-carousel .tile p {
       color: #FFF;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
   .banner-carousel .ngxcarouselPoint {
@@ -831,7 +904,7 @@ nav.navbar {
         background: #bf2d26 !important; }
 
 .search-carousel {
-  background: #007bff; }
+  background: #921610; }
   .search-carousel .heading {
     position: absolute;
     left: 10px;
@@ -841,7 +914,8 @@ nav.navbar {
     color: #FFF; }
     .search-carousel .heading h3 {
       font-size: 0.875em;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      font-weight: bold; }
     .search-carousel .heading p {
       font-size: 0.750em; }
   .search-carousel .section {
@@ -860,13 +934,14 @@ nav.navbar {
           font-weight: 700;
           font-size: 0.875em; }
         .search-carousel .section .item .tile p {
-          color: #a9d3ff;
+          color: #ffc107;
           font-weight: 300;
           font-size: 0.750em; }
   .search-carousel .ngxcarousel {
     padding-left: 220px;
     position: relative; }
-    .search-carousel .ngxcarousel .leftRs, .search-carousel .ngxcarousel .rightRs {
+    .search-carousel .ngxcarousel .leftRs,
+    .search-carousel .ngxcarousel .rightRs {
       position: absolute;
       top: 50%;
       font-size: 2em;
@@ -878,8 +953,12 @@ nav.navbar {
       right: 0; }
 
 .events-festival {
-  background-color: #E0E0E0; }
-  .events-festival .nav-tabs, .events-festival .nav-tabs:hover {
+  background: url("./assets/images/bg/bg-flowers.png"), url("./assets/images/om-light.svg");
+  background-size: 54%, 100px 100px;
+  background-position: -112px 0px, center 10px;
+  background-repeat: no-repeat, no-repeat; }
+  .events-festival .nav-tabs,
+  .events-festival .nav-tabs:hover {
     border: none; }
   .events-festival .nav-tabs .nav-link.active {
     background: #FFF;
@@ -887,7 +966,9 @@ nav.navbar {
   .events-festival .nav-tabs .nav-item {
     margin-right: 3px;
     border-radius: 5px 5px 0 0;
-    background: #DDD;
+    background: #FFF;
+    border: 1px solid #921610;
+    border-bottom: 0px;
     margin-bottom: 0;
     box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.15) inset;
     -webkit-box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.15) inset;
@@ -896,9 +977,14 @@ nav.navbar {
     -ms-box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.15) inset; }
     .events-festival .nav-tabs .nav-item a {
       color: #d97b1c; }
-    .events-festival .nav-tabs .nav-item:hover, .events-festival .nav-tabs .nav-item.active {
-      background: #FFF; }
-  .events-festival .nav-link, .events-festival .nav-link:hover {
+    .events-festival .nav-tabs .nav-item.active {
+      background: #921610; }
+      .events-festival .nav-tabs .nav-item.active a {
+        background: #921610;
+        color: #fff;
+        font-weight: bold; }
+  .events-festival .nav-link,
+  .events-festival .nav-link:hover {
     padding: 10px 30px;
     border: none !important; }
   .events-festival .event-tabs {
@@ -916,7 +1002,7 @@ nav.navbar {
       border-radius: 4px; }
       .events-festival .event-tabs .tab-container .tab-content {
         zoom: 1;
-        background: #FFF;
+        border: 1px solid #921610;
         padding: 5px 7px; }
       .events-festival .event-tabs .tab-container .tab-content:before,
       .events-festival .event-tabs .tab-container .tab-content:after {
@@ -959,42 +1045,6 @@ nav.navbar {
       margin-right: 0px !important; }
     .events-festival .featured-event .event-img h2 {
       font-weight: 900; }
-    .events-festival .featured-event .event-date {
-      background: #FFF;
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      border-radius: 3px; }
-      .events-festival .featured-event .event-date .date {
-        float: left;
-        font-size: 1.250em;
-        font-weight: 900;
-        padding: 7px 5px;
-        line-height: 1.250rem;
-        margin-right: 37px;
-        color: #000;
-        text-align: center; }
-      .events-festival .featured-event .event-date .month-year {
-        font-weight: 500;
-        color: #FFF;
-        background: #bf2d26;
-        padding: 5px;
-        text-align: center;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 0 3px 3px 0; }
-        .events-festival .featured-event .event-date .month-year .month {
-          font-size: 0.750em;
-          text-transform: uppercase;
-          font-weight: 900;
-          line-height: 0.750rem; }
-        .events-festival .featured-event .event-date .month-year .year {
-          font-size: 0.675em;
-          line-height: 0.675rem;
-          margin-top: 1px;
-          color: #DDD; }
     .events-festival .featured-event .description {
       width: 100%;
       color: #FFF;
@@ -1033,131 +1083,136 @@ nav.navbar {
   .events-festival .event-img:hover .description {
     bottom: 0px; }
 
-.temple-donations .temple_list ul {
-  background: #E0E0E0;
-  float: right;
-  width: 100%;
-  max-width: 350px;
-  max-height: 490px;
-  overflow-y: auto;
-  padding-left: 20px; }
-  .temple-donations .temple_list ul::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-    background-color: #F5F5F5; }
-  .temple-donations .temple_list ul::-webkit-scrollbar {
-    width: 5px;
-    background-color: #F5F5F5; }
-  .temple-donations .temple_list ul::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #000; }
-  .temple-donations .temple_list ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    background: #333;
-    position: relative;
-    /*@include boxShadow(0 -1px 6px rgba(0, 0, 0, 0.35) inset);*/ }
-    .temple-donations .temple_list ul li a {
-      padding: 5px;
-      display: block; }
-      .temple-donations .temple_list ul li a .img {
-        width: 120px;
-        height: 70px;
-        float: left;
-        margin-right: 10px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center; }
-      .temple-donations .temple_list ul li a h4 {
-        color: #FFF; }
-      .temple-donations .temple_list ul li a:after {
-        content: " ";
-        display: table;
-        clear: both; }
-    .temple-donations .temple_list ul li:hover {
-      background: #666; }
-    .temple-donations .temple_list ul li.active {
-      background: #bf2d26;
-      box-shadow: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      -o-box-shadow: none;
-      -ms-box-shadow: none; }
-      .temple-donations .temple_list ul li.active:after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        display: block;
-        border: 15px solid #bf2d26;
-        border-left: 15px solid transparent;
-        border-top: 15px solid transparent;
-        border-bottom: 15px solid transparent;
-        left: -29px;
-        top: 50%;
-        margin-top: -15px; }
-
-.temple-donations .temple_details {
-  height: 490px;
-  position: relative;
-  margin-right: 350px;
-  /*border: 5px solid $blue;*/ }
-  .temple-donations .temple_details:hover:after {
-    background: rgba(0, 0, 0, 0.6); }
-  .temple-donations .temple_details .temple_image {
-    width: 50%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    float: left; }
-  .temple-donations .temple_details .details {
-    background: #e0e0e0;
-    display: table-cell;
-    width: 50%;
-    height: 100%;
+.temple-donations {
+  background: url("./assets/images/bg/monuments.png") repeat-x bottom center;
+  background-size: 340px 55px; }
+  .temple-donations .temple_list ul {
+    background: #E0E0E0;
     float: right;
-    padding: 30px;
-    padding-right: 0; }
-    .temple-donations .temple_details .details .content {
+    width: 100%;
+    max-width: 350px;
+    max-height: 490px;
+    overflow-y: auto;
+    padding-left: 20px; }
+    .temple-donations .temple_list ul::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      background-color: #F5F5F5; }
+    .temple-donations .temple_list ul::-webkit-scrollbar {
+      width: 5px;
+      background-color: #F5F5F5; }
+    .temple-donations .temple_list ul::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #000; }
+    .temple-donations .temple_list ul li {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: #333;
       position: relative;
-      z-index: 2; }
-      .temple-donations .temple_details .details .content h3 {
-        font-weight: 700; }
-      .temple-donations .temple_details .details .content h3, .temple-donations .temple_details .details .content p {
-        color: #000; }
-      .temple-donations .temple_details .details .content h3 + p {
-        margin-top: 10px;
-        line-height: normal;
-        font-size: 0.875em;
-        color: #444; }
-      .temple-donations .temple_details .details .content .needs {
-        margin-top: 30px; }
-        .temple-donations .temple_details .details .content .needs h4 {
-          color: #000;
+      /*@include boxShadow(0 -1px 6px rgba(0, 0, 0, 0.35) inset);*/ }
+      .temple-donations .temple_list ul li a {
+        padding: 5px;
+        display: block; }
+        .temple-donations .temple_list ul li a .img {
+          width: 120px;
+          height: 70px;
+          float: left;
+          margin-right: 10px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center; }
+        .temple-donations .temple_list ul li a h4 {
+          color: #FFF; }
+        .temple-donations .temple_list ul li a:after {
+          content: " ";
+          display: table;
+          clear: both; }
+      .temple-donations .temple_list ul li:hover {
+        background: #666; }
+      .temple-donations .temple_list ul li.active {
+        background: #bf2d26;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        -ms-box-shadow: none; }
+        .temple-donations .temple_list ul li.active:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          display: block;
+          border: 15px solid #bf2d26;
+          border-left: 15px solid transparent;
+          border-top: 15px solid transparent;
+          border-bottom: 15px solid transparent;
+          left: -29px;
+          top: 50%;
+          margin-top: -15px; }
+  .temple-donations .temple_details {
+    height: 490px;
+    position: relative;
+    margin-right: 350px;
+    /*border: 5px solid $blue;*/ }
+    .temple-donations .temple_details:hover:after {
+      background: rgba(0, 0, 0, 0.6); }
+    .temple-donations .temple_details .temple_image {
+      width: 50%;
+      height: 490px;
+      overflow: hidden;
+      float: left; }
+      .temple-donations .temple_details .temple_image > div {
+        width: 100%;
+        height: 100%; }
+    .temple-donations .temple_details .details {
+      background: #e0e0e0;
+      display: table-cell;
+      width: 50%;
+      height: 100%;
+      float: right;
+      padding: 30px;
+      padding-right: 0; }
+      .temple-donations .temple_details .details .content {
+        position: relative;
+        z-index: 2; }
+        .temple-donations .temple_details .details .content h3 {
           font-weight: 700;
-          font-size: 1.1250rem; }
-        .temple-donations .temple_details .details .content .needs ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          margin-top: 10px; }
-          .temple-donations .temple_details .details .content .needs ul li {
-            color: #333;
-            margin-bottom: 5px;
-            font-size: 0.875em; }
-            .temple-donations .temple_details .details .content .needs ul li i {
-              margin-right: 5px; }
-    .temple-donations .temple_details .details .btn {
-      margin-top: 20px; }
+          font-family: 'Oswald', sans-serif; }
+        .temple-donations .temple_details .details .content h3,
+        .temple-donations .temple_details .details .content p {
+          color: #000; }
+        .temple-donations .temple_details .details .content h3 + p {
+          margin-top: 10px;
+          line-height: normal;
+          font-size: 0.875em;
+          color: #444; }
+        .temple-donations .temple_details .details .content .needs {
+          margin-top: 30px; }
+          .temple-donations .temple_details .details .content .needs h4 {
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1250rem; }
+          .temple-donations .temple_details .details .content .needs ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 10px; }
+            .temple-donations .temple_details .details .content .needs ul li {
+              color: #333;
+              margin-bottom: 5px;
+              font-size: 0.875em; }
+              .temple-donations .temple_details .details .content .needs ul li i {
+                margin-right: 5px; }
+      .temple-donations .temple_details .details .btn {
+        margin-top: 20px; }
 
 /*Curated Experiences*/
 .section-bg.curated {
@@ -1167,7 +1222,10 @@ nav.navbar {
 
 /*Book a pandit*/
 .section-book-pandit {
-  background: #E0E0E0; }
+  background: url(/assets/images/bg/1.png) repeat center center;
+  background-size: 170px; }
+  .section-book-pandit .section-bg.section-dark {
+    background-color: transparent; }
   .section-book-pandit .pandit-list .pandit-box {
     float: left;
     margin: 10px 0px;
@@ -1244,7 +1302,9 @@ nav.navbar {
       padding-left: 500px;
       min-height: 200px;
       width: 100%; }
-  .section-book-pandit .about-tab h3, .section-book-pandit .pooja-offered h3, .section-book-pandit .availability h3 {
+  .section-book-pandit .about-tab h3,
+  .section-book-pandit .pooja-offered h3,
+  .section-book-pandit .availability h3 {
     margin: 15px 0; }
   .section-book-pandit .about-tab > div img {
     max-width: 100px;
@@ -1320,7 +1380,8 @@ nav.navbar {
   .curated-experiences-section .box-head h2 {
     font-size: 1.272em;
     color: #1b5694;
-    padding-bottom: 27px; }
+    padding-bottom: 27px;
+    font-family: 'Niconne', cursive; }
 
 /*Gallery*/
 .main-gallery {
@@ -1330,6 +1391,7 @@ nav.navbar {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  background-position: center;
   overflow: hidden; }
 
 .sub-gallery {
@@ -1345,6 +1407,7 @@ nav.navbar {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
+  background-position: center;
   overflow: hidden; }
 
 .sub-gallery .sub-gallery-2 {
@@ -1355,7 +1418,8 @@ nav.navbar {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background-position: center; }
 
 .gallery-section .description {
   width: 100%;
@@ -1378,7 +1442,9 @@ nav.navbar {
   background: -ms-linear-gradient(top, transparent 0% 0%, rgba(0, 0, 0, 0.8) 100% 100%);
   background: linear-gradient(to bottom, transparent 0% 0%, rgba(0, 0, 0, 0.8) 100% 100%); }
 
-.gallery-section .main-gallery:hover .description, .gallery-section .sub-gallery-1:hover .description, .gallery-section .sub-gallery-2:hover .description {
+.gallery-section .main-gallery:hover .description,
+.gallery-section .sub-gallery-1:hover .description,
+.gallery-section .sub-gallery-2:hover .description {
   bottom: 0px; }
 
 /*Audio Video*/
@@ -1396,7 +1462,8 @@ nav.navbar {
   margin-right: 10px;
   border: 1px solid; }
 
-.video-section .rightRs, .video-section .leftRs {
+.video-section .rightRs,
+.video-section .leftRs {
   position: absolute;
   top: 50%;
   margin-top: -12px; }
@@ -1407,7 +1474,8 @@ nav.navbar {
 .video-section .leftRs {
   left: 10px; }
 
-.video-section .rightRs i, .video-section .leftRs i {
+.video-section .rightRs i,
+.video-section .leftRs i {
   color: #FFF;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
 
@@ -1456,7 +1524,8 @@ nav.navbar {
   -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #e27412; }
 
-.audio-detail .title, .audio-detail .date {
+.audio-detail .title,
+.audio-detail .date {
   float: left;
   font-size: 0.675em;
   color: #b2b3b5;
@@ -1471,13 +1540,16 @@ nav.navbar {
   direction: rtl;
   text-align: right;
   float: right;
-  line-height: 0.75rem; }
+  line-height: 0.75rem;
+  width: 100%; }
+  .rating i {
+    color: gold;
+    padding: 0 2px; }
+  .rating input[type=radio] {
+    float: left; }
 
 .section-book-pandit .pandit-list .pandit-box div.pandit h5 {
   display: inline-block; }
-
-.rating i {
-  color: gold; }
 
 .section-footer {
   background: #111;
@@ -1486,7 +1558,8 @@ nav.navbar {
   z-index: 1;
   color: #fff;
   font-size: 0.575em; }
-  .section-footer .download-section > div, .section-footer .religios-india-footer-section {
+  .section-footer .download-section > div,
+  .section-footer .religios-india-footer-section {
     width: 33%;
     float: left; }
   .section-footer .download-section > div img {
@@ -1495,7 +1568,8 @@ nav.navbar {
     width: 70%;
     margin: 10px 2% 0 0;
     float: left; }
-  .section-footer .subscribe a, .section-footer .section-footer .connect > div {
+  .section-footer .subscribe a,
+  .section-footer .section-footer .connect > div {
     margin-top: 10px; }
   .section-footer .section-footer hr {
     border-top: 1px solid #5f5050; }
@@ -1514,7 +1588,8 @@ nav.navbar {
     color: #c2c3c4; }
 
 /****Calendar***/
-.cal-month-view .cal-cell-top, .cal-month-view .cal-day-cell {
+.cal-month-view .cal-cell-top,
+.cal-month-view .cal-day-cell {
   min-height: initial; }
 
 .cal-month-view .cal-day-cell.cal-today .cal-day-number {
@@ -1567,51 +1642,58 @@ mwl-calendar-open-day-events {
         float: right; }
 
 /**Feedback**/
-.feedback .tile {
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  -o-box-shadow: none !important;
-  -ms-box-shadow: none !important; }
+.feedback {
+  background: url("./assets/images/bg/BG1.png") repeat; }
+  .feedback h2 {
+    color: #000000; }
+  .feedback .tile {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -o-box-shadow: none !important;
+    -ms-box-shadow: none !important; }
+  .feedback .feedback-body {
+    position: relative; }
+    .feedback .feedback-body img {
+      position: absolute;
+      max-width: 60px;
+      height: auto;
+      top: 20px;
+      border: 4px solid #fff;
+      border-radius: 50%; }
+    .feedback .feedback-body .meta {
+      padding: 20px;
+      padding-left: 80px; }
+      .feedback .feedback-body .meta h3 {
+        font-size: 1.225em;
+        font-weight: 900;
+        display: none; }
+      .feedback .feedback-body .meta p.comment {
+        font-size: 1em;
+        color: #ffffff; }
+        .feedback .feedback-body .meta p.comment i.fa-quote-left {
+          margin-right: 10px;
+          color: #000000; }
+        .feedback .feedback-body .meta p.comment i.fa-quote-right {
+          margin-left: 10px;
+          color: #000000; }
+      .feedback .feedback-body .meta .rating {
+        float: none;
+        text-align: left;
+        margin-top: 5px; }
+      .feedback .feedback-body .meta h4 {
+        margin-top: 10px;
+        color: #ffffff; }
+      .feedback .feedback-body .meta .location {
+        color: gold;
+        font-size: 0.675em; }
 
-.feedback .feedback-body {
-  position: relative; }
-  .feedback .feedback-body img {
-    position: absolute;
-    max-width: 60px;
-    height: auto;
-    top: 20px; }
-  .feedback .feedback-body .meta {
-    padding: 20px;
-    padding-left: 80px; }
-    .feedback .feedback-body .meta h3 {
-      font-size: 1.225em;
-      font-weight: 900;
-      display: none; }
-    .feedback .feedback-body .meta p.comment {
-      font-size: 1em; }
-      .feedback .feedback-body .meta p.comment i.fa-quote-left {
-        margin-right: 10px;
-        color: #bf2d26; }
-      .feedback .feedback-body .meta p.comment i.fa-quote-right {
-        margin-left: 10px;
-        color: #bf2d26; }
-    .feedback .feedback-body .meta .rating {
-      float: none;
-      text-align: left;
-      margin-top: 5px; }
-    .feedback .feedback-body .meta h4 {
-      margin-top: 10px; }
-    .feedback .feedback-body .meta .location {
-      color: #888;
-      font-size: 0.675em; }
-
-.sidebarSection .item {
+.sidebarSection .across-india .item {
   width: 50%;
   padding: 5px 5px;
   float: left; }
 
-.sidebarSection .tile {
+.sidebarSection .across-india .tile {
   display: inline-block;
   white-space: initial;
   box-sizing: border-box;
@@ -1619,7 +1701,8 @@ mwl-calendar-open-day-events {
   width: 100%;
   transition: transform .6s ease; }
 
-.sidebarSection, .temple-donations .main .contentSection {
+.sidebarSection,
+.temple-donations .main .contentSection {
   padding: 0px !important;
   background: none !important; }
 
@@ -1652,75 +1735,6 @@ mwl-calendar-open-day-events {
   display: block;
   font-size: 0.675em; }
 
-/***Temple Donation***/
-.temple-donations {
-  background: #EEE;
-  padding: 20px 0; }
-  .temple-donations .filterSection {
-    border: 1px solid #DDD;
-    width: 200px;
-    float: left;
-    padding: 15px;
-    background: #FFF;
-    border-radius: 5px; }
-    .temple-donations .filterSection h4 {
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #DDD;
-      font-weight: bold; }
-    .temple-donations .filterSection .filterBox h5 {
-      text-transform: uppercase;
-      margin-top: 10px;
-      font-weight: bold; }
-    .temple-donations .filterSection .filterBox .filterList {
-      list-style: none;
-      padding: 0;
-      margin: 5px 0 10px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #DDD;
-      max-height: 180px;
-      overflow-y: auto; }
-      .temple-donations .filterSection .filterBox .filterList::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
-        background-color: #F5F5F5; }
-      .temple-donations .filterSection .filterBox .filterList::-webkit-scrollbar {
-        width: 5px;
-        background-color: #F5F5F5; }
-      .temple-donations .filterSection .filterBox .filterList::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: "#666"; }
-      .temple-donations .filterSection .filterBox .filterList li {
-        margin-bottom: 3px; }
-        .temple-donations .filterSection .filterBox .filterList li label {
-          user-select: none;
-          cursor: pointer;
-          margin: 0;
-          font-size: 0.875rem;
-          display: block; }
-  .temple-donations .main {
-    padding-left: 220px; }
-    .temple-donations .main .contentSection {
-      float: left;
-      background: #FFF;
-      border-radius: 5px;
-      width: calc(60% - 20px); }
-    .temple-donations .main .sidebarSection {
-      float: right;
-      width: 40%;
-      background: #FFF;
-      border-radius: 5px;
-      padding: 15px; }
-
 /***Single Page**/
 .singlePage {
   padding: 20px 0;
@@ -1732,14 +1746,13 @@ mwl-calendar-open-day-events {
       text-transform: capitalize;
       color: #000; }
       .singlePage .mainSection .mainSectionContent h1 + p {
-        color: #999;
+        color: #666666;
         font-size: 0.875em; }
     .singlePage .mainSection .mainSectionContent .mainBanner {
-      background-repeat: no-repeat;
-      background-size: cover;
       background-position: center center;
       min-height: 200px;
-      border-radius: 5px 5px 0 0; }
+      border-radius: 5px 5px 0 0;
+      background-size: cover; }
   .singlePage .sidebarSection {
     float: right;
     width: 100%;
@@ -1748,11 +1761,2138 @@ mwl-calendar-open-day-events {
       text-transform: uppercase;
       font-size: 0.875rem; }
 
-.singlePage .mainSection .mainSectionContent.temple-detail {
-  background: grey !important; }
+.event-date {
+  background: #bf2d26;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border-radius: 3px; }
+  .event-date .date {
+    float: left;
+    font-size: 1.250em;
+    font-weight: 900;
+    padding: 7px 5px;
+    line-height: 1.250rem;
+    margin-right: 37px;
+    color: #fff;
+    text-align: center; }
+  .event-date .month-year {
+    font-weight: 500;
+    color: #000;
+    background: #FFF;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0 3px 3px 0; }
+    .event-date .month-year .month {
+      font-size: 0.750em;
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 0.750rem; }
+    .event-date .month-year .year {
+      font-size: 0.675em;
+      line-height: 0.675rem;
+      margin-top: 1px;
+      color: #000; }
+
+.insider {
+  padding: 20px 0;
+  background: #EEE; }
+
+.back-to-top {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer; }
+
+.choose-location {
+  position: relative; }
+
+.cityList {
+  position: absolute;
+  right: -15px;
+  top: 24px;
+  background: #ffc107;
+  z-index: 111111;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  color: #333;
+  width: 324px; }
+
+.dropdown-menu {
+  width: 303px; }
+
+/*Login page*/
+.register-popup-form {
+  width: 1008px;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  height: 410px;
+  background: #fff;
+  /* background-image: url(/assets/images/bg/design.png);*/
+  border-radius: 4px;
+  box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.58);
+  -o-box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.58);
+  -ms-box-shadow: 0px 0px 21px 5px rgba(0, 0, 0, 0.58);
+  margin: -205px auto;
+  padding: 20px; }
+  .register-popup-form .close {
+    position: absolute;
+    right: 2px;
+    top: 2px; }
+  .register-popup-form .sign-up {
+    width: 60%;
+    float: left;
+    border-right: 1px solid #dbdbdb;
+    height: 100%; }
+  .register-popup-form .sign-in {
+    padding-left: 60%;
+    margin-left: 20px; }
+  .register-popup-form .sign-up-content > h3 {
+    color: #f16521; }
+  .register-popup-form .sign-up-content > p {
+    font-size: 0.875em; }
+
+#dropOverlayWrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-100%);
+  transition: ease-out 500ms all; }
+
+#dropOverlayWrap.active {
+  transform: translateY(0%); }
+
+@keyframes blink {
+  0% {
+    opacity: .2; }
+  20% {
+    opacity: 1; }
+  100% {
+    opacity: .2; } }
+
+.loaderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(0, 23, 41, 0.9), rgba(0, 23, 41, 0.9));
+  z-index: 999999; }
+
+.loaderOverlay h2 {
+  color: #FFF;
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: 0;
+  left: 0;
+  margin: -70px 0; }
+
+.loaderOverlay span {
+  /**
+     * Use the blink animation, which is defined above
+     */
+  font-size: 65px;
+  animation-name: blink;
+  /**
+     * The animation should take 1.4 seconds
+     */
+  animation-duration: 1.4s;
+  /**
+     * It will repeat itself forever
+     */
+  animation-iteration-count: infinite;
+  /**
+     * This makes sure that the starting style (opacity: .2)
+     * of the animation is applied before the animation starts.
+     * Otherwise we would see a short flash or would have
+     * to set the default styling of the dots to the same
+     * as the animation. Same applies for the ending styles.
+     */
+  animation-fill-mode: both; }
+
+.loaderOverlay span:nth-child(2) {
+  /**
+     * Starts the animation of the third dot
+     * with a delay of .2s, otherwise all dots
+     * would animate at the same time
+     */
+  animation-delay: .2s; }
+
+.loaderOverlay span:nth-child(3) {
+  /**
+     * Starts the animation of the third dot
+     * with a delay of .4s, otherwise all dots
+     * would animate at the same time
+     */
+  animation-delay: .4s; }
+
+/*Shlok*/
+.shlok-bg {
+  background: url(/assets/images/bg/bg-shloks2.png);
+  background-repeat: repeat; }
+  .shlok-bg .shlok-carousel {
+    padding: 20px 0; }
+    .shlok-bg .shlok-carousel p {
+      font-size: 2.75em;
+      text-align: center;
+      font-family: 'Khand', sans-serif; }
+      .shlok-bg .shlok-carousel p span {
+        display: inline-block; }
+      .shlok-bg .shlok-carousel p i {
+        color: #bf2d26; }
+        .shlok-bg .shlok-carousel p i:first-child {
+          vertical-align: top; }
+      .shlok-bg .shlok-carousel p::after {
+        content: " ";
+        height: 1px;
+        background: #E0E0E0;
+        display: block;
+        max-width: 80%;
+        margin: 10px auto 0; }
+    .shlok-bg .shlok-carousel h5 {
+      font-size: 1em;
+      color: #750500;
+      text-align: center;
+      font-family: 'Kalam', cursive;
+      padding-top: 20px; }
+    .shlok-bg .shlok-carousel .tile {
+      box-shadow: none !important; }
+
+.photo-gallery {
+  background: url("./assets/images/bg/Peacock-Feather.png"), url("./assets/images/bg/Peacock-Feather-right.png") #e0e0e0;
+  background-position: bottom left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 201px, 180px; }
+  .photo-gallery > div {
+    background-color: transparent; }
+
+.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div {
+  color: #000; }
+
+.dashboard h3 {
+  font-size: 1.2em;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px; }
+
+.dashboard .left-menu {
+  width: 18%;
+  list-style: none;
+  padding-right: 2%;
+  border-right: 1px solid #ccc;
+  margin-bottom: 30px;
+  float: left; }
+  .dashboard .left-menu > li {
+    padding: 10px 0 20px;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    font-size: 0.875em;
+    color: #bf2d26; }
+    .dashboard .left-menu > li:last-child {
+      border-bottom: none; }
+    .dashboard .left-menu > li .sub-menu {
+      list-style: none;
+      padding-left: 1%;
+      padding-top: 10px;
+      font-size: 0.875em; }
+      .dashboard .left-menu > li .sub-menu > li {
+        padding: 3px 0; }
+        .dashboard .left-menu > li .sub-menu > li.active a {
+          color: #0bc6a0;
+          font-weight: 900;
+          font-size: 1.1em; }
+
+.dashboard .dashboard-content {
+  padding-left: 20%; }
+  .dashboard .dashboard-content .order-list .order {
+    width: 100%;
+    margin: 20px 0 10px;
+    background: #fff;
+    border: 1px solid #e2e3e4;
+    float: left; }
+    .dashboard .dashboard-content .order-list .order .order-head {
+      background: #f9f9f9;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 12px 15px;
+      width: 100%;
+      float: left; }
+      .dashboard .dashboard-content .order-list .order .order-head .order-number {
+        background: #f9f9f9;
+        border: 1px solid #d7d7d7;
+        padding: 5px 7px;
+        border-radius: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-align: center;
+        float: left;
+        font-size: 0.875em; }
+      .dashboard .dashboard-content .order-list .order .order-head .reciept {
+        cursor: pointer;
+        text-align: center;
+        border-radius: 2px;
+        background: #f9f9f9;
+        border: 1px solid #d7d7d7;
+        margin-left: 10px;
+        float: right;
+        padding: 5px 7px;
+        font-size: 0.875em; }
+    .dashboard .dashboard-content .order-list .order .detail {
+      float: left;
+      width: 100%;
+      padding: 12px 15px; }
+      .dashboard .dashboard-content .order-list .order .detail .img {
+        width: 90px;
+        height: 65px;
+        float: left; }
+        .dashboard .dashboard-content .order-list .order .detail .img > div {
+          width: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 100%; }
+      .dashboard .dashboard-content .order-list .order .detail .desc {
+        padding-left: 7px;
+        float: left;
+        vertical-align: top;
+        width: calc(100% - 100px); }
+        .dashboard .dashboard-content .order-list .order .detail .desc h4 {
+          font-size: 0.925em;
+          font-weight: 900; }
+        .dashboard .dashboard-content .order-list .order .detail .desc .detail-desc {
+          width: 45%;
+          float: left;
+          color: #878787; }
+        .dashboard .dashboard-content .order-list .order .detail .desc .amount-discount {
+          width: 12%;
+          margin-right: 3%;
+          float: left;
+          font-size: 0.775em;
+          text-align: right; }
+          .dashboard .dashboard-content .order-list .order .detail .desc .amount-discount .cashback {
+            color: #28a745; }
+        .dashboard .dashboard-content .order-list .order .detail .desc .status-section {
+          width: 40%;
+          float: left; }
+          .dashboard .dashboard-content .order-list .order .detail .desc .status-section .msg {
+            margin-top: 3px;
+            font-size: 0.675em;
+            color: #878787; }
+    .dashboard .dashboard-content .order-list .order .total {
+      width: 100%;
+      float: left;
+      border-top: 1px solid #d7d7d7;
+      padding: 12px 15px;
+      font-size: 0.875em; }
+      .dashboard .dashboard-content .order-list .order .total .order-on {
+        float: left; }
+        .dashboard .dashboard-content .order-list .order .total .order-on span {
+          color: #878787;
+          margin-right: 7px; }
+      .dashboard .dashboard-content .order-list .order .total .total-order {
+        float: right; }
+        .dashboard .dashboard-content .order-list .order .total .total-order span {
+          color: #878787;
+          margin-right: 7px; }
+  .dashboard .dashboard-content .coupon-list .coupon {
+    width: 100%;
+    margin: 20px 0 10px;
+    background: #fff;
+    border: 1px solid #e2e3e4;
+    float: left;
+    font-size: 0.875em; }
+    .dashboard .dashboard-content .coupon-list .coupon .offer-detail {
+      padding: 12px 15px;
+      width: 100%;
+      float: left; }
+      .dashboard .dashboard-content .coupon-list .coupon .offer-detail .offer-section {
+        width: 80px;
+        float: left;
+        text-align: center;
+        padding: 2px 0;
+        color: #0bc6a0;
+        font-weight: 900;
+        font-size: 1.4em;
+        border-right: 1px solid #d7d7d7;
+        height: 100%; }
+      .dashboard .dashboard-content .coupon-list .coupon .offer-detail .offer-desc {
+        padding-left: 90px;
+        color: #7e818c; }
+        .dashboard .dashboard-content .coupon-list .coupon .offer-detail .offer-desc .tax-detail {
+          font-size: 0.675em; }
+        .dashboard .dashboard-content .coupon-list .coupon .offer-detail .offer-desc > div {
+          margin: 2px 0; }
+        .dashboard .dashboard-content .coupon-list .coupon .offer-detail .offer-desc span {
+          font-weight: 900;
+          padding: 0 5px 0 2px; }
+    .dashboard .dashboard-content .coupon-list .coupon .offer-expire {
+      width: calc(100% - 30px);
+      float: left;
+      border-top: 1px solid #d7d7d7;
+      margin: 0px 15px;
+      padding: 12px 0; }
+      .dashboard .dashboard-content .coupon-list .coupon .offer-expire span {
+        font-weight: 900;
+        padding: 0 5px 0 2px; }
+
+.user-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  display: inline-block;
+  margin-left: 10px; }
+
+.user-rating > span {
+  display: inline-block;
+  position: relative;
+  font-size: 2.4em; }
+
+.user-rating > span:hover:before,
+.user-rating > span:hover ~ span:before,
+.user-rating > span.filled:before,
+.user-rating > span.filled ~ span:before {
+  content: "\2605";
+  color: gold;
+  position: absolute; }
+
+/*Near By Temples*/
+ul.gallery {
+  overflow-y: auto;
+  max-height: 500px; }
+  ul.gallery li {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: calc(20% - 10px);
+    overflow: hidden;
+    height: 120px; }
+    ul.gallery li:last-child {
+      padding-right: 0; }
+    ul.gallery li a {
+      display: block;
+      height: 120px;
+      position: relative;
+      border-radius: 3px; }
+      ul.gallery li a.more {
+        background: #DDD;
+        border: 1px solid #EEE;
+        font-size: 1.250em;
+        text-align: center;
+        vertical-align: center;
+        width: 100%;
+        padding: 35px 0; }
+        ul.gallery li a.more i {
+          font-size: 1.5em;
+          display: block; }
+    ul.gallery li h5 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 5px;
+      color: #FFF; }
+
+.singlePage .sidebarSection h4 {
+  font-size: 1em;
+  color: #bf2d26;
+  text-transform: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 5px; }
+
+.singlePage .sidebarSection .near-by {
+  background: #FFF;
+  margin-top: 30px;
+  padding: 10px; }
+  .singlePage .sidebarSection .near-by ul {
+    height: 300px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none; }
+
+.singlePage .sidebarSection .special-event .item {
+  color: #000;
+  padding: 0px; }
+  .singlePage .sidebarSection .special-event .item .tile {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important; }
+    .singlePage .sidebarSection .special-event .item .tile .img {
+      width: 100%;
+      height: 150px; }
+    .singlePage .sidebarSection .special-event .item .tile .header {
+      width: 100%;
+      padding: 5px 0; }
+      .singlePage .sidebarSection .special-event .item .tile .header .name {
+        margin-left: 75px; }
+        .singlePage .sidebarSection .special-event .item .tile .header .name .txt {
+          font-size: 0.875em;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden; }
+        .singlePage .sidebarSection .special-event .item .tile .header .name .eventName {
+          color: #333;
+          font-size: 1em;
+          text-align: center;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-weight: bold; }
+        .singlePage .sidebarSection .special-event .item .tile .header .name .distance-from {
+          float: right;
+          font-size: 0.875em;
+          color: #666; }
+          .singlePage .sidebarSection .special-event .item .tile .header .name .distance-from i {
+            font-size: 0.875em;
+            color: #990000; }
+
+.singlePage .sidebarSection .special-event .leftRs,
+.singlePage .sidebarSection .special-event .rightRs {
+  display: none !important; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail .banner-head {
+  background: #FFF;
+  padding: 10px;
+  float: left;
+  width: 100%; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail .devotes {
+  float: right;
+  font-size: 0.875em; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail .summary {
+  font-size: 0.775em;
+  color: #484848; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail .open-hour {
+  margin: 5px 2%;
+  float: left;
+  width: 96%;
+  color: #bf2d26; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .open-hour > div {
+    float: left;
+    width: 28%;
+    margin-left: 5.33%; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .open-hour > div i {
+      display: inline-block; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .open-hour > div div {
+      display: inline-block;
+      margin-left: 10px; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .open-hour > div div h4 {
+        margin: 10px 0 0;
+        font-weight: 900;
+        font-size: 1em; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .open-hour > div div span {
+        color: #000;
+        font-size: 0.675em;
+        display: block; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail h1 .connectivity {
+  float: right;
+  color: #666666;
+  position: relative; }
+  .singlePage .mainSection .mainSectionContent.temple-detail h1 .connectivity .tooltip {
+    min-width: 200px; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail h1 i {
+  margin-right: 5px; }
+
+.singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section {
+  margin-top: 20px;
+  font-size: 0.875em;
+  float: left;
+  width: 100%; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section ul.nav-tabs {
+    border: none;
+    background: #FFF;
+    padding: 10px; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section ul.nav-tabs a.nav-link {
+      border: none;
+      font-size: 1rem; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section ul.nav-tabs a.nav-link.active {
+        border-bottom: 3px solid #bf2d26;
+        font-weight: bold; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history {
+    position: relative; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history div.detail {
+      height: 250px;
+      overflow: hidden; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history:after {
+      content: " ";
+      display: block;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.2);
+      background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, white 100%);
+      background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0.2)), color-stop(100%, white));
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, white 100%);
+      background: -o-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, white 100%);
+      background: -ms-linear-gradient(top, rgba(255, 255, 255, 0.2) 0%, white 100%);
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, white 100%);
+      position: absolute;
+      bottom: 22px;
+      left: 0;
+      right: 0;
+      z-index: 1; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history .more {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3px;
+      background: #DDD;
+      color: #000;
+      font-size: 0.675rem;
+      text-align: center;
+      display: block;
+      z-index: 2;
+      height: 22px;
+      cursor: pointer; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history .more:hover {
+        background: #CCC; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history.more-content div.detail {
+      overflow: auto;
+      height: 450px; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .detail-history.more-content:after {
+      position: relative;
+      height: 22px;
+      bottom: 0px; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .pooja-services .puja-img {
+    height: 142px;
+    background-position: center; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-needs ul li {
+    float: left;
+    width: 33.33333%;
+    font-size: 0.850rem; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-needs ul li label {
+      font-weight: bold; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-needs ul li i {
+      font-size: 0.750rem; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation {
+    width: 100%;
+    float: left;
+    font-size: 0.875em; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation ul {
+      width: 100%;
+      float: left;
+      padding: 0px;
+      border-bottom: 1px solid #ddd; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation ul li {
+        float: right;
+        padding: 5px 8px;
+        background-color: #dedede;
+        margin-right: 3px; }
+        .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation ul li.active {
+          background-color: #fff;
+          border-left: 1px solid #ddd;
+          border-top: 1px solid #007bff;
+          border-right: 1px solid #ddd; }
+        .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation ul li a.nav-link {
+          padding: 0px;
+          font-size: 1.1em; }
+          .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation ul li a.nav-link.active {
+            border-bottom: none;
+            color: #007bff; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content {
+      float: left;
+      border: 1px solid #ddd;
+      height: 500px;
+      overflow-y: auto;
+      width: 100%;
+      border-top: none; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item {
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin: 7px;
+        float: left;
+        width: calc(100% - 14px); }
+        .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .img {
+          float: left;
+          width: 100px;
+          height: 100px;
+          background-size: cover;
+          background-position: center; }
+        .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail {
+          padding-left: 110px;
+          font-size: 1rem; }
+          .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail h5 {
+            font-size: 1rem;
+            font-weight: 900; }
+          .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .txt {
+            font-size: 0.775em; }
+          .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donateMoney {
+            font-size: 0.775em;
+            display: block;
+            color: #000; }
+            .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donateMoney b {
+              color: #007bff; }
+          .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donate-now {
+            font-size: 0.875em;
+            float: left;
+            text-align: right;
+            width: 100%; }
+            .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donate-now .calc {
+              display: inline-block;
+              padding-right: 10px; }
+              .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donate-now .calc i {
+                padding: 0 5px;
+                font-size: 0.875em; }
+                .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donate-now .calc i.fa-minus-circle, .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .donation .tab-content .tab-pane .item .detail .donate-now .calc i.fa-plus-circle {
+                  font-size: 1.2em;
+                  color: #bf2d26;
+                  cursor: pointer; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-experts-section .expert-list > div.pandit > div {
+    width: 31.5%;
+    float: left;
+    margin: 7px 2.75% 7px 0;
+    border: 1px solid #bbb;
+    border-radius: 4px; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-experts-section .expert-list > div.pandit > div:nth-child(3n) {
+      margin-right: 0px; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-experts-section .expert-list > div.pandit > div .img {
+      width: 100%;
+      height: 180px; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-experts-section .expert-list > div.pandit > div .meta {
+      text-align: center;
+      padding: 10px; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-experts-section .expert-list > div.pandit > div .meta h4 {
+        margin-bottom: 0px; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .poojas.inner-section {
+    height: 500px;
+    overflow-y: auto; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .poojas .pooja-item {
+    width: 33.333333333333336%;
+    display: inline-block;
+    white-space: initial;
+    padding: 10px;
+    box-sizing: border-box;
+    vertical-align: top; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .poojas .pooja-item .tile {
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .poojas .pooja-item .tile .puja-img {
+        overflow: hidden;
+        width: 100%; }
+        .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .poojas .pooja-item .tile .puja-img > div {
+          width: 100%;
+          height: 142px; }
+  .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-events .event-list {
+    background: #EEE;
+    width: 31%;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin: 5px 1.1666%;
+    border: 1px solid #ccc;
+    vertical-align: top;
+    position: relative; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-events .event-list .img {
+      overflow: hidden;
+      width: 100%;
+      height: 180px; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-events .event-list .img > div {
+        width: 100%;
+        height: 180px; }
+    .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-events .event-list .meta {
+      text-align: center;
+      padding: 10px; }
+      .singlePage .mainSection .mainSectionContent.temple-detail .temple-details-section .temple-detail-events .event-list .meta h4 {
+        margin-bottom: 0px;
+        font-size: 1em; }
+
+.comment-section {
+  float: left; }
+  .comment-section .write-review {
+    font-size: 0.725em; }
+    .comment-section .write-review .user-img {
+      float: left;
+      width: 80px; }
+      .comment-section .write-review .user-img img {
+        max-width: 60px;
+        height: auto;
+        border-radius: 50%; }
+    .comment-section .write-review .review-txt {
+      float: left;
+      width: calc(100% - 80px);
+      position: relative; }
+      .comment-section .write-review .review-txt input[type='text'] {
+        display: inline-block;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        font-size: 1.1em;
+        line-height: 1.5;
+        width: 60%;
+        padding: .375rem .75rem;
+        margin-bottom: 5px; }
+      .comment-section .write-review .review-txt textarea {
+        resize: none;
+        font-size: 1.1em; }
+      .comment-section .write-review .review-txt .count {
+        font-size: 0.875em;
+        position: absolute;
+        bottom: 2px;
+        right: 5px; }
+    .comment-section .write-review .publish {
+      margin-top: 10px;
+      float: right; }
+  .comment-section .review-section {
+    font-size: 0.875em; }
+    .comment-section .review-section .review {
+      background: #EEE;
+      padding: 10px;
+      margin: 5px 0; }
+      .comment-section .review-section .review .user-img {
+        width: 50px;
+        border-radius: 50%;
+        height: 50px;
+        margin-right: 10px;
+        float: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center; }
+      .comment-section .review-section .review .title {
+        font-weight: 900;
+        padding: 5px 10px;
+        width: 100%;
+        float: left; }
+      .comment-section .review-section .review .location {
+        display: inline-block; }
+      .comment-section .review-section .review .rating {
+        width: auto; }
+      .comment-section .review-section .review .review-txt {
+        padding-left: 10px; }
+
+.event-date-calender {
+  color: #000;
+  border: 1px solid #a75959;
+  float: left;
+  text-align: center; }
+  .event-date-calender span {
+    display: block; }
+  .event-date-calender span.weekday {
+    font-size: 0.625rem;
+    background: #990000;
+    color: #FFF;
+    padding: 2px;
+    text-transform: uppercase; }
+  .event-date-calender .day-month {
+    padding: 5px; }
+    .event-date-calender .day-month span.day {
+      font-size: 1.125em;
+      display: block;
+      float: left;
+      line-height: 1em;
+      font-weight: bold; }
+  .event-date-calender .month-year {
+    padding: 0px 3px;
+    float: right; }
+    .event-date-calender .month-year span.month {
+      font-size: 0.675em;
+      text-transform: uppercase;
+      line-height: 0.6750em;
+      margin-bottom: 3px; }
+    .event-date-calender .month-year span.year {
+      font-size: 0.675em;
+      line-height: 0.6750em; }
+
+/*Listing*/
+.temple-donations,
+.pandit-listing {
+  padding: 20px 0; }
+  .temple-donations .filterSection,
+  .pandit-listing .filterSection {
+    border: 1px solid #DDD;
+    width: 200px;
+    float: left;
+    padding: 15px;
+    background: #FFF;
+    border-radius: 5px; }
+    .temple-donations .filterSection h4,
+    .pandit-listing .filterSection h4 {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #DDD;
+      font-weight: bold; }
+    .temple-donations .filterSection .filterBox h5,
+    .pandit-listing .filterSection .filterBox h5 {
+      text-transform: uppercase;
+      margin-top: 10px;
+      font-weight: bold; }
+    .temple-donations .filterSection .filterBox .range,
+    .pandit-listing .filterSection .filterBox .range {
+      display: inline-block;
+      font-size: 0.675em;
+      float: right;
+      color: #484848;
+      margin-top: 17px; }
+    .temple-donations .filterSection .filterBox input[type="range"],
+    .pandit-listing .filterSection .filterBox input[type="range"] {
+      width: 120px; }
+    .temple-donations .filterSection .filterBox .rating label,
+    .pandit-listing .filterSection .filterBox .rating label {
+      left: -140px;
+      top: -5px; }
+    .temple-donations .filterSection .filterBox input[type="text"],
+    .pandit-listing .filterSection .filterBox input[type="text"] {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 4px 6px;
+      font-size: 0.875em;
+      line-height: 1;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out; }
+    .temple-donations .filterSection .filterBox .filterList,
+    .pandit-listing .filterSection .filterBox .filterList {
+      list-style: none;
+      padding: 0;
+      margin: 5px 0 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #DDD;
+      max-height: 180px;
+      overflow-y: auto; }
+      .temple-donations .filterSection .filterBox .filterList::-webkit-scrollbar-track,
+      .pandit-listing .filterSection .filterBox .filterList::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        background-color: #F5F5F5; }
+      .temple-donations .filterSection .filterBox .filterList::-webkit-scrollbar,
+      .pandit-listing .filterSection .filterBox .filterList::-webkit-scrollbar {
+        width: 5px;
+        background-color: #F5F5F5; }
+      .temple-donations .filterSection .filterBox .filterList::-webkit-scrollbar-thumb,
+      .pandit-listing .filterSection .filterBox .filterList::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -o-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -ms-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: "#666"; }
+      .temple-donations .filterSection .filterBox .filterList li,
+      .pandit-listing .filterSection .filterBox .filterList li {
+        margin-bottom: 3px; }
+        .temple-donations .filterSection .filterBox .filterList li label,
+        .pandit-listing .filterSection .filterBox .filterList li label {
+          user-select: none;
+          cursor: pointer;
+          margin: 0;
+          display: block;
+          font-size: 0.725em; }
+  .temple-donations .across-india,
+  .pandit-listing .across-india {
+    margin: 0 -5px; }
+  .temple-donations .main,
+  .pandit-listing .main {
+    padding-left: 220px; }
+    .temple-donations .main .pandit-list .pandit,
+    .pandit-listing .main .pandit-list .pandit {
+      margin: 10px 0;
+      padding: 24px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+      -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+      -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+      -o-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+      -ms-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+      float: left;
+      width: 100%; }
+      .temple-donations .main .pandit-list .pandit:first-child,
+      .pandit-listing .main .pandit-list .pandit:first-child {
+        margin: 0 0 10px 0; }
+      .temple-donations .main .pandit-list .pandit .img,
+      .pandit-listing .main .pandit-list .pandit .img {
+        width: 220px;
+        height: 150px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        float: left;
+        border-radius: 4px;
+        border: 1px solid #d2d3d4; }
+      .temple-donations .main .pandit-list .pandit .desc,
+      .pandit-listing .main .pandit-list .pandit .desc {
+        padding-left: 240px;
+        font-size: 0.875em; }
+        .temple-donations .main .pandit-list .pandit .desc .pandit-name,
+        .pandit-listing .main .pandit-list .pandit .desc .pandit-name {
+          width: 60%;
+          float: left;
+          padding-right: 20px; }
+          .temple-donations .main .pandit-list .pandit .desc .pandit-name h3 a,
+          .pandit-listing .main .pandit-list .pandit .desc .pandit-name h3 a {
+            color: #bf2d26; }
+          .temple-donations .main .pandit-list .pandit .desc .pandit-name .location,
+          .pandit-listing .main .pandit-list .pandit .desc .pandit-name .location {
+            margin: 5px 0; }
+          .temple-donations .main .pandit-list .pandit .desc .pandit-name .about,
+          .pandit-listing .main .pandit-list .pandit .desc .pandit-name .about {
+            text-align: left;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            height: 40px; }
+          .temple-donations .main .pandit-list .pandit .desc .pandit-name .services,
+          .pandit-listing .main .pandit-list .pandit .desc .pandit-name .services {
+            font-size: 0.875em;
+            margin-top: 7px;
+            color: #007bff; }
+        .temple-donations .main .pandit-list .pandit .desc .pooja-type,
+        .pandit-listing .main .pandit-list .pandit .desc .pooja-type {
+          width: 40%;
+          float: left;
+          border-left: 1px solid #d2d3d4;
+          min-height: 150px;
+          padding-left: 20px; }
+          .temple-donations .main .pandit-list .pandit .desc .pooja-type .rating,
+          .pandit-listing .main .pandit-list .pandit .desc .pooja-type .rating {
+            float: left;
+            text-align: left;
+            margin-bottom: 10px;
+            width: 100px; }
+          .temple-donations .main .pandit-list .pandit .desc .pooja-type p,
+          .pandit-listing .main .pandit-list .pandit .desc .pooja-type p {
+            font-size: 0.875em; }
+          .temple-donations .main .pandit-list .pandit .desc .pooja-type .pooja-modes,
+          .pandit-listing .main .pandit-list .pandit .desc .pooja-type .pooja-modes {
+            clear: both;
+            height: 90px;
+            font-size: 0.875em; }
+            .temple-donations .main .pandit-list .pandit .desc .pooja-type .pooja-modes ul,
+            .pandit-listing .main .pandit-list .pandit .desc .pooja-type .pooja-modes ul {
+              list-style: none; }
+              .temple-donations .main .pandit-list .pandit .desc .pooja-type .pooja-modes ul i,
+              .pandit-listing .main .pandit-list .pandit .desc .pooja-type .pooja-modes ul i {
+                color: #00a680;
+                font-size: 1.2em;
+                padding-right: 7px; }
+          .temple-donations .main .pandit-list .pandit .desc .pooja-type .book-pandit,
+          .pandit-listing .main .pandit-list .pandit .desc .pooja-type .book-pandit {
+            text-align: right; }
+    .temple-donations .main .contentSection,
+    .pandit-listing .main .contentSection {
+      float: left;
+      background: #FFF;
+      border-radius: 5px;
+      width: calc(60% - 20px); }
+    .temple-donations .main .sidebarSection,
+    .pandit-listing .main .sidebarSection {
+      float: right;
+      width: 40%;
+      background: #FFF;
+      border-radius: 5px;
+      padding: 15px; }
+    .temple-donations .main .contentSection .temple-list,
+    .pandit-listing .main .contentSection .temple-list {
+      width: 100%;
+      margin: 8px 0;
+      border: 1px solid #e2e3e4;
+      background: #fff;
+      position: relative; }
+      .temple-donations .main .contentSection .temple-list .desc,
+      .pandit-listing .main .contentSection .temple-list .desc {
+        padding-left: 130px; }
+        .temple-donations .main .contentSection .temple-list .desc .services,
+        .pandit-listing .main .contentSection .temple-list .desc .services {
+          font-size: 0.675em;
+          color: #bf2d26; }
+        .temple-donations .main .contentSection .temple-list .desc .badge-success,
+        .pandit-listing .main .contentSection .temple-list .desc .badge-success {
+          color: #666666;
+          background-color: #d4f1ff; }
+      .temple-donations .main .contentSection .temple-list .details,
+      .pandit-listing .main .contentSection .temple-list .details {
+        padding: 15px; }
+      .temple-donations .main .contentSection .temple-list .img,
+      .pandit-listing .main .contentSection .temple-list .img {
+        width: 110px;
+        height: 105px;
+        margin-right: 10px;
+        border-radius: 5px;
+        float: left;
+        overflow: hidden; }
+        .temple-donations .main .contentSection .temple-list .img > div,
+        .pandit-listing .main .contentSection .temple-list .img > div {
+          width: 100%;
+          height: 100%; }
+      .temple-donations .main .contentSection .temple-list .cart-footer,
+      .pandit-listing .main .contentSection .temple-list .cart-footer {
+        width: 100%;
+        border-top: 1px solid #e2e3e4; }
+        .temple-donations .main .contentSection .temple-list .cart-footer > a,
+        .pandit-listing .main .contentSection .temple-list .cart-footer > a {
+          width: 32%;
+          display: inline-block;
+          text-align: center;
+          -webkit-box-pack: center;
+          -moz-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          border-left: 1px solid #e2e3e4;
+          padding: 10px 0; }
+          .temple-donations .main .contentSection .temple-list .cart-footer > a i,
+          .pandit-listing .main .contentSection .temple-list .cart-footer > a i {
+            margin-right: 5px; }
+      .temple-donations .main .contentSection .temple-list .address,
+      .pandit-listing .main .contentSection .temple-list .address {
+        font-size: 0.725em;
+        color: #AAA; }
+      .temple-donations .main .contentSection .temple-list .needs,
+      .pandit-listing .main .contentSection .temple-list .needs {
+        border-top: 1px solid #e2e3e4;
+        width: 96%;
+        margin: 0px 2%;
+        font-size: 0.725em;
+        color: #AAA;
+        clear: both;
+        padding: 10px; }
+        .temple-donations .main .contentSection .temple-list .needs label,
+        .pandit-listing .main .contentSection .temple-list .needs label {
+          padding-right: 7px;
+          font-weight: 900;
+          color: #333; }
+        .temple-donations .main .contentSection .temple-list .needs span,
+        .pandit-listing .main .contentSection .temple-list .needs span {
+          color: #666; }
+        .temple-donations .main .contentSection .temple-list .needs li,
+        .pandit-listing .main .contentSection .temple-list .needs li {
+          line-height: 0.725em;
+          width: 33.3%;
+          float: left; }
+      .temple-donations .main .contentSection .temple-list .certified,
+      .pandit-listing .main .contentSection .temple-list .certified {
+        position: absolute;
+        background: url(/assets/images/certified.png);
+        background-size: 90%;
+        background-position: center;
+        width: 106px;
+        height: 78px;
+        background-repeat: no-repeat;
+        top: 0px;
+        right: -5px; }
+  .temple-donations .trending,
+  .pandit-listing .trending {
+    font-size: 0.875em;
+    margin-top: 7px; }
+    .temple-donations .trending span:first-child,
+    .pandit-listing .trending span:first-child {
+      font-weight: 900;
+      padding-right: 10px; }
+
+.pandit-detail-section .left-pandit {
+  float: left; }
+
+.pandit-detail-section .right-pandit {
+  float: right; }
+
+.pandit-detail-section .left-pandit a:before,
+.pandit-detail-section .right-pandit a:before {
+  content: "";
+  background-image: url("/assets/images/pandit-ji.png");
+  min-height: 80px;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  display: inline-block;
+  width: 140px;
+  cursor: default;
+  opacity: 0.7; }
+
+.pandit-detail-section .left-pandit a:before {
+  transform: scaleX(-1); }
+
+.pandit-detail-section .trust {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  width: 900px;
+  height: 40px; }
+  .pandit-detail-section .trust ul {
+    position: absolute;
+    width: 900px;
+    border: 1px solid #E0E0E0;
+    padding: 16px 8px;
+    top: -100px;
+    left: 132px;
+    background: #fff;
+    list-style: none; }
+    .pandit-detail-section .trust ul li {
+      float: left;
+      width: 220px; }
+
+.pandit-detail-section .overview div.section {
+  padding: 0 20px 50px;
+  margin-top: -50px; }
+
+.pandit-detail-section .overview h4 {
+  font-size: 1.8em;
+  margin: 0.675em 0;
+  font-weight: bold;
+  padding-bottom: 10px;
+  font-family: arial;
+  border-bottom: 1px solid #E0E0E0; }
+
+.pandit-detail-section .overview .left-section {
+  width: 66%;
+  float: left; }
+  .pandit-detail-section .overview .left-section .summary {
+    clear: both;
+    border-top: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+    padding: 0 10px; }
+    .pandit-detail-section .overview .left-section .summary h5 {
+      font-size: 1.2em;
+      margin: 0.875em 0;
+      font-weight: bold; }
+      .pandit-detail-section .overview .left-section .summary h5 span {
+        color: #bf2d26; }
+    .pandit-detail-section .overview .left-section .summary ul {
+      list-style: none;
+      font-size: 1.8em; }
+      .pandit-detail-section .overview .left-section .summary ul li {
+        float: left;
+        padding: 10px 24px 0;
+        color: #28a745; }
+        .pandit-detail-section .overview .left-section .summary ul li.awards {
+          color: gold; }
+  .pandit-detail-section .overview .left-section .rating-pandit {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #E0E0E0;
+    height: 254px;
+    text-align: left;
+    padding-right: 1%; }
+    .pandit-detail-section .overview .left-section .rating-pandit > .rating {
+      width: auto;
+      float: left;
+      padding-right: 10px;
+      font-size: 1.8em;
+      padding-bottom: 10px; }
+    .pandit-detail-section .overview .left-section .rating-pandit .review-line {
+      font-weight: bold;
+      padding-bottom: 10px;
+      font-size: 1.4em; }
+    .pandit-detail-section .overview .left-section .rating-pandit ul {
+      list-style: none; }
+      .pandit-detail-section .overview .left-section .rating-pandit ul li label {
+        width: 100px;
+        margin-bottom: 0; }
+      .pandit-detail-section .overview .left-section .rating-pandit ul li .progress {
+        width: 180px;
+        display: inline-block; }
+      .pandit-detail-section .overview .left-section .rating-pandit ul li span {
+        font-size: 0.875em; }
+    .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user {
+      margin: 10px 0;
+      float: left;
+      width: 100%; }
+      .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .left-section {
+        width: 96px;
+        float: left;
+        text-align: center; }
+        .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .left-section .img {
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          margin: 0 24px; }
+        .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .left-section .user-name {
+          font-size: 0.775em; }
+      .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .review-detail {
+        padding-left: 96px;
+        font-size: 0.875em; }
+        .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .review-detail .rating {
+          width: auto;
+          float: left;
+          padding-right: 7px; }
+        .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .review-detail .title {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: bold;
+          clear: right; }
+        .pandit-detail-section .overview .left-section .rating-pandit .user-rating .user .review-detail .description {
+          text-align: left;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          height: 40px; }
+  .pandit-detail-section .overview .left-section .pandit-specialization {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #E0E0E0;
+    height: 254px;
+    text-align: left;
+    padding: 0 1%; }
+    .pandit-detail-section .overview .left-section .pandit-specialization h5 {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      font-weight: bold; }
+      .pandit-detail-section .overview .left-section .pandit-specialization h5 span {
+        color: #bf2d26; }
+    .pandit-detail-section .overview .left-section .pandit-specialization .pandit-temple-association {
+      font-size: 0.875em;
+      margin-bottom: 10px; }
+    .pandit-detail-section .overview .left-section .pandit-specialization .associated-temple {
+      font-size: 0.675em; }
+      .pandit-detail-section .overview .left-section .pandit-specialization .associated-temple .img {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 92px;
+        border-radius: 4px;
+        height: 62px;
+        display: inline-block; }
+      .pandit-detail-section .overview .left-section .pandit-specialization .associated-temple .temple-detail {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 7px; }
+        .pandit-detail-section .overview .left-section .pandit-specialization .associated-temple .temple-detail h6 {
+          font-weight: bold; }
+
+.pandit-detail-section .overview .pandit-availability {
+  width: 33%;
+  float: left;
+  height: 100%;
+  text-align: left;
+  padding: 0 1%;
+  position: relative; }
+  .pandit-detail-section .overview .pandit-availability h5 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: bold; }
+    .pandit-detail-section .overview .pandit-availability h5 span {
+      color: #bf2d26; }
+  .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar > div.row {
+    margin-bottom: 7px; }
+    .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar > div.row .btn-group {
+      position: absolute;
+      right: 0px;
+      z-index: 2; }
+      .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar > div.row .btn-group > .btn {
+        font-size: 0.675em;
+        padding: 3px 7px; }
+    .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar > div.row .date-value h3 {
+      font-size: 1em;
+      font-weight: bold; }
+  .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar > div:last-child {
+    margin-bottom: 10px; }
+  .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar .cal-month-view .cal-day-cell {
+    min-height: 42px;
+    height: 42px; }
+  .pandit-detail-section .overview .pandit-availability .calendar-box events-calendar .cal-month-view .cal-day-number {
+    margin: 0 2px 0px 0;
+    font-size: 1em; }
+
+.pandit-detail-section .status {
+  color: #427f60;
+  font-size: 1.3em;
+  margin-top: 20px;
+  font-weight: bold; }
+  .pandit-detail-section .status i {
+    margin: 0 10px; }
+
+.pandit-detail-section .pandit-bio {
+  margin: 30px 0;
+  border-bottom: 1px solid #d2d3d4;
+  padding: 20px 0; }
+  .pandit-detail-section .pandit-bio .img-section {
+    margin: 0 auto;
+    text-align: center;
+    width: 260px;
+    float: left; }
+    .pandit-detail-section .pandit-bio .img-section .img {
+      width: 180px;
+      height: 180px;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      border: 5px solid #b2b3b4;
+      padding: 2px;
+      margin: 0 auto;
+      text-align: center; }
+    .pandit-detail-section .pandit-bio .img-section p {
+      font-size: 0.875em;
+      font-weight: bold; }
+      .pandit-detail-section .pandit-bio .img-section p:last-child {
+        font-weight: normal; }
+  .pandit-detail-section .pandit-bio .desc {
+    padding-left: 260px; }
+    .pandit-detail-section .pandit-bio .desc .name-section .name {
+      font-size: 1.8em;
+      text-decoration: underline;
+      display: inline-block; }
+    .pandit-detail-section .pandit-bio .desc .name-section span {
+      font-size: 0.875em;
+      color: #222;
+      display: inline-block;
+      padding-left: 20px; }
+    .pandit-detail-section .pandit-bio .desc .qualification {
+      font-size: 0.775em;
+      color: #bf2d26;
+      margin: 5px 0;
+      width: 100%;
+      float: left; }
+      .pandit-detail-section .pandit-bio .desc .qualification i {
+        color: #000; }
+      .pandit-detail-section .pandit-bio .desc .qualification span.language {
+        float: right;
+        font-size: 0.875em;
+        color: #222; }
+      .pandit-detail-section .pandit-bio .desc .qualification span.grad {
+        float: left; }
+
+.pandit-detail-section .pandit-info {
+  clear: both;
+  padding-top: 10px; }
+  .pandit-detail-section .pandit-info ul.nav-tabs {
+    border: none;
+    background: #FFF;
+    padding: 10px; }
+    .pandit-detail-section .pandit-info ul.nav-tabs a.nav-link {
+      border: none;
+      font-size: 1rem; }
+      .pandit-detail-section .pandit-info ul.nav-tabs a.nav-link.active {
+        border-bottom: 3px solid #bf2d26;
+        font-weight: bold; }
+  .pandit-detail-section .pandit-info .tab-content {
+    margin: 5px 0 10px 0;
+    padding: 20px;
+    background: #FFF;
+    min-height: 250px;
+    overflow-y: auto; }
+    .pandit-detail-section .pandit-info .tab-content .item {
+      border: 1px solid #ccc;
+      padding: 5px;
+      margin: 7px;
+      float: left;
+      width: calc(100% - 14px); }
+      .pandit-detail-section .pandit-info .tab-content .item .img {
+        float: left;
+        width: 120px;
+        height: 80px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 4px;
+        background-repeat: no-repeat; }
+      .pandit-detail-section .pandit-info .tab-content .item .detail {
+        padding-left: 130px;
+        font-size: 1rem; }
+        .pandit-detail-section .pandit-info .tab-content .item .detail h5 {
+          font-size: 1rem;
+          font-weight: 900; }
+        .pandit-detail-section .pandit-info .tab-content .item .detail .txt {
+          font-size: 0.775em; }
+        .pandit-detail-section .pandit-info .tab-content .item .detail .book-now {
+          font-size: 0.875em;
+          float: left;
+          text-align: right;
+          width: 98%; }
+          .pandit-detail-section .pandit-info .tab-content .item .detail .book-now .price {
+            color: #e16e53;
+            font-weight: 700;
+            padding-right: 10px; }
+  .pandit-detail-section .pandit-info .videos {
+    list-style: none; }
+    .pandit-detail-section .pandit-info .videos li {
+      width: 48%;
+      float: left;
+      padding: 10px 1%; }
+      .pandit-detail-section .pandit-info .videos li video {
+        border: 1px solid;
+        padding: 15px; }
+  .pandit-detail-section .pandit-info .award-section .award {
+    width: 31%;
+    display: inline-block;
+    padding-right: 3%;
+    vertical-align: top;
+    text-align: center; }
+    .pandit-detail-section .pandit-info .award-section .award .img {
+      width: 250px;
+      height: 250px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 20px auto;
+      border: 5px solid; }
+    .pandit-detail-section .pandit-info .award-section .award .title {
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 10px; }
+    .pandit-detail-section .pandit-info .award-section .award .desc {
+      font-size: 0.875em; }
+  .pandit-detail-section .pandit-info .articles,
+  .pandit-detail-section .pandit-info .specialization {
+    list-style: none; }
+    .pandit-detail-section .pandit-info .articles li,
+    .pandit-detail-section .pandit-info .specialization li {
+      width: 48%;
+      float: left;
+      padding: 10px 0%;
+      margin-right: 2%;
+      border-bottom: 1px dashed #d2d3d4; }
+  .pandit-detail-section .pandit-info .info {
+    width: 200px;
+    float: left;
+    padding-bottom: 20px;
+    position: relative; }
+    .pandit-detail-section .pandit-info .info .inner {
+      padding: 20px 16px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+      min-height: 130px;
+      /* box-sizing: border-box; */
+      border-radius: 2px;
+      background-color: #fff;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #e5e5e5;
+      position: relative;
+      z-index: 2; }
+      .pandit-detail-section .pandit-info .info .inner h5 {
+        font-size: 1.2em;
+        margin: 0.875em 0;
+        font-weight: bold; }
+        .pandit-detail-section .pandit-info .info .inner h5 span {
+          color: #bf2d26; }
+      .pandit-detail-section .pandit-info .info .inner ul {
+        list-style: none; }
+        .pandit-detail-section .pandit-info .info .inner ul li {
+          padding: 3px 5px; }
+          .pandit-detail-section .pandit-info .info .inner ul li a {
+            font-size: 0.975em;
+            color: #b18605; }
+    .pandit-detail-section .pandit-info .info:after, .pandit-detail-section .pandit-info .info:before {
+      position: absolute;
+      bottom: 27px;
+      width: 40%;
+      height: 36px;
+      border-radius: 12px;
+      box-shadow: 0 0 16px 12px rgba(0, 0, 0, 0.4);
+      content: "";
+      z-index: 1; }
+    .pandit-detail-section .pandit-info .info:before {
+      left: 28px;
+      transform: rotate(-8deg);
+      -ms-transform: rotate(-8deg);
+      -moz-transform: rotate(-8deg);
+      -webkit-transform: rotate(-8deg); }
+    .pandit-detail-section .pandit-info .info:after {
+      right: 28px;
+      transform: rotate(8deg);
+      -ms-transform: rotate(8deg);
+      -moz-transform: rotate(8deg);
+      -webkit-transform: rotate(8deg); }
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 1.3em;
+  height: 25px;
+  margin: 0 auto;
+  display: inline-block;
+  margin: 0 15px;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2; }
+  .star-ratings-css-top {
+    color: gold;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden; }
+  .star-ratings-css-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0; }
+
+.bhoj .poster {
+  position: relative; }
+  .bhoj .poster img {
+    max-width: 100%; }
+  .bhoj .poster .catering-desc {
+    background: #fff;
+    position: absolute;
+    top: 57px;
+    right: 120px;
+    width: 350px;
+    height: 350px;
+    border: 15px solid #ffffff;
+    background: #ef2360;
+    opacity: 0.85;
+    text-align: center;
+    padding: 5px 10px;
+    color: #FFF; }
+    .bhoj .poster .catering-desc h2 {
+      font-size: 2.6em;
+      font-weight: bold;
+      padding-top: 10px;
+      text-decoration: underline; }
+    .bhoj .poster .catering-desc span {
+      display: block;
+      padding: 30px 0;
+      font-size: 0.875em; }
+    .bhoj .poster .catering-desc .catering-button a {
+      background: #fff; }
+
+.bhoj .what-we-do,
+.bhoj .how-it-works {
+  margin: 30px 0;
+  width: 100%;
+  float: left; }
+  .bhoj .what-we-do li,
+  .bhoj .how-it-works li {
+    float: left;
+    list-style: square;
+    width: 48%;
+    margin-left: 2%;
+    font-size: 0.875em; }
+  .bhoj .what-we-do h4,
+  .bhoj .how-it-works h4 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold; }
+    .bhoj .what-we-do h4 span,
+    .bhoj .how-it-works h4 span {
+      color: #bf2d26; }
+
+.bhoj .category {
+  display: inline-block;
+  width: 30.33%;
+  margin: 0 1%;
+  text-align: center; }
+  .bhoj .category i {
+    font-size: 2.6em;
+    background: #b2b3b4;
+    border-radius: 50%;
+    width: 78px;
+    line-height: 78px; }
+  .bhoj .category h5 {
+    font-size: 1.4em;
+    padding: 10px 0 20px; }
+  .bhoj .category div {
+    padding: 0 20px;
+    font-size: 0.875em; }
+
+.bhoj .submit-request {
+  border: 15px solid #6a4fda;
+  padding: 15px;
+  width: 100%;
+  min-height: 300px;
+  width: 100%;
+  float: left;
+  margin: 30px 0; }
+  .bhoj .submit-request h4 {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 1.4em; }
+  .bhoj .submit-request a.btn-default {
+    background: #6a4fda;
+    color: #fff; }
+
+.forms-control {
+  margin: 50px 10px 0; }
+  .forms-control.sign-in-section {
+    margin: -10px 10px 0; }
+  .forms-control .forgot-password {
+    margin-top: -20px; }
+    .forms-control .forgot-password a {
+      font-size: 0.875em;
+      font-weight: bold;
+      color: #f16521; }
+  .forms-control .row {
+    margin: 20px 0; }
+    .forms-control .row .connect {
+      margin: 20px 0 0; }
+      .forms-control .row .connect a {
+        width: 46%;
+        background: #ddd;
+        padding: 10px 15px;
+        display: inline-block;
+        margin-right: 2%;
+        text-align: center; }
+        .forms-control .row .connect a img {
+          margin-right: 7px; }
+    .forms-control .row.mt-10 {
+      margin: -10px 0 20px !important; }
+    .forms-control .row > .sign-up-btn {
+      width: 96%;
+      background: #f16521;
+      outline: none;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 0px; }
+    .forms-control .row > .sign-in-btn {
+      width: 96%;
+      outline: none;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 0px; }
+    .forms-control .row > div {
+      position: relative;
+      width: 48%;
+      float: left;
+      margin-right: 2%;
+      color: #596988;
+      font-size: 0.875em; }
+      .forms-control .row > div.w100per {
+        width: 100%;
+        margin-right: 0px; }
+        .forms-control .row > div.w100per.keep {
+          margin-top: -15px; }
+          .forms-control .row > div.w100per.keep label {
+            font-size: 0.875em; }
+      .forms-control .row > div > label.radio-inline {
+        font-size: 1em; }
+        .forms-control .row > div > label.radio-inline input {
+          width: 28px; }
+      .forms-control .row > div > label.animate-label {
+        position: absolute;
+        top: 2px;
+        left: 0px;
+        pointer-events: none;
+        transition: all ease 500ms;
+        -webkit-transition: all ease 500ms;
+        -moz-transition: all ease 500ms;
+        -o-transition: all ease 500ms;
+        -ms-transition: all ease 500ms; }
+      .forms-control .row > div > input.animate-input {
+        border: none;
+        border-bottom: 1px solid #d2d3d4;
+        width: 95%; }
+        .forms-control .row > div > input.animate-input:not([value=""]) ~ label.animate-label {
+          top: -18px; }
+        .forms-control .row > div > input.animate-input:focus {
+          border-bottom: 1px solid #bf2d26;
+          outline: none; }
+          .forms-control .row > div > input.animate-input:focus ~ label.animate-label {
+            top: -18px; }
+
+.user-cart {
+  padding-bottom: 20px;
+  float: left;
+  background: #e2e3e4;
+  width: 100%; }
+  .user-cart .section {
+    padding: 10px 0; }
+    .user-cart .section .left-section {
+      padding-right: 37%; }
+      .user-cart .section .left-section .cart-section {
+        border-radius: 4px;
+        background: #ffffff;
+        line-height: 50px;
+        width: 100%;
+        padding: 0 25px; }
+        .user-cart .section .left-section .cart-section i {
+          font-size: 1.3em;
+          padding-right: 10px; }
+      .user-cart .section .left-section .order-list {
+        margin-top: 20px; }
+        .user-cart .section .left-section .order-list .order {
+          width: 100%;
+          background: #fff;
+          float: left;
+          border-bottom: 1px solid #d7d7d7; }
+          .user-cart .section .left-section .order-list .order input {
+            max-width: 60px;
+            padding: 3px; }
+          .user-cart .section .left-section .order-list .order .detail {
+            float: left;
+            width: 100%;
+            padding: 12px 15px; }
+            .user-cart .section .left-section .order-list .order .detail .img {
+              width: 90px;
+              height: 65px;
+              float: left; }
+              .user-cart .section .left-section .order-list .order .detail .img > div {
+                width: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 100%; }
+            .user-cart .section .left-section .order-list .order .detail .desc {
+              padding-left: 7px;
+              float: left;
+              vertical-align: top;
+              width: calc(100% - 100px); }
+              .user-cart .section .left-section .order-list .order .detail .desc h4 {
+                font-size: 0.925em;
+                font-weight: 900; }
+              .user-cart .section .left-section .order-list .order .detail .desc .detail-desc {
+                width: 45%;
+                float: left;
+                color: #878787; }
+              .user-cart .section .left-section .order-list .order .detail .desc .amount-discount {
+                width: 12%;
+                margin-right: 3%;
+                float: right;
+                font-size: 0.775em;
+                text-align: right; }
+                .user-cart .section .left-section .order-list .order .detail .desc .amount-discount .cashback {
+                  color: #28a745; }
+              .user-cart .section .left-section .order-list .order .detail .desc .items-btn {
+                padding: 12px 15px;
+                float: right;
+                clear: both;
+                font-size: 0.875em; }
+                .user-cart .section .left-section .order-list .order .detail .desc .items-btn a {
+                  color: #00B9F5;
+                  font-size: 0.875em;
+                  padding-left: 30px; }
+        .user-cart .section .left-section .order-list .total {
+          background: #484848;
+          border: 1px solid #e6e6e6;
+          padding: 0 15px;
+          width: 100%;
+          font-weight: bold;
+          line-height: 40px;
+          color: #fff; }
+          .user-cart .section .left-section .order-list .total span {
+            float: right; }
+    .user-cart .section .right-section {
+      width: 35%;
+      float: right; }
+      .user-cart .section .right-section .add-more a {
+        color: #00B9F5;
+        font-size: 0.725em; }
+      .user-cart .section .right-section .delivery-address {
+        border-radius: 4px;
+        background: #ffffff;
+        padding: 0 25px;
+        font-size: 1em; }
+        .user-cart .section .right-section .delivery-address .address {
+          font-size: 0.875em;
+          padding-bottom: 20px; }
+          .user-cart .section .right-section .delivery-address .address .user-name {
+            font-weight: bold; }
+        .user-cart .section .right-section .delivery-address h4 {
+          line-height: 50px;
+          font-size: 1em; }
+          .user-cart .section .right-section .delivery-address h4 i {
+            font-size: 1.3em;
+            padding-right: 10px; }
+      .user-cart .section .right-section .payment-summary {
+        border-radius: 4px;
+        background: #ffffff;
+        padding: 0 25px;
+        margin: 20px 0; }
+        .user-cart .section .right-section .payment-summary .detail {
+          font-size: 0.875em;
+          padding-bottom: 20px;
+          width: 100%; }
+          .user-cart .section .right-section .payment-summary .detail .type label,
+          .user-cart .section .right-section .payment-summary .detail .total label {
+            float: right;
+            margin-bottom: 0px; }
+          .user-cart .section .right-section .payment-summary .detail .total {
+            border-top: 1px solid #d2d3d4;
+            font-weight: bold; }
+        .user-cart .section .right-section .payment-summary h4 {
+          line-height: 50px;
+          font-size: 1em; }
+          .user-cart .section .right-section .payment-summary h4 i {
+            font-size: 1.3em;
+            padding-right: 10px; }
+      .user-cart .section .right-section .proceed a {
+        width: 100%; }
+
+.book-pandit-with-pooja {
+  background: #e2e3e4;
+  padding: 0px 30px;
+  overflow-y: auto;
+  height: 100vh; }
+  .book-pandit-with-pooja .pooja-details {
+    padding: 20px 31% 20px 0;
+    height: 100vh;
+    font-size: 1em; }
+    .book-pandit-with-pooja .pooja-details h3 {
+      margin-bottom: 15px;
+      font-size: 1.6em;
+      color: #bf2d26; }
+    .book-pandit-with-pooja .pooja-details .header-frame {
+      position: relative; }
+      .book-pandit-with-pooja .pooja-details .header-frame .pooja-image {
+        width: calc(100% + 30px);
+        height: 330px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-right: 2%;
+        margin-left: -30px; }
+      .book-pandit-with-pooja .pooja-details .header-frame .pandit {
+        position: absolute;
+        left: 0px;
+        top: -8px;
+        width: 220px;
+        height: 346px;
+        background: #bf2d26;
+        opacity: 0.9; }
+        .book-pandit-with-pooja .pooja-details .header-frame .pandit .img {
+          width: 86%;
+          height: 150px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          border: 3px solid #fff;
+          border-radius: 4px;
+          margin: 15px 7% 0 7%; }
+        .book-pandit-with-pooja .pooja-details .header-frame .pandit .pandit-name {
+          margin: 10px 7%;
+          font-size: 1.2em;
+          font-weight: bold;
+          color: #ffffff;
+          padding-bottom: 10px;
+          border-bottom: 1px dashed #d2d3d4; }
+        .book-pandit-with-pooja .pooja-details .header-frame .pandit .exp {
+          font-size: 0.875em;
+          color: #ffffff;
+          margin: 0 7%; }
+        .book-pandit-with-pooja .pooja-details .header-frame .pandit .performed {
+          font-size: 1.2em;
+          font-weight: bold;
+          color: gold;
+          text-align: center;
+          padding: 10px 0 0px; }
+        .book-pandit-with-pooja .pooja-details .header-frame .pandit .star-ratings-css {
+          margin: 0px;
+          font-size: 1em;
+          display: block; }
+      .book-pandit-with-pooja .pooja-details .header-frame .pooja-desc {
+        position: absolute;
+        left: 220px;
+        bottom: 0px;
+        width: calc(100% - 220px);
+        height: 60px;
+        background: black;
+        opacity: 0.8;
+        color: #ffffff;
+        padding: 10px;
+        font-size: 0.875em; }
+    .book-pandit-with-pooja .pooja-details .details {
+      margin-top: 30px; }
+      .book-pandit-with-pooja .pooja-details .details .left-side {
+        width: 50%;
+        float: left;
+        padding-right: 10px; }
+        .book-pandit-with-pooja .pooja-details .details .left-side .samagri {
+          font-size: 0.875em; }
+        .book-pandit-with-pooja .pooja-details .details .left-side .key-insight {
+          background: #ffffff;
+          margin-top: 20px;
+          font-size: 0.875em;
+          padding-bottom: 10px; }
+          .book-pandit-with-pooja .pooja-details .details .left-side .key-insight li {
+            list-style: square;
+            padding-right: 10px;
+            margin-left: 30px;
+            margin-top: 10px; }
+          .book-pandit-with-pooja .pooja-details .details .left-side .key-insight h5 {
+            padding: 10px 0 0 10px; }
+      .book-pandit-with-pooja .pooja-details .details .right-side {
+        width: 50%;
+        float: left;
+        padding-left: 10px;
+        border-left: 1px solid #d2d3d4;
+        height: 100%; }
+        .book-pandit-with-pooja .pooja-details .details .right-side .packeges {
+          font-size: 0.875em; }
+          .book-pandit-with-pooja .pooja-details .details .right-side .packeges .panel {
+            background-color: transparent; }
+            .book-pandit-with-pooja .pooja-details .details .right-side .packeges .panel.customClass {
+              background-color: #fff; }
+              .book-pandit-with-pooja .pooja-details .details .right-side .packeges .panel.customClass .panel-body {
+                background-color: #fff; }
+            .book-pandit-with-pooja .pooja-details .details .right-side .packeges .panel input[type=checkbox] {
+              margin-right: 3px; }
+            .book-pandit-with-pooja .pooja-details .details .right-side .packeges .panel label {
+              margin-right: 7px; }
+            .book-pandit-with-pooja .pooja-details .details .right-side .packeges .panel .panel-body {
+              background-color: transparent; }
+      .book-pandit-with-pooja .pooja-details .details h5 {
+        font-weight: bold;
+        padding-bottom: 10px;
+        font-size: 1.4em; }
+  .book-pandit-with-pooja .cart-details {
+    float: right;
+    max-width: 29%;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    margin-top: 38px;
+    padding: 20px 0; }
+    .book-pandit-with-pooja .cart-details .booking .btn {
+      width: 100%;
+      color: #fff;
+      text-transform: uppercase; }
+    .book-pandit-with-pooja .cart-details div.event {
+      display: inline-block;
+      width: 49%; }
+      .book-pandit-with-pooja .cart-details div.event label {
+        font-weight: bold; }
+      .book-pandit-with-pooja .cart-details div.event input[type=date],
+      .book-pandit-with-pooja .cart-details div.event input[type=time] {
+        width: 138px;
+        border: 1px solid #d2d3d4;
+        font-size: 1em;
+        padding: 5px;
+        padding-left: 10px;
+        height: 40px !important;
+        background-color: #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none; }
+    .book-pandit-with-pooja .cart-details div.package-detail {
+      background: #FFF;
+      width: 100%;
+      min-height: 110px;
+      margin: 20px 0;
+      padding: 10px; }
+      .book-pandit-with-pooja .cart-details div.package-detail h5 {
+        padding-bottom: 10px;
+        font-weight: bold;
+        font-size: 0.825em; }
+      .book-pandit-with-pooja .cart-details div.package-detail .price {
+        line-height: 60px;
+        background: #e2e3e4;
+        width: 96%;
+        margin: 0 2%;
+        font-size: 1.4em;
+        padding: 0 20px;
+        position: relative; }
+        .book-pandit-with-pooja .cart-details div.package-detail .price .line-through {
+          color: rgba(0, 0, 0, 0.38);
+          padding-left: 20px; }
+        .book-pandit-with-pooja .cart-details div.package-detail .price .Inclusive {
+          font-size: 0.475em;
+          position: absolute;
+          bottom: -20px;
+          left: 28px; }
+        .book-pandit-with-pooja .cart-details div.package-detail .price .percent {
+          background: #ffb121;
+          padding: 6px;
+          border-radius: 2px;
+          font-size: 12px;
+          font-weight: 600;
+          color: #fff;
+          line-height: 20px;
+          display: inline-block;
+          margin-left: 28px; }
+    .book-pandit-with-pooja .cart-details div.keep-in-mind {
+      background: #FFF;
+      width: 100%;
+      min-height: 100px;
+      margin: 20px 0;
+      padding: 10px 30px 20px;
+      font-size: 0.825em; }
+      .book-pandit-with-pooja .cart-details div.keep-in-mind h5 {
+        font-size: 1.2em;
+        margin-left: -20px;
+        font-weight: bold;
+        padding-bottom: 10px; }
+      .book-pandit-with-pooja .cart-details div.keep-in-mind li {
+        list-style: square; }
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px; }
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666; }
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  background: #fff; }
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #28a745;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0); }
+
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1); }
+
+.goog-te-gadget-simple .goog-te-menu-value span {
+  padding-right: 4px; }
+
+.goog-te-gadget-simple .goog-te-menu-value span:first-child {
+  padding-left: 4px; }
+
+.events-festival .featured-event .calendar-box .btn-group .btn.btn-primary {
+  background: #e0e0e0;
+  color: #000;
+  border-color: #e0e0e0; }
+
+.events-festival .featured-event .calendar-box .btn-group .btn {
+  border-color: #e0e0e0; }
 
 @media screen and (max-width: 720px) {
-  body, html {
+  body,
+  html {
     font-size: 0.825em; }
   audio {
     width: 100%; }
@@ -1766,10 +3906,12 @@ mwl-calendar-open-day-events {
     width: 49%;
     margin: 2px 1% 2px 0;
     height: 130px; }
-  .events-festival .nav-link, .events-festival .nav-link:hover {
+  .events-festival .nav-link,
+  .events-festival .nav-link:hover {
     padding: 3px 5px;
     font-size: 0.925em; }
-  .video-section, .audio-section {
+  .video-section,
+  .audio-section {
     width: 100%;
     margin: 0px; }
   .banner-carousel .item {
@@ -1780,7 +3922,8 @@ mwl-calendar-open-day-events {
     padding-left: 110px; }
   .search-carousel .ngxcarousel .leftRs {
     left: 100px; }
-  .search-carousel .ngxcarousel .leftRs, .search-carousel .ngxcarousel .rightRs {
+  .search-carousel .ngxcarousel .leftRs,
+  .search-carousel .ngxcarousel .rightRs {
     margin-top: -10px; }
   .sideNav-icon {
     display: block; }
@@ -1791,7 +3934,10 @@ mwl-calendar-open-day-events {
     border-bottom: 3px solid #bf2d26; }
   .search-ico {
     display: block; }
-  .primary-search, .user-detail, .hide-on-body, .topbar {
+  .primary-search,
+  .user-detail,
+  .hide-on-body,
+  .topbar {
     display: none; }
   .mobile-menu {
     width: 180px;
@@ -1811,9 +3957,18 @@ mwl-calendar-open-day-events {
     font-size: 1.5em; }
   .home-text {
     display: block; }
-  .mobile-menu .fa-home, .temple_details, .sub-gallery .sub-gallery-1:nth-child(3), .sub-gallery .sub-gallery-2:nth-child(7), .sub-gallery .sub-gallery-2:nth-child(8), .pandit-detail, .event-img:nth-child(6), .event-img:nth-child(7), .download-app {
+  .mobile-menu .fa-home,
+  .temple_details,
+  .sub-gallery .sub-gallery-1:nth-child(3),
+  .sub-gallery .sub-gallery-2:nth-child(7),
+  .sub-gallery .sub-gallery-2:nth-child(8),
+  .pandit-detail,
+  .event-img:nth-child(6),
+  .event-img:nth-child(7),
+  .download-app {
     display: none; }
-  .banner-carousel .rightRs, .banner-carousel .leftRs {
+  .banner-carousel .rightRs,
+  .banner-carousel .leftRs {
     margin-top: -14px; }
   .banner-carousel .ngxcarouselPoint li {
     padding: 3px !important; }
@@ -1849,7 +4004,8 @@ mwl-calendar-open-day-events {
     margin: 0px; }
   .audio-video .audio {
     height: 290px; }
-  .section-footer .download-section > div, .about-religios-india {
+  .section-footer .download-section > div,
+  .about-religios-india {
     width: 96%;
     margin: 0 2% 10px; }
   .curated-experiences-section .box-head h2 {
@@ -1870,6 +4026,22 @@ mwl-calendar-open-day-events {
   .audio-video h4 {
     padding: 7px;
     border-bottom: 1px solid;
-    margin: 10px 3px; } }
+    margin: 10px 3px; }
+  .puja-img {
+    height: 122px; }
+  .blog ul {
+    margin: 0px; }
+  .blog ul li {
+    width: 50%;
+    padding: 10px 20px; }
+  .blog ul li:nth-child(3) {
+    clear: left; }
+  .temple-donations .main {
+    padding-left: 0px; }
+  .temple-donations .main .sidebarSection, .temple-donations .filterSection {
+    display: none; }
+  .temple-donations .main .contentSection {
+    width: 100%;
+    padding: 0 10px !important; } }
 
 /*# sourceMappingURL=styles.css.map */

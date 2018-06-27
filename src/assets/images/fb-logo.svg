@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>9C9D8401-704F-4D09-9A4F-93E6C7572856</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="7.4906367e-06 0.00786516854 19.991985 0.00786516854 19.991985 20 7.4906367e-06 20"></polygon>
+    </defs>
+    <g id="checkout-registration-modal" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-563.000000, -772.000000)">
+        <g id="Group-4" transform="translate(514.000000, 730.000000)">
+            <g id="facebook_btn-copy" transform="translate(0.000000, 28.000000)">
+                <g id="fb_logo" transform="translate(49.000000, 14.000000)">
+                    <g id="Group-3">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M18.8886217,20 C19.4979101,20 19.9919925,19.5059176 19.9919925,18.8966292 L19.9919925,1.11131086 C19.9919925,0.501797753 19.4979101,0.00786516854 18.8886217,0.00786516854 L1.10337828,0.00786516854 C0.493865169,0.00786516854 7.4906367e-06,0.501797753 7.4906367e-06,1.11131086 L7.4906367e-06,18.8966292 C7.4906367e-06,19.5059176 0.493865169,20 1.10337828,20 L18.8886217,20 Z" id="Fill-1" fill="#3C5A99" mask="url(#mask-2)"></path>
+                    </g>
+                    <path d="M14.2832376,20 L14.2832376,12.397595 L16.9859194,12.397595 L17.3905466,9.43474973 L14.2832376,9.43474973 L14.2832376,7.54310396 C14.2832376,6.68529111 14.5354869,6.10073968 15.8383333,6.10073968 L17.5,6.10000412 L17.5,3.45006708 C17.2125387,3.41402453 16.2262113,3.33333333 15.0787031,3.33333333 C12.6829583,3.33333333 11.0428706,4.71405748 11.0428706,7.24976168 L11.0428706,9.43474973 L8.33333333,9.43474973 L8.33333333,12.397595 L11.0428706,12.397595 L11.0428706,20 L14.2832376,20 Z" id="Fill-4" fill="#FEFEFE"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

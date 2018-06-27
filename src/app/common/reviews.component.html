@@ -1,0 +1,46 @@
+<div class="comment-section" style="width:100%">
+
+  <div>
+    <div class="write-review">
+      <h4>Write a Review</h4>
+      <div class="review clearfix">
+        <div class="user-img"><img src="../assets/users/user-default.png"></div>
+
+        <div class="review-txt">
+          <input type="text" [(ngModel)]="ratingTitle" placeholder="Headline for your review" />
+          <div class="user-rating temple-rating" (click)="rating($event)">
+            <span value="5">☆</span><span value="4">☆</span><span value="3">☆</span><span value="2">☆</span><span value="1">☆</span>
+          </div>
+
+          <textarea class="form-control" [(ngModel)]="ratingDesc" maxlength="140" (keyup)="count = $event.target.value.length" placeholder="Write your review here"></textarea>
+          <div class="count">{{count}} / 140</div>
+
+        </div>
+
+        <div class="btn btn-success publish" (click)="postReview()">Publish Review</div>
+      </div>
+    </div>
+  </div>
+  <div class="box-section">
+    <div class="review-section">
+      <h4>Reviews ({{ reviewsData?.length || '0' }})</h4>
+      <div class="review clearfix" *ngFor="let review of reviewsData">
+        <div class="user-img" [ngStyle]="{'background-image':'url('+ _requestService.baseServiceUrl+'/' +review.User_Image+')'}"></div>
+        <div class="user-detail">
+          <h5 class="f900 f15">{{review.User_Name}}</h5>
+          <div class="location f12"> {{review.User_Location}}</div>
+          <div class="rating">
+            <i class="fa-star fa-xs" [ngClass]="review.Rating == '5' ? 'fas' : 'far'"></i>
+            <i class="fa-star fa-xs" [ngClass]="review.Rating == '4' || review.Rating == '5' ? 'fas' : 'far'"></i>
+            <i class="fa-star fa-xs" [ngClass]="review.Rating == '3' || review.Rating == '4'  || review.Rating == '5' ? 'fas' : 'far'"></i>
+            <i class="fa-star fa-xs" [ngClass]="review.Rating == '2' || review.Rating == '3' || review.Rating == '4'  || review.Rating == '5' ? 'fas' : 'far'"></i>
+            <i class="fas fa-xs fa-star"></i>
+          </div>
+
+          <div class="title">{{review.UserReview}}</div>
+          <div class="review-txt f14" [innerHtml]="review.ReviewDesc"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

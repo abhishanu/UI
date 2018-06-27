@@ -1,0 +1,20 @@
+<div class="credit-details">
+  <h4 [innerHtml]="heading"></h4>
+  <div class="coupon-list">
+    <div class="coupon" *ngFor="let coupon of data">
+      <div class="offer-detail">
+        <div class="offer-section">
+          <div class="offer-value">{{coupon.discount}}</div>
+          <div class="offer-txt">OFF</div>
+        </div>
+        <div class="offer-desc">
+          <div class="min-purchase">On minimum purchase of Rs. <span>{{coupon.min  | amountConverter:locale}}</span></div>
+          <div class="offer-code">{{coupon.code}}</div>
+          <div class="tax-detail">*Tax Extra</div>
+        </div>
+      </div>
+      <div class="offer-expire">Expiry: <span>{{coupon.expiryDate}}</span> {{coupon.expiryTime}}</div>
+    </div>
+
+  </div>
+</div>

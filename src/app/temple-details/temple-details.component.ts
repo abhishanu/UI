@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, animate, transition, style,query,stagger } from '@angular/animations';
+import { trigger, state, animate, transition, style, query, stagger } from '@angular/animations';
+import { ActivatedRoute } from '@angular/router';
 import { CommonService } from '../services/common.service';
+import { RequestService } from '../services/request.service';
 @Component({
   selector: 'temple-details',
   templateUrl: './temple-details.component.html',
   animations: [
     trigger('photosAnimation', [
       transition('* => *', [
-        query('a.quick-tag',style({ transform: 'translateY(-100%)'})),
+        query('a.quick-tag', style({ transform: 'translateY(-100%)' })),
         query('a.quick-tag',
           stagger('300ms', [
-            animate('600ms', style({ transform: 'translateY(0)'}))
-        ]))
+            animate('600ms', style({ transform: 'translateY(0)' }))
+          ]))
       ])
     ])
   ]
@@ -19,125 +21,153 @@ import { CommonService } from '../services/common.service';
 export class TempleDetailsComponent implements OnInit {
   private templeDetails: any;
   private specialEvent: any;
-  upcomingEvents:any;
+  private detail: any = [];
+  upcomingEvents: any;
   reviews: any;
-  count:any=0;
-  constructor(private _commonService: CommonService) { }
+  connectivity: any = [];
+  count: any = 0;
+  poojaService: any;
+  experts: any;
+  gallery: any;
+  images: any;
+  params: any = {};
+  ratingTitle:any;
+  ratingDesc:any;
+  currentRating: any;
+  constructor(private _commonService: CommonService, private _requestService: RequestService, private route: ActivatedRoute) { }
 
-
-  ngOnInit() {
-    this.reviews = [
-      {
-        "name": "Shrinivas Nathan",
-        "title": "Sed ut perspiciatis unde omnis iste natus error sit",
-        "comment": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labor.",
-        "image": "../assets/users/user-default.png",
-        "rating": 3,
-        "location": "Haridwar, Uttrakhand",
-      },
-      {
-        "name": "Deepak Rawat",
-        "title": "Sed ut perspiciatis unde omnis iste natus error sit",
-        "comment": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.  Enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labor.",
-        "image": "../assets/users/user-default.png",
-        "rating": 4,
-        "location": "Haridwar, Uttrakhand",
-      },
-      {
-        "name": "Gaurav Bhardwaj",
-        "title": "Sed ut perspiciatis unde omnis iste natus error sit",
-        "comment": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.  Enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit labor.",
-        "image": "../assets/users/user-default.png",
-        "rating": 5,
-        "location": "Haridwar, Uttrakhand",
+  rating(event) {
+    let currentVal = parseInt(event.target.getAttribute("value"));
+    let starElem = event.currentTarget.children;
+    let removeClass = document.querySelector(".temple-rating span.filled");
+    removeClass ? removeClass.classList.remove("filled") : "";
+    starElem[5 - currentVal].classList.add("filled");
+    this.currentRating = currentVal;
+    //alert(event.target.getAttribute("value"))
+  }
+  postReview() {
+    this.params = {
+      "requestType": "save",
+      "requestParam": {
+        "rating":""+this.currentRating,
+        "reviewDesc": this.ratingDesc,
+        "userReview": this.ratingTitle,
+        "templeId": this.route.snapshot.paramMap.get('id'),
+        "userId": "12"
       }
-    ];
-    this.templeDetails = {
-      "templeName": "Sri Ranganathaswamy Temple",
-      "city": "Tiruchirappalli",
-      "state": "Tamil Nadu",
-      "address": "Srirangam",
-      "banner": "../assets/temples/Ranganathaswamy-banner.jpg",
-      "devotes": 899,
-      "operationalHour": "05:30 am to 10:00 pm. In special days visiting times can be changed.",
-      "summary": "The Sri Ranganathaswamy Temple or Thiruvarangam is a Hindu temple dedicated to Ranganatha, a reclining form of the Hindu deity Vishnu, located in Srirangam, Tiruchirapalli, Tamil Nadu, India. Constructed in the Tamil style of architecture, this temple is glorified in the Thiviya Pirabandham, the early medieval Tamil literature canon of the Alvar saints of Bhakti movement from the 6th to 9th centuries AD. The temple tops the list among the 108 Divya Desams dedicated to Vishnu.",
-      "needs": [{
-        "name": "Food Donation",
-        "value": "3000"
-      },
-      {
-        "name": "Prasad",
-        "value": "1000"
-      },
-      {
-        "name": "Construction",
-        "value": "15000"
-      }, {
-        "name": "Bhandara",
-        "value": "3300"
-      }, {
-        "name": "Cloths",
-        "value": "6000"
-      }, {
-        "name": "Food Donation",
-        "value": "3000"
-      }]
-
     }
+ this._commonService.showLoader();
+    this._requestService.postData("saveTempleReview", this.params).subscribe(data => {
+      this._commonService.showAlert({
+          type: "success", msg: data.json().response
+        });
+        this.getReview();
+      this._commonService.hideLoader();
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+  }
+  getReview(){
+    this._requestService.fetchData("getReview?type=temple&id=" + this.route.snapshot.paramMap.get('id')).subscribe(data => {
+      this.reviews = data.json().response.ReviewInDetail;
+
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+  }
+  ngOnInit() {
+    this._commonService.showLoader();
+    this._requestService.fetchData("getTempleDetails/" + this.route.snapshot.paramMap.get('id')).subscribe(data => {
+      this.detail = data.json();
+      this._commonService.hideLoader();
+      this._commonService.updateBreadCrumb([
+        {
+          "path": "/temple-donations",
+          "label": "Temples in " + this.detail.Temple_Dist
+        },
+        {
+          "path": "",
+          "label": this.detail.Temple_Name
+        }
+      ]);
+
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+    this._requestService.fetchData("getTempleConnectivityDetails/" + this.route.snapshot.paramMap.get('id')).subscribe(data => {
+      this.connectivity = data.json();
+
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+    this._requestService.fetchData("getPanditAssociatedWithTemple/" + this.route.snapshot.paramMap.get('id')).subscribe(data => {
+      this.experts = data.json().response;
+
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+    this._requestService.fetchData("getAllPoojaServices/" + this.route.snapshot.paramMap.get('id')).subscribe(data => {
+      this.poojaService = data.json().response;
+
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+    this.getReview();
+    this._requestService.fetchData("getTempleImageGallery/" + this.route.snapshot.paramMap.get('id')).subscribe(data => {
+      this.gallery = data.json().response;
+      this.images = this.gallery.Images;
+
+    }, err => {
+      this._commonService.showHttpErrorMsg();
+    });
+
+
+
     this.specialEvent = [
       {
         "eventName": "Bhandara",
         "date": "31",
-        "month":"Mar",
-        "year":"2018",
-        "day":"Saturday",
+        "month": "Mar",
+        "year": "2018",
+        "day": "Saturday",
         "eventDesc": "Bhandara organised by temple devotees.",
         "eventImg": "../assets/temples/bhandara.jpg",
-        "location":"New Delhi"
+        "location": "New Delhi"
       },
       {
         "eventName": "Medical Camp",
         "date": "10",
-        "month":"Apr",
-        "year":"2018",
-        "day":"Tuesday",
+        "month": "Apr",
+        "year": "2018",
+        "day": "Tuesday",
         "eventDesc": "Medical Camp organised by temple devotees.",
         "eventImg": "../assets/temples/medical-camp.jpg",
-        "location":"Mathura"
+        "location": "Mathura"
       },
     ];
     this.upcomingEvents = [
       {
         "eventName": "Kanya Pujan",
         "date": "25",
-        "month":"Mar",
-        "year":"2018",
-        "day":"Sunday",
+        "month": "Mar",
+        "year": "2018",
+        "day": "Sunday",
         "eventDesc": "Kanya Pujan on Ashtami or Navami",
         "eventImg": "../../assets/events/event-6.jpg",
-        "location":"Haridwar"
+        "location": "Haridwar"
       },
       {
         "eventName": "Shani Dosha",
         "date": "17",
-        "month":"Apr",
-        "year":"2018",
-        "day":"Tuesday",
+        "month": "Apr",
+        "year": "2018",
+        "day": "Tuesday",
         "eventDesc": "Shani Dosha Nivaran puja at Shani Shingnapur",
         "eventImg": "../../assets/events/event-1.jpg",
-        "location":"Mathura"
+        "location": "Mathura"
       },
     ]
-    this._commonService.updateBreadCrumb([
-      {
-        "path": "/temple-donations",
-        "label": "Temples in " + this.templeDetails.city
-      },
-      {
-        "path": "",
-        "label": this.templeDetails.templeName
-      }
-    ]);
+
   }
 
 }

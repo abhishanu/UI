@@ -20,7 +20,7 @@ import { RequestService } from '../services/request.service';
         <div class="section">
             <div class="heading">
                 <h3>Popular Searches</h3>
-                <p>In New Delhi</p>
+                <p>in New Delhi</p>
             </div>
             <ngx-carousel [inputs]="carouselTile">
                 <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
@@ -36,7 +36,7 @@ import { RequestService } from '../services/request.service';
     <div class="container-fluid shlok-carousel" *ngIf="carouselType == 'shlokcarousel'">
         <ngx-carousel [inputs]="carouselTile">
             <ngx-tile NgxCarouselItem *ngFor="let Tile of carouselTileItems">
-                <p><i class="fas fa-quote-left"></i> {{Tile.thoughtTitle}} <i class="fas fa-quote-right"></i></p>
+                <p><i class="fas fa-quote-left"></i> <span [innerHtml]=Tile.thoughtTitle></span> <i class="fas fa-quote-right"></i></p>
                 <h5>{{Tile.thoughtRefrence}}</h5>
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs  hide-elem'><i class="fas fa-chevron-circle-left"></i></a>
@@ -62,7 +62,7 @@ import { RequestService } from '../services/request.service';
                 <div class="puja-detail">
                     <h2>{{Tile.title}}</h2>
                     <p class="desc">{{Tile.description}}</p>
-                    <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{Tile.price}}</span> {{Tile.discounted}}</span> <a class="buy-now">Buy Now</a></p>
+                    <p><span class="price"><i class="fas fa-rupee-sign"></i> <span class="line-through">{{Tile.price | amountConverter:locale}}</span> {{Tile.discounted | amountConverter:locale}}</span> <a class="buy-now">Buy Now</a></p>
                 </div>
             </ngx-tile>
             <a NgxCarouselPrev href="javascript:void(0)" class='leftRs'><i class="fas fa-2x fa-chevron-circle-left"></i></a>

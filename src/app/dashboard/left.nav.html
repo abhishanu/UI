@@ -1,0 +1,8 @@
+<ul class="left-menu">
+  <li *ngFor="let menu of menuList;let i = index">
+    <h4>{{menu.menuName}}</h4>
+    <ul class="sub-menu">
+      <li *ngFor="let submenu of menu.subMenus;let j = index" [ngClass]="{'active': i ==0 && j ==0}"><a href="javascript:void(0)" (click)="setCurrent($event,submenu.url,menu.menuType)">{{submenu.name}}</a></li>
+    </ul>
+  </li>
+</ul>

@@ -7,8 +7,6 @@ import { RequestService } from '../services/request.service';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  private bannerCarouselItems: any;
-  private shloklItems: any;
   private popularSearchesIteams: any;
   constructor(private _commonService: CommonService, private _requestService: RequestService) {
     
@@ -16,41 +14,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this._commonService.updateBreadCrumb([]);
-
-    this.bannerCarouselItems = [
-      {
-        "src": "../assets/banner/1.jpg",
-        "title": "Akshardham Temple",
-        "description": "Akshardham or Swaminarayan Akshardham complex is a Hindu mandir."
-      },
-
-      {
-        "src": "../assets/banner/6.jpg",
-        "title": "Srirangam Temple",
-        "description": "Srirangam is the foremost of the eight self-manifested shrines (Swayam Vyakta Kshetras) of Lord Vishnu"
-      },
-      {
-        "src": "../assets/banner/5.jpg",
-        "title": "Golden Temple",
-        "description": "this is a test description for the title"
-      },
-      {
-        "src": "../assets/banner/2.jpg",
-        "title": "Haridwar Har Ki Pauri.",
-        "description": "Haridwar, visit Mansa Devi Temple & Ganga aarti at Har Ki Pauri"
-      },
-      {
-        "src": "../assets/banner/3.jpg",
-        "title": "ARULMIGU MEENAKSHI SUNDARESHWARAR THIRUKKOIL",
-        "description": "this is a test description for the title"
-      },
-      {
-        "src": "../assets/banner/4.jpg",
-        "title": "Badrinath Temple",
-        "description": "this is a test description for the title"
-      },
-
-    ];
+    
     this.popularSearchesIteams = [
       {
         "heading": "Temple In Manali 1",

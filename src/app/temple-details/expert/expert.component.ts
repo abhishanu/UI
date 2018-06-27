@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,Input } from '@angular/core';
+import { RequestService } from '../../services/request.service';
 @Component({
   selector: 'expert',
   templateUrl: './expert.component.html'
 })
 export class ExpertComponent implements OnInit {
+  @Input() data;
   toppandit: any;
   aboutpandits: any;
-  constructor() { }
+  constructor(private _requestService: RequestService) { }
 
   ngOnInit() {
     this.toppandit = [

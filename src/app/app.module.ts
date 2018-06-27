@@ -7,7 +7,7 @@ import { BannerCarouselComponent } from './common/banner.carousel';
 import 'hammerjs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
-import { AlertModule ,ModalModule,TabsModule,TooltipModule,TypeaheadModule   } from 'ngx-bootstrap';
+import { AlertModule ,ModalModule,TabsModule,TooltipModule,TypeaheadModule,ProgressbarModule,AccordionModule,BsDatepickerModule } from 'ngx-bootstrap';
 import { PrettyUrlPipe } from './Pipes/prettyUrl.pipe';
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
@@ -30,6 +30,7 @@ import { GauSewaComponent } from './home/gau-sewa/gau-sewa.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { FeedbackComponent } from './home/feedback/feedback.component';
 import { CalendarComponent } from './common/Calendar/calendar';
+import { LoaderComponent } from './common/loader.component';
 import { TempleDetailsComponent } from './temple-details/temple-details.component';
 import { BreadcrumbComponent } from './common/breadcrumb/breadcrumb.component';
 import { PopularAcrossIndiaComponent } from './templates/popular-across-india/popular-across-india.component';
@@ -45,6 +46,21 @@ import { PoojaServiceComponent } from './temple-details/pooja-service/pooja-serv
 import { EventsFestivalsComponent } from './temple-details/events-festivals/events-festivals.component';
 import { PoojaServiceListingComponent } from './pooja-service-listing/pooja-service-listing.component';
 import { LoginComponent } from './login/login.component';
+
+import {LeftNavComponent  } from './dashboard/left.nav';
+import { CartDetailComponent } from './dashboard/cart-detail/cart-detail.component';
+import {AmountConverterPipe} from './Pipes/amount.converter';
+import { SearchPipeModule } from './Pipes/search-filter';
+import { CreditComponent } from './dashboard/credit/credit.component';
+import { WishListComponent } from './dashboard/wish-list/wish-list.component';
+import { AccountDetailComponent } from './dashboard/account-detail/account-detail.component';
+import { ServicesPoojaComponent } from './book-pandit/pandit-detail/services-pooja/services-pooja.component';
+import { SpecializationComponent } from './book-pandit/pandit-detail/specialization/specialization.component';
+import { AwardsComponent } from './book-pandit/pandit-detail/awards/awards.component';
+import { OverviewComponent } from './book-pandit/pandit-detail/overview/overview.component';
+import { ReviewsComponent } from './book-pandit/pandit-detail/reviews/reviews.component';
+import { CartComponent } from './dashboard/cart/cart.component';
+import { BrahmanBhojComponent } from './book-pandit/brahman-bhoj/brahman-bhoj.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +90,7 @@ import { LoginComponent } from './login/login.component';
     MapOverlayComponent,
     NearByTempleComponent,
     PrettyUrlPipe,
+    LoaderComponent,
     HistoryComponent,
     PhotosComponent,
     DonationComponent,
@@ -81,7 +98,8 @@ import { LoginComponent } from './login/login.component';
     PoojaServiceComponent,
     EventsFestivalsComponent,
     PoojaServiceListingComponent,
-    LoginComponent
+    LoginComponent,    SearchPipeModule,
+    LeftNavComponent, CartDetailComponent,AmountConverterPipe, CreditComponent, WishListComponent, AccountDetailComponent, ServicesPoojaComponent, SpecializationComponent, AwardsComponent, OverviewComponent, ReviewsComponent, CartComponent, BrahmanBhojComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +113,9 @@ import { LoginComponent } from './login/login.component';
     TabsModule.forRoot(),
     TooltipModule.forRoot(),
     TypeaheadModule.forRoot(),
+    ProgressbarModule.forRoot(),
+    AccordionModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     LightboxModule,
     AppRoutingModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDyhs7KydbC9ws3jx_OoC3w0tZ1IYdNOHk'})    

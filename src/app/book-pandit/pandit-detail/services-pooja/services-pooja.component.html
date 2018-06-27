@@ -1,0 +1,126 @@
+<div id="OverlayWrap" [ngClass]="{'active':isBookingOverlayOpend}">
+  <div class="overlayContent" *ngIf="isBookingOverlayOpend">
+    <div class="book-pandit-with-pooja">
+      <div class="cart-details">
+        <div class="event"><label>Pooja Date</label><br/><input type="date" /></div>
+        <div class="event"><label>Pooja Time</label><br/><input type="time" /></div>
+        <div class="package-detail">
+          <h5>Price for Classic package</h5>
+          <div class="price"><i class="fas fa-rupee-sign"></i> {{poojaService[0].Pooja_Discounted_Price | amountConverter:locale}} <span class="line-through"> <i class="fas fa-rupee-sign"></i>{{poojaService[1].Pooja_Discounted_Price | amountConverter:locale}}</span>
+            <div class="percent">{{percent}} % off</div>
+            <div class="Inclusive">(Inclusive of all taxes)</div>
+          </div>
+        </div>
+        <div class="keep-in-mind">
+          <h5>Keep in Mind</h5>
+          <ul>
+            <li>Cancellation policy</li>
+            <li>Guests can check in using any local or outstation ID proof (PAN card not accepted).</li>
+            <li>Couples are welcome</li>
+            <li>This property is prepaid</li>
+
+          </ul>
+        </div>
+        <div class="booking">
+          <a class="btn btn-success">Continue to book</a>
+        </div>
+      </div>
+      <div class="pooja-details">
+        <h3>{{data.name}}</h3>
+        <div class="header-frame">
+          <div class="pooja-image" [ngStyle]="{'background-image': 'url('+ data.img + ')'}"></div>
+          <div class="pooja-desc">{{data.desc}}</div>
+          <div class="pandit">
+            <div class="performed">Pooja performed by</div>
+            <div class="img" [ngStyle]="{'background-image': 'url(../assets/pandit/pandit-5.jpg)'}"></div>
+            <div class="pandit-name">R K Shridhar
+              <div class="star-ratings-css" [title]="persentReview">
+                <div class="star-ratings-css-top" [ngStyle]="{width: persentReview}"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+                <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+              </div>
+            </div>
+            <div class="exp">Experience - 17 Years<br/>Location - New Delhi</div>
+          </div>
+        </div>
+        <div class="details">
+          <div class="left-side">
+            <div class="samagri">
+              <h5>Pooja Samagri</h5>
+              <span *ngFor="let item of data.samagri">{{item}}, </span>
+            </div>
+            <div class="key-insight">
+              <h5>Key Insights</h5>
+              <ul>
+                <li *ngFor="let item of data.key">{{item}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="packeges">
+              <h5>Packages</h5>
+              <accordion [closeOthers]="oneAtATime">
+                <accordion-group heading="Classic" panelClass="customClass" [isOpen]="isFirstOpen">
+                  <div class="options">
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Pandit Ji</label>
+                    <input type="checkbox" name="optionType" value="support" checked="checked" disabled><label>Support</label>
+                    <input type="checkbox" name="optionType" value="samagri" disabled><label>With Pooja Samagri</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Photographar</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Online upload</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Video</label>
+                  </div>
+                </accordion-group>
+                <accordion-group heading="Silver">
+
+                  <div class="options">
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Pandit Ji</label>
+                    <input type="checkbox" name="optionType" value="support" checked="checked" disabled><label>Support</label>
+                    <input type="checkbox" name="optionType" value="samagri" checked="checked" disabled><label>With Pooja Samagri</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Photographar</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Online upload</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Video</label>
+                  </div>
+                </accordion-group>
+                <accordion-group heading="Gold" panelClass="customClass">
+
+                  <div class="options">
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Pandit Ji</label>
+                    <input type="checkbox" name="optionType" value="support" checked="checked" disabled><label>Support</label>
+                    <input type="checkbox" name="optionType" value="samagri" checked="checked" disabled><label>With Pooja Samagri</label>
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Photographar</label>
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Online upload</label>
+                    <input type="checkbox" name="optionType" value="pandit" disabled><label>Video</label>
+                  </div>
+                </accordion-group>
+                <accordion-group heading="Platinum">
+
+                  <div class="options">
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Pandit Ji</label>
+                    <input type="checkbox" name="optionType" value="support" checked="checked" disabled><label>Support</label>
+                    <input type="checkbox" name="optionType" value="samagri" checked="checked" disabled><label>With Pooja Samagri</label>
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Photographar</label>
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Online upload</label>
+                    <input type="checkbox" name="optionType" value="pandit" checked="checked" disabled><label>Video</label>
+                  </div>
+
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="closeMapOverlay"><i class="far fa-times-circle" (click)="closeOverlay()"></i></div>
+</div>
+<div class="item" *ngFor="let item of poojaService">
+  <div class="img" [title]="item.title" [ngStyle]="{'background-image': 'url(' + _requestService.baseServiceUrl + item.Image_Id + ')'}"></div>
+  <div class="detail">
+    <h5><a href="javascript:void(0)">{{item.Pooja_Name}}</a></h5>
+    <div class="txt">{{item.Service_Desc}} </div>
+    <div class="book-now">
+      <span class="price"><i class="fas fa-rupee-sign"></i> {{item.Pooja_Discounted_Price | amountConverter:locale}}</span>      <a class="btn btn-primary btn-sm" href="javascript:void(0)" (click)="bookNow()">Book Now</a>
+    </div>
+  </div>
+</div>

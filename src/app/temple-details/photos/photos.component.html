@@ -3,8 +3,8 @@
     <tabset>
       <tab heading="Photos">
         <ul class="list-unstyled clearfix gallery">
-          <li *ngFor="let photos of photos;let i=index;">
-            <a href="javascript:void(0)" class="small-bg-img" [ngStyle]="{'background-image': 'url('+photos.src+')'}" (click)="open(i)">
+          <li *ngFor="let photos of images;let i = index">
+            <a href="javascript:void(0)" class="small-bg-img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + photos+')'}" (click)="open(i)">
               <h5 class="ellipsis">{{photos.title}}</h5>
             </a>
           </li>
@@ -12,8 +12,8 @@
       </tab>
       <tab heading="Videos">
         <ul class="list-unstyled clearfix gallery">
-          <li *ngFor="let photos of photos | slice:0:4">
-            <a href="javascript:void(0)" class="small-bg-img" [ngStyle]="{'background-image': 'url('+photos.src+')'}" (click)="open(i)">
+          <li *ngFor="let photos of videos">
+            <a href="javascript:void(0)" class="small-bg-img" [ngStyle]="{'background-image': 'url('+ _requestService.baseServiceUrl+'/' + photos+')'}" (click)="open(i)">
               <h5 class="ellipsis">{{photos.title}}</h5>
             </a>
           </li>
